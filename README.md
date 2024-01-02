@@ -1,4 +1,4 @@
-# Learn to Supabase
+# Learn to Supabase + Next.js
 
 [supabase.com](https://supabase.com)
 
