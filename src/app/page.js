@@ -6,7 +6,7 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
-          ee Get started by editing&nbsp;
+          GET STARTED BY EDITING&nbsp;
           <code className={styles.code}>src/app/page.js</code>
         </p>
         <div>
