@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from './page.module.css'
+import './page.css'
 import { createClient } from "@supabase/supabase-js";
 // import { cookies } from 'next/headers';
 
@@ -15,7 +15,7 @@ export default async function About() {
   return (
     <main>
         <h1>About</h1>
-        <table className={styles.table}>
+        <table className={'table'}>
           <tbody>
             
             {goods.data.map( (data,idx) =>{
