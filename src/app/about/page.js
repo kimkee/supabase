@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Head from 'next/head';
 import './page.css'
 import { createClient } from "@supabase/supabase-js";
 // import { cookies } from 'next/headers';
@@ -8,25 +9,30 @@ const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.
 export default async function About() {
  
 
-  const  goods  = await supabase.from("goods").select();
+  const  products  = await supabase.from("products").select();
 
 
   
   return (
     <main>
+        <Head>
+        {/* <link rel="icon" href="/favicon.ico" sizes="any" /> */}
+        </Head>
         <h1>About</h1>
         <table className={'table'}>
           <tbody>
             
-            {goods.data.map( (data,idx) =>{
+            {products.data.map( (data,idx) =>{
               const createdAt = new Date(data.created_at);
-              const time = new Intl.DateTimeFormat('ko-KR', { dateStyle: 'medium', timeStyle: 'medium' }).format(createdAt);
+              const time = new Intl.DateTimeFormat('ko-KR', { dateStyle: 'medium', timeStyle: 'short' }).format(createdAt);
               return(
               <tr key={idx}>
                 <td>{data.id}</td>
-                <td>{data.name}</td>
-                <td>{data.price_org}</td>
-                <td>{time}</td>
+                <td>{data.category}</td>
+                <td>{data.title}</td>
+                <td>{data.description}</td>
+                <td>{data.price}</td>
+                <td>{time}</td> 
               </tr>
               )
             })}
@@ -34,8 +40,8 @@ export default async function About() {
           </tbody>
         </table>
         
-        <pre>{JSON.stringify(goods, null, 2)}</pre>
-        <pre>{goods.status}</pre>
+        <pre>{JSON.stringify(products, null, 2)}</pre>
+        <pre>{products.status}</pre>
          
         <p><Image
               src="/vercel.svg"
