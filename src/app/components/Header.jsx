@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import React, {  useEffect,useState } from 'react'; //useState, useEffect
-import {NavLink , useLocation } from 'react-router-dom'; // Link  , useLocation, useSearchParams,useParams, useSearchParams
+// import {NavLink , useLocation } from 'react-router-dom'; // Link  , useLocation, useSearchParams,useParams, useSearchParams
 
 
 
