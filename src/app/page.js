@@ -1,16 +1,4 @@
-import Image from 'next/image'
-import styles from './page.module.css'
-
-export default function Home() {
-  return (
-    <main className={`contents`}>
-      
-      <div>
-        <a href="/products">
-        </a>
-      </div>
-
-      
-    </main>
-  )
+import { redirect } from 'next/navigation'
+export default function Index() {
+  redirect('/home');
 }

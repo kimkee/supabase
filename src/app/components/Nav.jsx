@@ -38,7 +38,7 @@ export default function Nav() {
               <a href={`/`} className={"bt"}><i className="fa-regular fa-house"></i><em>Home</em></a>
             </li>
             <li className={isActive("/products")}>
-              <a href={`/products`} className={"bt"}><i className="fa-regular fa-clapperboard-play"></i><em>Products</em></a>
+              <a href={`/products`} className={"bt"}><i className="fa-solid fa-box"></i><em>Products</em></a>
             </li>
             <li className={isActive("/search")}>
               <a href={`/search`} className={"bt"}><i className="fa-regular fa-search"></i><em>Search</em></a>
