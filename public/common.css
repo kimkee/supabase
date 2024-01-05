@@ -1,1 +1,90 @@
-body{background: #000 !important;}
+@charset "utf-8";
+@import url("//site-assets.fontawesome.com/releases/v6.2.1/css/all.css");
+@import url("//fonts.googleapis.com/earlyaccess/notosanskr.css");
+/* reset */ 
+* {margin: 0px;padding: 0;box-sizing: border-box;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav,
+section { display: block; }
+body { line-height: 1; line-height: 16rem; }
+h1, h2, h3, h4, h5, h6, input, select, textarea, option, label, button {font-size: 100%;font-weight: normal;}
+fieldset, img, abbr, acronym { border: 0 none; }
+ol, ul { list-style: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+em {font-style: normal;}
+p {vertical-align: baseline;}
+hr { display: none; } 
+
+html, body {font-size: 1400%;line-height: 1.6;font-family: 'Roboto',"Noto Sans KR",Arial,"Malgun Gothic",sans-serif;}
+input , textarea{font-family: 'Roboto',"Noto Sans KR",Arial,"Malgun Gothic",sans-serif;}
+html{font-size: 1px;}
+@media screen and ( max-width:340px ) { 
+    html{font-size: 0.9px;}    
+}
+@media screen and ( min-width:450px ) {
+    html{font-size: 1px;}    
+}
+@media screen and ( min-width:600px ) {
+    html{font-size: 1px;}    
+}
+body{overflow-y: scroll;background-color: #000000;color: #aaaaaa;}
+body:not(.is-dark){}
+a{color: #aaaaaa;text-decoration: none;}
+button{cursor:pointer;background: none;border: none;padding: 0; color: #aaaaaa;}
+select::-ms-expand {display:none;}
+caption{display:none;}
+
+[tabindex]{}
+
+input::-webkit-input-placeholder {color: #666666; font-weight: normal;}
+input:-ms-input-placeholder {color: #666666; font-weight: normal;}
+textarea::-webkit-input-placeholder {color: #666666; font-weight: normal;} 
+textarea:-ms-input-placeholder {color: #666666; font-weight: normal;} 
+
+:root {
+    --safe-top: calc( env(safe-area-inset-top) );
+    --safe-bottom: calc( env(safe-area-inset-bottom) );
+	--safe-watch: 0px;
+    --mwide: 480px;
+    --scrPad: 0rem;
+}
+
+
+
+#app{margin: 0rem 0rem;text-align: left;}
+a, button{-webkit-tap-highlight-color: rgb(0 0 0 / 30%);}
+
+
+/* 헤더 */
+.header{height: calc( 54rem + var(--safe-top) + var(--safe-watch) );text-align:center;display:block;z-index: 500;position: relative;}
+.header>.inr{display:flex;height: calc( 54rem + var(--safe-top) + var(--safe-watch)  );align-items: center;justify-content: space-between;align-items: center;position: fixed;left: 0;right: 0;z-index: 500;top: 0rem;background: #1a1a1a;border-bottom: #3a3a3a17 solid 1rem;padding: 0rem 20rem;padding-top: calc(  var(--safe-top) + var(--safe-watch)  );touch-action: none;transition: background-color 0.3s;left: 50%;width: 100%;max-width: var(--mwide);transform: translateX(-50%);margin-left: calc( 0px - var(--scrPad) /2 );}
+.header.home{height: 0rem;}
+.header.home>.inr{ background-color: transparent;border-color: transparent;}
+.header.trans{height: 0rem; }
+.header.hide{display: none;}
+.header.trans>.inr{background-color: rgb(0 0 0 / 70%);border-color: transparent;}
+.header.trans .htit{display: none;}
+.header.trans .rdt{} 
+
+.header .ldt{ display: flex; align-items: center; }
+.header .cdt{position: absolute;left: 64rem;right: 64rem;text-align: center;z-index: 0;}
+.header .htit{font-size: 18rem;font-weight: 700;color: #ffffff;padding-top: 0rem;margin: 0rem;}
+.header .bt.back+.htit{margin-left: 15rem;}
+.header .rdt{ display: flex; align-items: center; }
+.header .logo{display: inline-block;margin: -1rem 0rem 0rem 0rem;}
+.header .logo .btlogo{width:32rem;height: 32rem;background: url('/img/logo.png') no-repeat center;background-size: 32rem auto;font-size: 0rem;display:inline-block;vertical-align:middle;}
+.header .bt{width: 24rem;height: 24rem;font-size:0rem;background: no-repeat center;background-size: 24rem auto;color: #eeeeee;display: flex;align-items: center;justify-content: center;}
+.header .bt i{font-size: 28rem;text-shadow: 0rem 1rem 3rem rgb(0 0 0 / 36%);}
+.header .bt+.bt{margin-left: 10rem;}
+.header .bt.back{color: #aaaaaa;}
+.header .bt.back{color: #eeeeee; background-size: 24rem auto;}
+.header .bt.gnb{display:block;position: relative;height: 35rem;width: 35rem;margin-right: -5rem;transition: all 0.2s;font-size:0rem;}
+.header .bt.gnb i{font-size: 24rem;}
+.header .bt.gnb::before{top: 8rem;}
+.header .bt.gnb>b{top: 16rem;}
+.header .bt.gnb::after{top: 24rem;}
+.header i {font-weight:normal;}
+
+.header .user{display: flex;align-items: center;margin-right: 14rem;}
+.header .user .pic{margin-left: auto; width: 26rem;min-width: 26rem;height: 26rem;padding-bottom: 26rem;display: block;position: relative;border-radius: 100rem;overflow: hidden;}
+.header .user .pic .img{position: absolute; width: 100%; left: 0; top: 0;}
+.header .user .txt{color: #e1e1e1;margin-left: 10rem;line-height: 1.2;}
