@@ -1,3 +1,4 @@
+
 import { Inter } from 'next/font/google'
 import Icon from 'next/image'
 import Head from 'next/head';
@@ -5,7 +6,7 @@ import './globals.css'
 import '/public/common.css'
 /* import 'https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css'
 import 'https://fonts.googleapis.com/earlyaccess/notosanskr.css' */
-
+import Nav from './components/Nav.jsx';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -27,11 +28,11 @@ export default function RootLayout({ children }) {
       
       <body className={inter.className}>
 
-        <div class="wrap">
+        <div className="wrap">
           <header className={`header`}>
             <div className="inr">
               <div className="ldt">
-                <h1 className="logo"> <a href="/" className="btlogo"><i className="fa-brands fa-vuejs"></i></a></h1>
+                <a href="/" className="logo"> <span className="btlogo"></span> <span className="txt">SUPAMARKET</span></a>
           
               </div>
               <div className="rdt">
@@ -41,10 +42,11 @@ export default function RootLayout({ children }) {
               </div>
             </div>
           </header>
-          <div class="container page">
+          <div className="container page">
             {children}
           </div>
-          </div>
+          <Nav />
+        </div>
       </body>
     </html>
   )
