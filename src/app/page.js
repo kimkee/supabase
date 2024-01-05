@@ -29,6 +29,7 @@ export default function Home() {
       </div>
 
       <div className={styles.center}>
+        <a href="/products">
         <Image
           className={styles.logo}
           src="/next.svg"
@@ -36,7 +37,7 @@ export default function Home() {
           width={180}
           height={37}
           priority
-        />
+        /></a>
       </div>
 
       <div className={styles.grid}>

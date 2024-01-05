@@ -9,7 +9,7 @@ const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.
 export default async function About() {
  
 
-  const  products  = await supabase.from("products").select();
+  const products = await supabase.from("products").select().order('id', { ascending: true });
 
 
   
@@ -18,7 +18,7 @@ export default async function About() {
         <Head>
         {/* <link rel="icon" href="/favicon.ico" sizes="any" /> */}
         </Head>
-        <h1>About</h1>
+        <h1>Products</h1>
         <table className={'table'}>
           <tbody>
             

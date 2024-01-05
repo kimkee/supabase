@@ -3,6 +3,8 @@ import Icon from 'next/image'
 import Head from 'next/head';
 import './globals.css'
 import '/public/common.css'
+/* import 'https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css'
+import 'https://fonts.googleapis.com/earlyaccess/notosanskr.css' */
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,10 +24,28 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko">
-      <Head>
-        <Icon rel="icon" href="/favicon.ico" sizes="any" />
-      </Head>
-      <body className={inter.className}>{children}</body>
+      
+      <body className={inter.className}>
+
+        <div class="wrap">
+          <header className={`header`}>
+            <div className="inr">
+              <div className="ldt">
+                <h1 className="logo"> <a href="/" className="btlogo"><i className="fa-brands fa-vuejs"></i></a></h1>
+          
+              </div>
+              <div className="rdt">
+          
+          
+                <button type="button" className="bt gnb"><i className="fa-regular fa-bars"></i><b>메뉴</b></button>
+              </div>
+            </div>
+          </header>
+          <div class="container page">
+            {children}
+          </div>
+          </div>
+      </body>
     </html>
   )
 }
