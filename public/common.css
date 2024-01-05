@@ -49,7 +49,6 @@ textarea:-ms-input-placeholder {color: #666666; font-weight: normal;}
 }
 
 
-
 #app{margin: 0rem 0rem;text-align: left;}
 a, button{-webkit-tap-highlight-color: rgb(0 0 0 / 30%);}
 
@@ -73,6 +72,7 @@ a, button{-webkit-tap-highlight-color: rgb(0 0 0 / 30%);}
 .header .logo{display: inline-flex;margin: -1rem 0rem 0rem 0rem; align-items: center;}
 .header .logo .btlogo{width:26rem;height: 26rem;background: url('/img/logo.png') no-repeat center;background-size: 25rem auto;font-size: 0rem;display:inline-block;vertical-align:middle;}
 .header .logo .txt{font-size: 18rem; letter-spacing: 1rem; color: #ffffff; display: inline-flex; vertical-align: middle; margin-left: 8rem; font-weight: 600;}
+.header .logo .next{filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70); margin: 9rem 0rem 0rem 3rem;}
 .header .bt{width: 24rem;height: 24rem;font-size:0rem;background: no-repeat center;background-size: 24rem auto;color: #eeeeee;display: flex;align-items: center;justify-content: center;}
 .header .bt i{font-size: 28rem;text-shadow: 0rem 1rem 3rem rgb(0 0 0 / 36%);}
 .header .bt+.bt{margin-left: 10rem;}
@@ -107,4 +107,16 @@ a, button{-webkit-tap-highlight-color: rgb(0 0 0 / 30%);}
 .menubar .menu>li.active .bt{color: #61dafb;}
 .menubar .menu>li.active .bt i,
 .menubar .menu>li .bt.router-link-active i{font-weight:900;}
+
+/* 플로팅 탑버튼 글쓰기버튼 */
+.floatnav{position:fixed;text-align: right;padding: 0rem 20rem;left: 50%;max-width: var(--mwide);width: 100%;height: 0;z-index: 500;transition: all 0.3s;bottom: calc(78rem + var(--safe-bottom));transform: translate3D(-50%,90rem,0rem);transition: transform 0.2s;}
+.floatnav.is-top{bottom: 20rem;bottom: calc(20rem + var(--safe-bottom));transition: none;}
+.floatnav .bt{font-size: 0rem;width: 52rem;height: 52rem;display: inline-block;background: no-repeat #555555;background-size: 100% auto;margin: 10rem auto 0 auto;border-radius: 35rem;box-shadow: 0rem 0rem 6rem rgb(0 0 0 / 49%);}
+.floatnav .bt i{font-size: 17rem;}
+.floatnav .bt::before{}
+.floatnav .bt.top{ background: rgb(255 255 255 / 70%);border: solid rgba(0, 0, 0, 0.1) 1rem;text-align: center;width: 45rem;height: 45rem;color: #000;}
+.floatnav.on-top{transform: translate3D(-50%,-60rem,0rem);transition: transform 0.2s;}
+.floatnav.on-top .bt.top{}
+.floatnav .bt.reg{background: #35495e;box-shadow: rgb(0 0 0 / 20%) 2rem 2rem 10rem;position: relative;}
+.floatnav .bt.reg i{font-size: 19rem;color: #e9e9e9;display: block;text-align: center;}
 

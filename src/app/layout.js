@@ -1,6 +1,6 @@
 
 import { Inter } from 'next/font/google'
-import Icon from 'next/image'
+import Image from 'next/image'
 import Head from 'next/head';
 import './globals.css'
 import '/public/common.css'
@@ -32,7 +32,11 @@ export default function RootLayout({ children }) {
           <header className={`header`}>
             <div className="inr">
               <div className="ldt">
-                <a href="/" className="logo"> <span className="btlogo"></span> <span className="txt">SUPAMARKET</span></a>
+                <a href="/" className="logo">
+                  <span className="btlogo"></span>
+                  <span className="txt">SUPAMARKET</span>
+                  <Image className="next" src="/next.svg" alt="Next.js Logo" width={26} height={27} priority />
+                </a>
           
               </div>
               <div className="rdt">
