@@ -14,10 +14,9 @@ export default async function About() {
 
   
   return (
-    <main>
-        <Head>
-        {/* <link rel="icon" href="/favicon.ico" sizes="any" /> */}
-        </Head>
+    <div className="container page prds">
+      <main className={`contents`}>
+        
         <h1>Products</h1>
         <table className={'table'}>
           <tbody>
@@ -40,17 +39,10 @@ export default async function About() {
           </tbody>
         </table>
         
-        <pre>{JSON.stringify(products, null, 2)}</pre>
-        <pre>{products.status}</pre>
-         
-        <p><Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={"img"}
-              width={100}
-              height={24}
-              priority
-            /></p>
-    </main>
+        {/* <pre>{JSON.stringify(products, null, 2)}</pre>
+        <pre>{products.status}</pre> */}
+        <p><Image src="/vercel.svg" alt="Vercel Logo" className={"img"} width={100} height={24} priority /></p>
+      </main>
+    </div>
   )
 }

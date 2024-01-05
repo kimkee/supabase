@@ -2,13 +2,13 @@
 import { Inter } from 'next/font/google'
 
 import Head from 'next/head';
-import './globals.css'
+import '../globals.css'
 import '/public/common.css'
-import '/public/fontawesome/css/all.min.css'
+import '/public/fontawesome/css/all.css'
 /* import 'https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css'
 import 'https://fonts.googleapis.com/earlyaccess/notosanskr.css' */
-import Nav from './components/Nav.jsx';
-import Header from './components/Header.jsx';
+import Nav from '../components/Nav.jsx';
+import Header from '../components/Header.jsx';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -28,10 +28,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ko">
       
-      <body className={'body'}>
+      <body className={inter.className}>
 
         <div className="wrap">
-          {children}
+          <Header />
+          <div className="container page">
+            {children}
+          </div>
+          <Nav />
         </div>
       </body>
     </html>
