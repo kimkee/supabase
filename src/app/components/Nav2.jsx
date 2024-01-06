@@ -13,16 +13,16 @@ export default function Nav() {
       <nav id="menubar" className="menubar">
         <div className="inr">
           <ul className="menu">
-            <li className={isActive("/home")}>
+            <li>
               <a href={`/`} className={"bt"}><i className="fa-regular fa-house"></i><em>Home</em></a>
             </li>
-            <li className={isActive("/products")}>
+            <li>
               <a href={`/products`} className={"bt"}><i className="fa-regular fa-clapperboard-play"></i><em>Products</em></a>
             </li>
-            <li className={isActive("/search")}>
+            <li>
               <a href={`/search`} className={"bt"}><i className="fa-regular fa-search"></i><em>Search</em></a>
             </li>
-            <li className={isActive("user/")}>
+            <li>
               <a href={`/user/abc`} className={"bt"}> <i className="fa-regular fa-user"></i><em>Mypage</em></a>
               {/* <a href={`/user/signin`} className={"bt"}><i className="fa-regular fa-user"></i><em>Login</em></a> */}
             </li>
