@@ -6,7 +6,7 @@ import './globals.css'
 import '/public/common.css'
 /* import 'https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css'
 import 'https://fonts.googleapis.com/earlyaccess/notosanskr.css' */
-import Nav from './components/Nav.jsx';
+import Nav2 from './components/Nav2.jsx';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
           <div className="container page">
             {children}
           </div>
-          {/* <Nav /> */}
+          <Nav2 />
         </div>
       </body>
     </html>
