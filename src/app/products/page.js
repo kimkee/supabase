@@ -3,7 +3,7 @@ import Head from 'next/head';
 import './page.css'
 import { createClient } from "@supabase/supabase-js";
 // import { cookies } from 'next/headers';
-
+import ui from '../ui.js';
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
 export default async function About() {
