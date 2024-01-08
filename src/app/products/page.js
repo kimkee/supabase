@@ -41,7 +41,7 @@ export default async function About() {
         
         {/* <pre>{JSON.stringify(products, null, 2)}</pre>
         <pre>{products.status}</pre> */}
-        <p><Image src="/vercel.svg" alt="Vercel Logo" className={"img"} width={100} height={24} priority /></p>
+       
       </main>
     </div>
   )
