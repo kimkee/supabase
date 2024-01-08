@@ -3,7 +3,7 @@ import Head from 'next/head';
 import './page.css'
 import { createClient } from "@supabase/supabase-js";
 // import { cookies } from 'next/headers';
-
+import ui from '../ui.js';
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
 export default async function About() {
@@ -41,7 +41,7 @@ export default async function About() {
         
         {/* <pre>{JSON.stringify(products, null, 2)}</pre>
         <pre>{products.status}</pre> */}
-        <p><Image src="/vercel.svg" alt="Vercel Logo" className={"img"} width={100} height={24} priority /></p>
+       
       </main>
     </div>
   )

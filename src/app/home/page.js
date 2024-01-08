@@ -13,7 +13,8 @@ export default function Home() {
       <main className={`contents`}>
         
         <div className="box">
-          <a href="/products"><Image className="next" src="/next.svg" alt="Next.js Logo" width={100} height={27} priority /> </a>
+          <p><a href="/products"><Image className="next" src="/next.svg" alt="Next.js Logo" width={100} height={27} priority /> </a></p>
+          <p><Image src="/vercel.svg" className="vecl" alt="Vercel Logo" width={100} height={24} priority /></p>
         </div>
 
         

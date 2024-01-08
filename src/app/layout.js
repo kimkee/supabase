@@ -10,6 +10,7 @@ import 'https://fonts.googleapis.com/earlyaccess/notosanskr.css' */
 import Nav from './components/Nav.jsx';
 import Header from './components/Header.jsx';
 const inter = Inter({ subsets: ['latin'] })
+import ui from './ui.js';
 
 export const metadata = {
   title: '슈파마켓',

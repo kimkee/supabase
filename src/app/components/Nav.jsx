@@ -1,8 +1,8 @@
 'use client'
 import React, {  useEffect,useState } from 'react'; //useState, useEffect
-import {NavLink , useLocation } from 'react-router-dom'; // Link  , useLocation, useSearchParams,useParams, useSearchParams
+// import {NavLink , useLocation } from 'react-router-dom'; // Link  , useLocation, useSearchParams,useParams, useSearchParams
 
-
+import ui from '../ui.js';
 
 export default function Nav() {
   
@@ -11,6 +11,8 @@ export default function Nav() {
 
   const isActive = els => location.pathname.includes(`${els}`) ? "active" : "";
   
+  // console.log( isActive() );
+
   const [isOnTop, setIsOnTop] = useState('');
   const scrollEvent = ()=> {
     if ( ui.lock.stat ) return;
@@ -34,22 +36,22 @@ export default function Nav() {
       <nav id="menubar" className="menubar">
         <div className="inr">
           <ul className="menu">
-            <li className={isActive("/home")}>
+            <li className={``}>
               <a href={`/`} className={"bt"}><i className="fa-regular fa-house"></i><em>Home</em></a>
             </li>
-            <li className={isActive("/products")}>
+            <li className={``}>
               <a href={`/products`} className={"bt"}><i className="fa-solid fa-box"></i><em>Products</em></a>
             </li>
-            <li className={isActive("/search")}>
+            <li className={``}>
               <a href={`/search`} className={"bt"}><i className="fa-regular fa-search"></i><em>Search</em></a>
             </li>
-            <li className={isActive("user/")}>
+            <li className={``}>
               <a href={`/user/${userInfo.uid}`} className={"bt"}> <i className="fa-regular fa-user"></i><em>Mypage</em></a>
               {/* <a href={`/user/signin`} className={"bt"}><i className="fa-regular fa-user"></i><em>Login</em></a> */}
             </li>
           </ul>
           {/* <ul className="menu">
-            <li className={isActive("home")}>
+            <li className={``}>
               <NavLink to={`/home/`} className={"bt"}><i className="fa-regular fa-house"></i><em>Home</em></NavLink>
             </li>
             <li className={isActive("list/movie")}>
