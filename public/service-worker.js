@@ -1,5 +1,5 @@
 // 캐시 이름
-const CACHE_NAME = "cache-v8";
+const CACHE_NAME = "cache-v9";
 
 
 // 캐싱할 파일

@@ -1,8 +1,8 @@
 export default function manifest() {
 	return {
-	  name: '슈파마켓 App',
-	  short_name: '슈파마켓 App',
-	  description: '슈파마켓 App',
+	  name: 'SUPA MARKET',
+	  short_name: 'SUPA MARKET',
+	  description: 'SUPA MARKET + Supabase + Nest.js',
 	  start_url: '/',
 	  display: 'standalone',
 	  background_color: '#1a1a1a',
