@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 
 import Head from 'next/head';
 import './globals.css'
-import '/public/common.css'
+import '/public/css/common.css'
 import '/public/fontawesome/css/all.min.css'
 /* import 'https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css'
 import 'https://fonts.googleapis.com/earlyaccess/notosanskr.css' */
