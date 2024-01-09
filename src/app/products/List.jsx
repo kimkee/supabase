@@ -9,16 +9,16 @@ const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.
 export default function List() {
 
   // const products = await supabase.from("products").select().order('id', { ascending: true });
-  const [countries, setCountries] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    getCountries();
+    getProducts();
   }, []);
   
-  console.log(countries);
-  async function getCountries() {
+  console.log(products);
+  async function getProducts() {
     const { data } = await supabase.from("products").select().order('id', { ascending: true });
-    setCountries(data);
+    setProducts(data);
     
   }
   return(
@@ -26,7 +26,7 @@ export default function List() {
 
     
 		<section className="ui-pdlist">
-      <pre>{JSON.stringify(countries, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(products, null, 2)}</pre> */}
         
       <ul className="list tp-list" data-ui-ptype="ctn" data-ui-ptype-val="cate_list_1" id="pd_list">
         <li>
