@@ -17,7 +17,7 @@ export default async function About() {
   return (
     <div className="container page prds">
       <main className={`contents`}>
-
+        {process.env.NEXT_PUBLIC_SUPABASE_URL}
         <List />
 
         <h1>Products</h1>
