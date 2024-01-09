@@ -2,8 +2,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { createClient } from "@supabase/supabase-js";
+import { supabase } from '../supabase.js'; 
 import React, { useState, useEffect } from 'react';
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
 
 export default function List() {
@@ -21,6 +21,8 @@ export default function List() {
     setProducts(data);
     
   }
+  // if(!products.data){return}
+  
   return(
 		        
 
@@ -86,6 +88,28 @@ export default function List() {
           </Link>
         </li>
       </ul>
+
+
+      <table className={'table'}>
+        <tbody>
+          
+          {products.map( (data,idx) =>{
+            const createdAt = new Date(data.created_at);
+            const time = new Intl.DateTimeFormat('ko-KR', { dateStyle: 'medium', timeStyle: 'short' }).format(createdAt);
+            return(
+            <tr key={idx}>
+              <td>{data.id}</td>
+              <td>{data.category}</td>
+              <td>{data.title}</td>
+              <td>{data.description}</td>
+              <td>{data.price}</td>
+              <td>{time}</td> 
+            </tr>
+            )
+          })}
+          
+        </tbody>
+      </table>
       
     </section>
 

@@ -93,6 +93,8 @@ a, button{-webkit-tap-highlight-color: rgb(0 0 0 / 30%);}
 .body>.wrap{}
 
 .container { transition: opacity 1.5s; position: relative; z-index: 100; max-width: var(--mwide); margin: auto; background: #111111; }
+.container .contents{width: 100%;}
+
 
 /* 하단메뉴바 */
 .menubar{transition: transform 0.3s;height: 60rem;height: calc(60rem + var(--safe-bottom) );}
