@@ -2,7 +2,7 @@
 .container{ flex: 1; width: 100%; display: flex;   }
 
 .page.prds{}
-.page.prds .contents{padding:0rem 20rem;}
+.page.prds .contents{padding:20rem 20rem;}
 
 .table{ width: 100%; border-collapse: collapse;}
 .table tr{}
