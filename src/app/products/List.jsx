@@ -1,36 +1,29 @@
 "use client"
 import Image from 'next/image'
 import Link from 'next/link'
-import { createClient } from "@supabase/supabase-js";
-import { supabase } from '../supabase.js'; 
 import React, { useState, useEffect } from 'react';
 
 
 export default function List() {
 
-  // const products = await supabase.from("products").select().order('id', { ascending: true });
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     getProducts();
   }, []);
-  
-  console.log(products);
+
   async function getProducts() {
-    const { data } = await supabase.from("products").select().order('id', { ascending: true });
-    setProducts(data);
-    
+    const response = await fetch('/api/products').then((response) => response.json())
+    setProducts(response);
+    console.log(response);  
   }
-  // if(!products.data){return}
-  
+
   return(
 		        
-
-    
 		<section className="ui-pdlist">
       {/* <pre>{JSON.stringify(products, null, 2)}</pre> */}
         
-      <ul className="list tp-list" data-ui-ptype="ctn" data-ui-ptype-val="cate_list_1" id="pd_list">
+      <ul className="list tp-list">
         <li>
           <Link href="" className="unit-pd">
             <div className="thum">
