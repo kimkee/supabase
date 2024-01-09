@@ -3,6 +3,7 @@ import Head from 'next/head';
 import './page.css'
 import { createClient } from "@supabase/supabase-js";
 // import { cookies } from 'next/headers';
+import List from './List.jsx';
 import ui from '../ui.js';
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
@@ -16,7 +17,9 @@ export default async function About() {
   return (
     <div className="container page prds">
       <main className={`contents`}>
-        
+
+        <List />
+
         <h1>Products</h1>
         <table className={'table'}>
           <tbody>
