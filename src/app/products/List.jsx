@@ -7,15 +7,15 @@ import Loading from '../components/Loading';
 export default function List() {
 
   const [products, setProducts] = useState([]);
-  let tpData = ''
+  
   useEffect(() => {
     getProducts();
-  }, []);
+  },[]);
 
   async function getProducts() {
-    tpData = localStorage.getItem("prdType") || 'tp-list';
+    const tpData = localStorage.getItem("prdType") || 'tp-list';
     setIsTpList(tpData)
-    const response = await fetch('/api/products',{sort:'id'}).then((response) => response.json())
+    const response = await fetch('/api/products',{ next: { revalidate: 0 } }).then((response) => response.json())
     setProducts(response);
     // console.log(response);  
   }
