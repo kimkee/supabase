@@ -7,7 +7,7 @@ import ui from '../ui.js';
 export default function List() {
 
   const [products, setProducts] = useState([]);
-
+  
   useEffect(() => {
     getProducts();
   }, []);
@@ -28,7 +28,7 @@ export default function List() {
           const image = process.env.NEXT_PUBLIC_SUPABASE_URL+data.images_url[0]||"";
           return(
             <li key={idx}>
-              <Link href="" className="unit-pd">
+              <Link href={"/product/item/"+data.id}  className="unit-pd">
                 <div className="thum">
                   <div className="pic"><img className="img" src={image} alt="이미지"  onError={ ui.error.poster } /></div>
                   <button type="button" className="btzzim on">찜하기</button>

@@ -28,7 +28,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko">
-      
       <body className={'body'}>
 
         <div className="wrap">

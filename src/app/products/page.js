@@ -5,14 +5,12 @@ import './page.css'
 import List from './List.jsx';
 import ui from '../ui.js';
 
-export default async function About() {
+export default async function Page() {
  
  
   return (
     <div className="container page prds">
       <main className={`contents`}>
-
-        <h1>Products</h1>
 
         <List />
         

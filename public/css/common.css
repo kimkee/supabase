@@ -156,7 +156,7 @@ a, button{-webkit-tap-highlight-color: rgb(0 0 0 / 30%);}
 /* 상품 리스트 유닛 A*/
 .unit-pd{display: flex;justify-content: space-between; max-width: 100%;}
 .unit-pd .thum{width: 105px;height: 105px;position: relative;border-radius: 7px;overflow: hidden;}
-.unit-pd .thum .pic{display: block;position: relative;padding-bottom: calc(100% / 100 * 100);overflow: hidden;border-radius: 7px; background: #575757;}
+.unit-pd .thum .pic{display: block;position: relative;padding-bottom: calc(100% / 100 * 100);overflow: hidden;border-radius: 7px; background: rgb(120 120 120 / 40%);}
 .unit-pd .thum .pic .img{display: block;position: absolute;left: 50%;top: 50%;transform: translate(-50% , -50%);width: 100%;object-fit: cover;max-width: inherit;min-width: 100%;height: 100%; border-radius: 7px;}
 .unit-pd .thum .flg{position: absolute;left: 0;bottom: 0;right: 0;z-index: 1;height: 22px; display: flex; align-items: center; background: rgb(0 0 0 / 58%); }
 .unit-pd .thum .flg .fg{display: block;width: 100%;color: #ffffff;text-align: center;font-size: 10rem;padding: 0px 0px;background: center no-repeat;background-size: 45px auto;border-radius: 0px 0px 7px 7px;overflow: hidden;font-style: normal;}
