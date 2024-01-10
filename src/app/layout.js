@@ -1,5 +1,5 @@
 
-import { Inter } from 'next/font/google'
+import { Inter, Roboto_Mono } from 'next/font/google'
 
 import Head from 'next/head';
 import './globals.css'
@@ -7,7 +7,14 @@ import '/public/css/common.css'
 import '/public/fontawesome/css/all.min.css'
 import Nav from './components/Nav.jsx';
 import Header from './components/Header.jsx';
-const inter = Inter({ subsets: ['latin'] })
+export const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+})
+export const roboto_mono = Roboto_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+})
 import ui from './ui.js';
 
 export const metadata = {
