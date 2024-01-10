@@ -7,21 +7,24 @@ import Loading from '../components/Loading';
 export default function List() {
 
   const [products, setProducts] = useState([]);
-  
+  let tpData = ''
   useEffect(() => {
     getProducts();
   }, []);
 
   async function getProducts() {
+    tpData = localStorage.getItem("prdType") || 'tp-list';
+    setIsTpList(tpData)
     const response = await fetch('/api/products',{sort:'id'}).then((response) => response.json())
     setProducts(response);
     // console.log(response);  
   }
-  const tpData = localStorage.getItem("prd-type") || 'tp-list';
-  const [isTpList, setIsTpList] = useState(tpData);
+  
+  const [isTpList, setIsTpList] = useState('tp-list');
   const togTpList = (e, type)=>{
     console.log(`${type}`);
     setIsTpList( type );
+    localStorage.setItem("prdType", type)  
   }
 
 
