@@ -15,7 +15,7 @@ export default function List() {
   async function getProducts() {
     const tpData = localStorage.getItem("prdType") || 'tp-list';
     setIsTpList(tpData)
-    const response = await fetch('/api/products',{ next: { revalidate: 0 } }).then((response) => response.json())
+    const response = await fetch('/api/products',{ cache: 'no-store' }).then((response) => response.json())
     setProducts(response);
     // console.log(response);  
   }
