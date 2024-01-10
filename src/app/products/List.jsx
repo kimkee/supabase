@@ -17,8 +17,8 @@ export default function List() {
     setProducts(response);
     // console.log(response);  
   }
-
-  const [isTpList, setIsTpList] = useState('tp-list');
+  const tpData = localStorage.getItem("prd-type") || 'tp-list';
+  const [isTpList, setIsTpList] = useState(tpData);
   const togTpList = (e, type)=>{
     console.log(`${type}`);
     setIsTpList( type );
