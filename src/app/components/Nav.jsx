@@ -27,7 +27,7 @@ export default function Nav() {
   const [userInfo, setUserInfo] = useState({});
   
   useEffect( () => {
-    
+    window.addEventListener("scroll",scrollEvent);
   },[]);
 
   return (
@@ -38,16 +38,16 @@ export default function Nav() {
       <nav id="menubar" className="menubar">
         <div className="inr">
           <ul className="menu">
-            <li className={ clsx(`li`,{ 'active': pathname.includes('home')}) }>
+            <li className={ clsx(`li`,{ 'active': pathname.includes('/home')}) }>
               <a href={`/`} className={"bt"}><i className="fa-regular fa-house"></i><em>Home</em></a>
             </li>
-            <li className={ clsx(`li`,{ 'active': pathname.includes('products')}) }>
+            <li className={ clsx(`li`,{ 'active': pathname.includes('/products')}) }>
               <a href={`/products`} className={"bt"}><i className="fa-solid fa-box"></i><em>Products</em></a>
             </li>
-            <li className={``}>
+            <li className={ clsx(`li`,{ 'active': pathname.includes('/search')}) }>
               <a href={`/search`} className={"bt"}><i className="fa-regular fa-search"></i><em>Search</em></a>
             </li>
-            <li className={``}>
+            <li className={ clsx(`li`,{ 'active': pathname.includes('/user')}) }>
               <a href={`/user/${userInfo.uid}`} className={"bt"}> <i className="fa-regular fa-user"></i><em>Mypage</em></a>
               {/* <a href={`/user/signin`} className={"bt"}><i className="fa-regular fa-user"></i><em>Login</em></a> */}
             </li>
