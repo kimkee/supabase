@@ -26,12 +26,14 @@ export default function List() {
       <ul className="list tp-list">
         {products.map( (data,idx) =>{
           const image = process.env.NEXT_PUBLIC_SUPABASE_URL+data.images_url[0]||"";
+          const createdAt = new Date(data.created_at);
+            const time = new Intl.DateTimeFormat('ko-KR', { dateStyle: 'medium', timeStyle: 'short' }).format(createdAt);
           return(
             <li key={idx}>
-              <Link href={"/product/item/"+data.id}  className="unit-pd">
+              <Link href={"/products/item/"+data.id}  className="unit-pd">
                 <div className="thum">
                   <div className="pic"><img className="img" src={image} alt="이미지"  onError={ ui.error.poster } /></div>
-                  <button type="button" className="btzzim on">찜하기</button>
+                  <span className="btzzim on"><i className="fa-regular fa-heart"></i><b>찜하기</b></span>
                   <em className="flg">
                     <i className="fg">{data.status}</i>
                   </em>
@@ -40,8 +42,8 @@ export default function List() {
                   <div className="tit">{data.title}</div>
                   <div className="prc"><em className="p">{ui.commas.add(data.price)}</em><i className="w">원</i></div>
                   <div className="inf">
-                    <em className="time">4일전</em>
-                    <em className="name">서울</em>
+                    <em className="time">{time}</em>
+                    <em className="name">{data.location}</em>
                   </div>
                   <div className="dec">
                     <div className="hit">
