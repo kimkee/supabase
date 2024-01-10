@@ -1,5 +1,5 @@
 
-import { Inter, Roboto_Mono } from 'next/font/google'
+import { Inter, Roboto_Mono , Noto_Sans } from 'next/font/google'
 
 import Head from 'next/head';
 import './globals.css'
@@ -12,6 +12,10 @@ export const inter = Inter({
   display: 'swap',
 })
 export const roboto_mono = Roboto_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+})
+export const noto_sans = Noto_Sans({
   subsets: ['latin'],
   display: 'swap',
 })
@@ -33,7 +37,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko">
-      <body className={`body ${inter.className}`}>
+      <body className={`body ${noto_sans.className}`}>
 
         <div className="wrap">
           {children}
