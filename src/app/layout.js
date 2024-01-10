@@ -5,8 +5,6 @@ import Head from 'next/head';
 import './globals.css'
 import '/public/css/common.css'
 import '/public/fontawesome/css/all.min.css'
-/* import 'https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css'
-import 'https://fonts.googleapis.com/earlyaccess/notosanskr.css' */
 import Nav from './components/Nav.jsx';
 import Header from './components/Header.jsx';
 const inter = Inter({ subsets: ['latin'] })
@@ -28,7 +26,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko">
-      <body className={'body'}>
+      <body className={`body ${inter.className}`}>
 
         <div className="wrap">
           {children}
