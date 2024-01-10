@@ -57,7 +57,7 @@ a, button{-webkit-tap-highlight-color: rgb(0 0 0 / 30%);}
 .btn{border: 1rem solid #30363d;background: #191e24;color: #c9d1d9;height: 40rem;overflow:hidden;padding: 0 12rem;display: inline-flex;justify-content: center;align-items: center;vertical-align:middle;cursor:pointer;white-space:nowrap;border-radius: 4rem;line-height: 1.1;font-size: 14rem;}
 .btn.db{display:block;}
 .btn.xs{height: 24rem;min-width:30rem;padding: 0rem 6rem;font-size: 11rem;line-height: 1;}
-.btn.sm{height: 32rem;min-width: 32rem;padding: 1rem 6rem 0rem 6rem;font-size: 12rem;}
+.btn.sm{height: 32rem;min-width: 32rem;padding: 0rem 6rem 0rem 6rem;font-size: 12rem;}
 .btn.md{height: 40rem;font-size: 14rem;}
 .btn.lg{height: 50rem;min-width: 40rem;padding: 0 15rem;font-size: 15rem;}
 .btn.xl{height: 60rem;min-width: 80rem;padding: 0 10rem;font-size: 16rem;font-weight: 400;}
@@ -164,7 +164,7 @@ a.btn.disabled{ pointer-events: none; }
 .floatnav .bt.reg{background: #35495e;box-shadow: rgb(0 0 0 / 20%) 2rem 2rem 10rem;position: relative;}
 .floatnav .bt.reg i{font-size: 19rem;color: #e9e9e9;display: block;text-align: center;}
 
-.ut-bdg{height: 16px;font-size: 10rem;display: inline-block;vertical-align: middle;padding: 3px 3px;line-height: 1;white-space: nowrap;border: rgb(137 140 157 / 30%) solid 1px;border-radius: 3px;color: #898c9d;margin: 1px 4px 1px 0px;}
+.ut-bdg{height: 18px;font-size: 10rem;display: inline-block;vertical-align: middle;padding: 3px 3px;line-height: 1;white-space: nowrap;border: rgb(137 140 157 / 30%) solid 1px;border-radius: 3px;color: #898c9d;margin: 1px 4px 1px 0px;}
 .ut-bdg+.ut-bdg{}
 .sect.pdinfo .ut-bdg{padding: 3.5px 3px 2px;height: 19px;font-size: 11rem;}
 .ut-bdg.a{}
@@ -177,17 +177,25 @@ a.btn.disabled{ pointer-events: none; }
 .ut-bdg.h{}
 .ut-bdg.i{}
 
+.ui-pdlist .bbs-opt{display: flex;align-items: center;justify-content: space-between;padding: 0rem 0rem; margin-bottom: 10rem;}
+.ui-pdlist .bbs-opt i{font-weight: 600;}
+.ui-pdlist .bbs-opt .tots{font-size:12rem;color: #afafaf;}
+.ui-pdlist .bbs-opt .tbts{font-size: 18rem; line-height: 1;color: #777; border: 1rem #333333 solid; border-radius: 4rem;}
+.ui-pdlist .bbs-opt .tbts .bt-tog{width: 28rem; height: 28rem;}
+.ui-pdlist .bbs-opt .tbts.tp-list .bt-tog.tp-list,
+.ui-pdlist .bbs-opt .tbts.tp-thum .bt-tog.tp-thum{color: var(--active-color);}
+.ui-pdlist .bbs-opt .tbts .bt-tog+.bt-tog{border-left: 1rem #333333 solid;}
+
 /* 상품리스트 */
 .ui-pdlist{}
 .ui-pdlist .list{}
-.ui-pdlist .list>li{border-top: 1px solid rgb(255 255 255 / 20%);padding: 16px 0px 15px 0px;}
+.ui-pdlist .list>li{border-top: 1px solid rgb(100 100 100 / 20%);padding: 16px 0px 15px 0px;}
 .ui-pdlist .list>li .unit-pd{}
 .ui-pdlist .list.tp-list>li:first-child{border-top-width: 0px;margin-top: 0px;padding-top: 0;}
 .ui-pdlist .list>li .pdset{}
 .ui-pdlist .list.tp-list{}
-.ui-pdlist .list.tp-thum{display: flex;flex-wrap: wrap;margin: -12px -12px 0px -12px;}
-.ui-pdlist .list.tp-thum>li{width: 50%;padding: 0px 12px;margin: 12px 0px 13px 0px;border-top-width: 0;}
-.ui-pdlist .list.tp-thum>li:first-child{}
+.ui-pdlist .list.tp-thum{display: flex;flex-wrap: wrap;margin: 0px -2% 0px -2%;}
+.ui-pdlist .list.tp-thum>li{width: calc(100% / 3);padding: 0px 2%;margin: 0px 0px 13px 0px;border-top-width: 0;}
 .ui-pdlist .list>li.nodata{ padding: calc(50vh - 174px) 0px !important; width: 100%; }
 .ui-pdlist .list>li.nodata .msg{}
 .ui-pdlist .list.nat .unit-pd .boxs .inf .loct .g{display:inline;}
@@ -236,26 +244,20 @@ a.btn.disabled{ pointer-events: none; }
 .unit-pd .boxs .dec .hit .ht b{margin-left: 4rem;}
 .unit-pd .boxs .dec .hit .ht.repy{}
 .unit-pd .boxs .dec .hit .ht.like{}
-.unit-pd .boxs .dec .opt{display: flex;align-items: center;text-align: right;margin: 4px -4px 0 0;}
+.unit-pd .boxs .dec .opt{display: flex;align-items: center;text-align: right;margin: 4px 0px 0 0;}
 .unit-pd .boxs .dec .opt .bdg{}
 .unit-pd .boxs .dec .opt .bdg + .bdg{}
 /* 썸네일형 리스트 */
 .tp-thum .unit-pd{ display: block; }
 .tp-thum .unit-pd .thum{ width: 100%; height: auto; }
 .tp-thum .unit-pd .boxs{width: calc(100%);display: block;}
-.tp-thum .unit-pd .boxs .tit{margin-top: 18px;height: 21px;}
+.tp-thum .unit-pd .boxs .tit{margin-top: 8px; line-height: 1.2; -webkit-line-clamp: inherit;}
 .tp-thum .unit-pd .boxs .tit .bd{ margin-top: -1px; }
 .tp-thum .unit-pd .boxs .tit .lk{}
 .tp-thum .unit-pd .boxs .prc{margin-top: 4px;}
 .tp-thum .unit-pd .boxs .inf{}
-.tp-thum .unit-pd .boxs .inf .hr{height: 6px;width: 100%;}
-.tp-thum .unit-pd .boxs .inf .time + .hr{display: block;}
-.tp-thum .unit-pd .boxs .inf .time::before{display: none;}
-.tp-thum .unit-pd .boxs .inf .loct + .time::before{display:inline-block;}
-.tp-thum .unit-pd .boxs .inf .loct + .hr{display: block;}
-.tp-thum .unit-pd .boxs .inf .loct .g{/* display: inline; */}
-.tp-thum .unit-pd .boxs .inf .name{max-width: calc(100% - 30px);}
-.tp-thum .unit-pd .boxs .inf .name::before{display: none !important;}
+.tp-thum .unit-pd .boxs .inf .time{font-size:10rem;}
+.tp-thum .unit-pd .boxs .inf em{display: block; margin-left: 0; padding: 2rem 0;}
 .tp-thum .unit-pd .boxs .dec{ display: none; }
 .tp-thum .unit-pd .boxs .dec .hit{}
 .tp-thum .unit-pd .boxs .dec .opt{}
@@ -270,6 +272,63 @@ a.btn.disabled{ pointer-events: none; }
 .page.p404 .contents .error-box .bts .btn{min-width: 60rem;}
 .page.p404 .contents .error-box .bts .btn+.btn{margin-left: 10rem;}
 
+
+
+@keyframes loading-rotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+@-webkit-keyframes loading-rotate {
+    from { -webkit-transform: rotate(0deg); } 
+    to   { -webkit-transform: rotate(360deg); }
+}
+ 
+.ui-loading-dot{position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1200; display: flex; justify-content: center; align-items: center;}
+.ui-loading-dot.load{display: none;}
+.ui-loading-dot.abs{position: absolute;}
+.ui-loading-dot>.bx{position: absolute;margin-top: -18rem;top: 50%;left: 0;right: 0;text-align: center;}
+.ui-loading-dot>.bx em{display: flex; justify-content: center;}
+.ui-loading-dot>.bx em i,
+.ui-loading-dot>.bx em::before,
+.ui-loading-dot>.bx em::after{width: 6rem;height: 6rem;display: inline-flex;background-color: #adb9c9;border-radius: 10rem;margin: 0rem 2rem;animation: bounce-dots 0.5s alternate infinite;content: "";}
+.ui-loading-dot>.bx em::before{}
+.ui-loading-dot>.bx em i{animation-delay: 0.16s;}
+.ui-loading-dot>.bx em::after{animation-delay: 0.32s;}
+.ui-loading-dot>.bx::after{content: "LOADING...";font-size: 10rem;margin-left: 4rem;text-align: center;margin-top: 10rem;display: block;color: #adb9c9;}
+
+.ui-loading-dot.on{position: relative; height: 200rem;}
+@keyframes bounce-dots {
+	from{
+		transform: scaleX(1.15);
+	}
+	to{
+		transform: translateY(-20rem) scaleX(0.95);
+	}
+}
+/* 로딩 갤럭시 */
+.ui-load-glx{display: inline-block;position: relative;width: 18px;height: 18px;vertical-align: middle;} 
+.ui-load-glx.abs{position: absolute;}
+.ui-load-glx>.gbx{width: 18px;height: 18px;display: inline-block;}
+.ui-load-glx>.gbx .bx{animation: rotate 1.2s linear infinite;display: flex;position: relative;width: 100%;height: 100%;top: 50%;left: 50%;margin-top: -9px;margin-left: -9px;}
+.ui-load-glx>.gbx .bx i{width: 100%;height: 100%;position: absolute;left: 0;top: 0;}
+.ui-load-glx>.gbx .bx i::before{animation: bounce 0.5s alternate infinite;position: absolute;left: 50%;top: 50%;width: 20%;height: 20%;background: #0481ff;border-radius: 10px;display: inline-flex;content:"";}
+.ui-load-glx>.gbx .bx i:first-child::before {background: #00d593;}
+.ui-load-glx>.gbx .bx i:nth-child(1){transform: rotate(0deg);}
+.ui-load-glx>.gbx .bx i:nth-child(2){transform: rotate(90deg);}
+.ui-load-glx>.gbx .bx i:nth-child(3){transform: rotate(180deg);}
+.ui-load-glx>.gbx .bx i:nth-child(4){transform: rotate(270deg);}
+
+.ui-load-glx.full{position: fixed;left: 0;right: 0;top: 0;bottom: 0;z-index: 2000;background: transparent;width: auto;height: auto;}
+.ui-load-glx.full>.gbx{transform: scale(2.5);position: absolute;left: 50%;top: 50%;margin: -9px 0px 0px -9px;}
+.ui-load-glx.full>.gbx .bx{}
+@keyframes bounce {
+    0%{   transform: translateY(20%) ; }
+    30%{  transform: translateY(30%) ; }
+    100%{ transform: translateY(100%); }
+}
+@keyframes rotate {
+    0%{ transform: rotate(-360deg); }
+}
 
 
 ::-webkit-scrollbar{  width:12rem;  height:12rem}
