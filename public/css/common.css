@@ -267,8 +267,9 @@ a.btn.disabled{ pointer-events: none; }
 .page.p404 .contents{text-align: center;}
 .page.p404 .contents .error-box{}
 .page.p404 .contents .error-box::before{content: ""; filter: blur(45px); position: absolute; left: 20%; top: 33%;transform: translate(-50%, -50%); display: block; width: 330rem; height: 220rem; display: block; background: var(--secondary-glow); z-index: -1;}
-.page.p404 .contents .error-box .tit{font-size: 36rem; font-weight: 700; color: var(--active-color);}
-.page.p404 .contents .error-box .tit b{ display: inline-block; margin: 0rem 2rem; transform: perspective(14px) rotateX(360deg) rotateY(353deg); text-shadow: 3px 3px 0px rgb(255 255 255 / 10%);}
+.page.p404 .contents .error-box .tit{font-size: 36rem; font-weight: 700; color: var(--active-color); position: relative;}
+.page.p404 .contents .error-box .tit span{position: absolute;}
+.page.p404 .contents .error-box .tit b{ display: inline-block; margin: 0rem 1rem; transform: perspective(14px) rotateX(360deg) rotateY(353deg); text-shadow: 3px 3px 0px rgb(255 255 255 / 10%);}
 .page.p404 .contents .error-box .msg{margin-top: 20rem;}
 .page.p404 .contents .error-box .bts{margin-top: 30rem;}
 .page.p404 .contents .error-box .bts .btn{min-width: 60rem;}
