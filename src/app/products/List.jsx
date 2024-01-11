@@ -12,7 +12,7 @@ export default function List() {
     getProducts();
   },[]);
 
-  async function getProducts() {
+  const getProducts = async ()=> {
     const tpData = localStorage.getItem("prdType") || 'tp-list';
     setIsTpList(tpData)
     const response = await fetch('/api/products',{ cache: 'no-store' }).then((response) => response.json())
