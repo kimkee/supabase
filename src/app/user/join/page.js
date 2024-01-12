@@ -65,8 +65,9 @@ export default function Login() {
       <main className={`contents`}>
 
       <div className="sign-form">
-          <div className="hdt">회원가입</div>
+          {/* <div className="hdt">회원가입</div> */}
           <div className="join form">
+            <div className="tit"><em className="t">회원가입</em></div>
             <ul className="list">
               <li>
                 <label className="dt">아바타</label>
