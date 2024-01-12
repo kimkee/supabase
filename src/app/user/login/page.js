@@ -1,10 +1,11 @@
 "use client"
 import Image from 'next/image'
+import { useRouter } from 'next/navigation';
 import React, { useRef } from 'react';
 import ui from '@/app/ui.js';
 
 export default function Login() {
-
+  const router = useRouter();
   const userEmail = useRef(null);
   const userPassword = useRef(null);
   const autoLogin = useRef(null);
@@ -48,10 +49,10 @@ export default function Login() {
           <div className="sns form">
             <div className="tit"><em className="t">SNS 로그인</em></div>
             <div className="bts">
-              <button type="button" className="btn" /* onClick={''} */><i className="fa-brands fa-google" /><em>Google </em></button>
               <button type="button" className="btn" onClick={loginGithub  }><i className="fa-brands fa-github" /><em>Github </em></button>
-              <button type="button" className="btn" /* onClick={''} */><i class="fa-brands fa-kickstarter-k" /><em>Kakao </em></button>
-              <button type="button" className="btn" /* onClick={''} */><i className="fa-brands fa-twitter" /><em>Twitter </em></button>
+              <button type="button" className="btn" disabled><i className="fa-brands fa-google" /><em>Google </em></button>
+              <button type="button" className="btn" disabled><i className="fa-brands fa-kickstarter-k" /><em>Kakao </em></button>
+              <button type="button" className="btn" disabled><i className="fa-brands fa-twitter" /><em>Twitter </em></button>
             </div>
           </div>
           <div className="eml form">
@@ -65,9 +66,9 @@ export default function Login() {
               </li>
             </ul>
             <div className="savelogin">
-              <a className={`bt`} href={"/user/signup"}>
+              <button type="button" className={`bt`} onClick={ ()=> router.push(`/user/join`) }>
                 회원가입하러 가기 <i className="fa-solid fa-chevron-right"></i>
-              </a>
+              </button>
               <label className="checkbox"><input type="checkbox" ref={autoLogin} onChange={saveSheck} /><span className="txt">자동 로그인</span></label>
             </div>
             <div className="btsbox btn-set"><button type="button" className="btn" onClick={login}><i className="fa-solid fa-right-to-bracket"></i><em>로그인</em></button></div>

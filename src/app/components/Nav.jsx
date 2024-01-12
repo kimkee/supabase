@@ -47,8 +47,8 @@ export default function Nav() {
               <a href={`/search`} className={"bt"}><i className="fa-regular fa-search"></i><em>Search</em></a>
             </li>
             <li className={ clsx(`li`,{ 'active': pathname.includes('/user')}) }>
-              <a href={`/user/${userInfo.uid}`} className={"bt"}> <i className="fa-regular fa-user"></i><em>Mypage</em></a>
-              {/* <a href={`/user/signin`} className={"bt"}><i className="fa-regular fa-user"></i><em>Login</em></a> */}
+              {/* <a href={`/user/${userInfo.uid}`} className={"bt"}> <i className="fa-regular fa-user"></i><em>Mypage</em></a> */}
+              <a href={`/user/login`} className={"bt"}><i className="fa-regular fa-user"></i><em>Login</em></a>
             </li>
           </ul>
         </div>

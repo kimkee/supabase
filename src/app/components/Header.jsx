@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
-import React, {  useEffect,useState } from 'react'; //useState, useEffect
+import { useRouter } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
 // import {NavLink , useLocation } from 'react-router-dom'; // Link  , useLocation, useSearchParams,useParams, useSearchParams
 
 
@@ -8,7 +9,7 @@ import React, {  useEffect,useState } from 'react'; //useState, useEffect
 export default function Nav() {
   
   // const location = useLocation();
-  
+  const router = useRouter();
 
   const isActive = els => location.pathname.includes(`${els}`) ? "active" : "";
   
@@ -40,8 +41,6 @@ export default function Nav() {
       
           </div>
           <div className="rdt">
-      
-      
             <button type="button" className="bt gnb"><i className="fa-sharp fa-solid fa-bars"></i><b>메뉴</b></button>
           </div>
         </div>
