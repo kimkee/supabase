@@ -48,24 +48,24 @@ export default function Login() {
           <div className="sns form">
             <div className="tit"><em className="t">SNS 로그인</em></div>
             <div className="bts">
-              <button type="button" className="btn" /* onClick={''} */><i className="fa-brands fa-google"></i><em>Google </em></button>
-              <button type="button" className="btn" onClick={loginGithub  }><i className="fa-brands fa-github"></i><em>Github </em></button>
-              <button type="button" className="btn" /* onClick={''} */><i className="fa-brands fa-facebook"></i><em>Facebook </em></button>
-              <button type="button" className="btn" /* onClick={''} */><i className="fa-brands fa-twitter"></i><em>Twitter </em></button>
+              <button type="button" className="btn" /* onClick={''} */><i className="fa-brands fa-google" /><em>Google </em></button>
+              <button type="button" className="btn" onClick={loginGithub  }><i className="fa-brands fa-github" /><em>Github </em></button>
+              <button type="button" className="btn" /* onClick={''} */><i class="fa-brands fa-kickstarter-k" /><em>Kakao </em></button>
+              <button type="button" className="btn" /* onClick={''} */><i className="fa-brands fa-twitter" /><em>Twitter </em></button>
             </div>
           </div>
           <div className="eml form">
             <div className="tit"><em className="t">Email 계정 로그인</em></div>
             <ul className="list">
               <li>
-                <div className="dd"><span className="input"><input type="email" ref={userEmail} placeholder="이메일 (user@test.com)" /></span></div>
+                <div className="dd"><span className="input"><input type="email" ref={userEmail} placeholder="이메일" /></span></div>
               </li>
               <li>
-                <div className="dd"><span className="input"><input type="password" ref={userPassword} placeholder="비밀번호 (123456)" /></span></div>
+                <div className="dd"><span className="input"><input type="password" ref={userPassword} placeholder="비밀번호" /></span></div>
               </li>
             </ul>
             <div className="savelogin">
-              <a className={`bt`} to={"/user/signup"}>
+              <a className={`bt`} href={"/user/signup"}>
                 회원가입하러 가기 <i className="fa-solid fa-chevron-right"></i>
               </a>
               <label className="checkbox"><input type="checkbox" ref={autoLogin} onChange={saveSheck} /><span className="txt">자동 로그인</span></label>
