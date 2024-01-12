@@ -15,6 +15,7 @@ export default function List() {
   const getProducts = async ()=> {
     const tpData = localStorage.getItem("prdType") || 'tp-list';
     setIsTpList(tpData)
+    // const response = await fetch('https://api.kimkee7.workers.dev/',{ cache: 'no-store' }).then((response) => response.json())
     const response = await fetch('/api/products',{ cache: 'no-store' }).then((response) => response.json())
     setProducts(response);
     // console.log(response);  

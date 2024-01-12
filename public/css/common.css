@@ -212,7 +212,7 @@ a.btn.disabled{ pointer-events: none; }
 .unit-pd .thum .flg .fg.cvz{background-color: #0fae6f; background-size: 64px auto;  }
 .unit-pd .thum .flg .fg.mnt{background-color: #17c6b8; background-size: 66px auto;}
 .unit-pd .thum .flg .fg img{display: block;position: absolute;left: 50%;top: 50%;transform: translate(-50% , -50%);width: 100%;object-fit: cover;max-width: inherit;min-width: 100%;height: 18px;}
-.unit-pd .thum .btzzim{position: absolute;width: 28px;height: 28px;right: 3px;top: 3px;display:inline-block;vertical-align:middle;content:'';padding: 2px 0px 0px 0px;text-align: center;}
+.unit-pd .thum .btzzim{position: absolute;width: 28px;height: 28px;right: 3px;top: 5px;display:inline-block;vertical-align:middle;content:'';padding: 2px 0px 0px 0px;text-align: center;font-size: clamp(14rem,4vw,20rem);}
 .unit-pd .thum .btzzim i{ /* text-shadow: 0rem 0rem 4rem rgb(0 0 0 / 40%); */}
 .unit-pd .thum .btzzim b{font-size:0rem;}
 .unit-pd .thum .btzzim.on i{color: var(--active-color);font-weight: 700;}
