@@ -67,7 +67,7 @@ export default function List() {
                     <div className="prc"><em className="p">{ui.commas.add(data.price)}</em><i className="w">원</i></div>
                     <div className="inf">
                       <em className="time">{time}</em>
-                      <em className="name">{data.location}</em>
+                      {/* <em className="name">{data.location}</em> */}
                     </div>
                     <div className="dec">
                       <div className="hit">
@@ -75,6 +75,7 @@ export default function List() {
                         <em className="ht like"><i className="fa-regular fa-heart"></i><b>12</b></em>
                       </div>
                       <div className="opt">
+                        <em className="ut-bdg a bdg">{data.location}</em>
                         <em className="ut-bdg a bdg">{data.condition}</em>
                       </div>
                     </div>
