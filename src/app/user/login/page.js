@@ -39,6 +39,7 @@ export default function Login() {
   }
   const login = async ()=>{
     console.log("login");
+    ui.alert("준비중입니다.");
   };
   return (
     <div className="container page sign in">
