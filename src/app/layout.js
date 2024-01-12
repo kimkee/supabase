@@ -1,15 +1,24 @@
 
-import { Inter } from 'next/font/google'
+import { Inter, Roboto_Mono , Noto_Sans } from 'next/font/google'
 
 import Head from 'next/head';
 import './globals.css'
 import '/public/css/common.css'
 import '/public/fontawesome/css/all.min.css'
-/* import 'https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css'
-import 'https://fonts.googleapis.com/earlyaccess/notosanskr.css' */
 import Nav from './components/Nav.jsx';
 import Header from './components/Header.jsx';
-const inter = Inter({ subsets: ['latin'] })
+export const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+})
+export const roboto_mono = Roboto_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+})
+export const noto_sans = Noto_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+})
 import ui from './ui.js';
 
 export const metadata = {
@@ -28,7 +37,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko">
-      <body className={'body'}>
+      <body className={`body ${noto_sans.className}`}>
 
         <div className="wrap">
           {children}
