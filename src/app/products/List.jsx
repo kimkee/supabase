@@ -47,42 +47,45 @@ export default function List() {
           </div>
         </div>
         <ul className={`list ${isTpList}`}>
-          {
-            products.map( (data,idx) =>{
-            const image = process.env.NEXT_PUBLIC_SUPABASE_URL+data.images_url[0]||"";
-            const createdAt = new Date(data.created_at);
+          { products.map( (data,idx) =>{
+              const image = process.env.NEXT_PUBLIC_SUPABASE_URL+data.images_url[0] || "";
+              const createdAt = new Date(data.created_at);
               const time = new Intl.DateTimeFormat('ko-KR', { dateStyle: 'medium', timeStyle: 'short' }).format(createdAt);
-            return(
-              <li key={idx}>
-                <Link href={"/products/item/"+data.id}  className="unit-pd">
-                  <div className="thum">
-                    <div className="pic"><img className="img" src={image} alt="이미지"  onError={ ui.error.poster } /></div>
-                    <span className="btzzim on"><i className="fa-regular fa-heart"></i><b>찜하기</b></span>
-                    { data.status == '판매중' ? null
-                      :<em className="flg"><i className="fg">{data.status}</i></em>
-                    }
-                  </div>
-                  <div className="boxs">
-                    <div className="tit">{data.title}</div>
-                    <div className="prc"><em className="p">{ui.commas.add(data.price)}</em><i className="w">원</i></div>
-                    <div className="inf">
-                      <em className="time">{time}</em>
-                      {/* <em className="name">{data.location}</em> */}
+              return(
+                <li key={idx}>
+                  <Link href={"/products/item/"+data.id}  className="unit-pd">
+                    <div className="thum">
+                      <div className="pic"><img className="img" src={image} alt="이미지"  onError={ ui.error.poster } /></div>
+                      
+                      { idx % 5 === 1 &&
+                      <span className="btzzim on"><i className="fa-regular fa-bookmark"></i><b>찜하기</b></span>
+                      }
+
+                      { data.status == '판매중' ? null
+                        :<em className="flg"><i className="fg">{data.status}</i></em>
+                      }
                     </div>
-                    <div className="dec">
-                      <div className="hit">
-                        <em className="ht repy"><i className="fa-regular fa-comment-dots"></i><b>1</b></em>
-                        <em className="ht like"><i className="fa-regular fa-heart"></i><b>12</b></em>
+                    <div className="boxs">
+                      <div className="tit">{data.title}</div>
+                      <div className="prc"><em className="p">{ui.commas.add(data.price)}</em><i className="w">원</i></div>
+                      <div className="inf">
+                        <em className="time">{time}</em>
+                        {/* <em className="name">{data.location}</em> */}
                       </div>
-                      <div className="opt">
-                        <em className="ut-bdg a bdg">{data.location}</em>
-                        <em className="ut-bdg a bdg">{data.condition}</em>
+                      <div className="dec">
+                        <div className="hit">
+                          <em className="ht repy"><i className="fa-regular fa-comment-dots"></i><b>1</b></em>
+                          <em className="ht like"><i className="fa-regular fa-heart"></i><b>12</b></em>
+                        </div>
+                        <div className="opt">
+                          <em className="ut-bdg a bdg">{data.location}</em>
+                          <em className="ut-bdg a bdg">{data.condition}</em>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              </li>
-            )
+                  </Link>
+                </li>
+              )
           })}
         </ul>
       </>

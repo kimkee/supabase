@@ -9,6 +9,22 @@ const ui = {
     aaa:function(){
         console.log("dsfafsafdsffsafasfdfas");
     },
+    avatar: [
+        "https://cdn-icons-png.flaticon.com/128/3899/3899618.png",
+        "https://cdn-icons-png.flaticon.com/128/805/805370.png ",
+        "https://cdn-icons-png.flaticon.com/128/1154/1154448.png",
+        "https://cdn-icons-png.flaticon.com/128/1211/1211015.png",
+        "https://cdn-icons-png.flaticon.com/128/949/949635.png",
+        "https://cdn-icons-png.flaticon.com/128/4322/4322992.png",
+        "https://cdn-icons-png.flaticon.com/128/547/547413.png",
+        "https://cdn-icons-png.flaticon.com/128/4322/4322991.png",
+        "https://cdn-icons-png.flaticon.com/128/4202/4202843.png",
+        "https://cdn-icons-png.flaticon.com/128/2589/2589136.png",
+        "https://cdn-icons-png.flaticon.com/128/1785/1785918.png",
+        "https://cdn-icons-png.flaticon.com/128/4139/4139993.png",
+        "https://cdn-icons-png.flaticon.com/128/1154/1154473.png",
+        "https://cdn-icons-png.flaticon.com/128/4532/4532510.png",
+    ],
     error:{
         poster: e => e.target.src=`/img/common/noimage.png`,
         user: e => e.target.src=`/img/common/user.png`
