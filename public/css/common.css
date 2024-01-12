@@ -63,7 +63,7 @@ a, button{-webkit-tap-highlight-color: rgb(0 0 0 / 30%);}
 .btn.xl{height: 60rem;min-width: 80rem;padding: 0 10rem;font-size: 16rem;font-weight: 400;}
 
 .btn.disabled,
-.btn[disabled]:not(.a){color: rgb(221 221 221 / 40%);}
+.btn[disabled]:not(.a){color: rgb(221 221 221 / 20%);}
 
 .btn.a{border-color: #41b883;background-color: #41b883;color:#ffffff;}
 .btn.a:disabled,
@@ -429,6 +429,18 @@ html.is-lock {height: 100%;width: 100%;overflow: hidden;position: fixed;}
 .sign-form .link{margin-top: 20rem;font-size:12rem;}
 .sign-form .link a{color: #d5d5d5;}
 .sign-form .join.form{margin: 10rem 0rem 20rem 0rem;}
+
+
+.ut-avata{display: flex;gap: 5rem 0rem;flex-wrap: wrap;justify-content: center;}
+.ut-avata label{display: inline-flex;position: relative;width: calc(100% / 7);}
+.ut-avata label input{position: absolute;width: 34rem;height: 34rem;}
+.ut-avata label input:checked + .txt{border-color: #61dafb;}
+.ut-avata label .txt{display: inline-flex;width: 36rem;height: 36rem;border: solid 3rem transparent;border-radius: 20rem;overflow: hidden;}
+.ut-avata label .txt .img{width: 31rem;height: 31rem;}
+
+.msg-valid{color: #838383;font-size: 12rem;margin: 3rem 2rem 0rem 14rem;text-align: right;}
+
+
 
 @keyframes loading-rotate {
     from { transform: rotate(0deg); }

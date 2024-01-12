@@ -57,7 +57,11 @@ export default function List() {
                 <Link href={"/products/item/"+data.id}  className="unit-pd">
                   <div className="thum">
                     <div className="pic"><img className="img" src={image} alt="이미지"  onError={ ui.error.poster } /></div>
-                    <span className="btzzim on"><i className="fa-regular fa-heart"></i><b>찜하기</b></span>
+                    
+                    { idx % 5 === 1 &&
+                    <span className="btzzim on"><i className="fa-regular fa-bookmark"></i><b>찜하기</b></span>
+                    }
+
                     { data.status == '판매중' ? null
                       :<em className="flg"><i className="fg">{data.status}</i></em>
                     }
