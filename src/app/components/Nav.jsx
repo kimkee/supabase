@@ -1,8 +1,9 @@
 'use client'
 import React, {  useEffect,useState } from 'react'; //useState, useEffect
 import { usePathname } from 'next/navigation';
+import Link from 'next/link'
 import clsx from 'clsx';
-import ui from '../ui.js';
+import ui from '@/app/ui.js';
 
 export default function Nav() {
   
@@ -38,17 +39,17 @@ export default function Nav() {
         <div className="inr">
           <ul className="menu">
             <li className={ clsx(`li`,{ 'active': pathname.includes('/home')}) }>
-              <a href={`/`} className={"bt"}><i className="fa-regular fa-house"></i><em>Home</em></a>
+              <Link href={`/`} className={"bt"}><i className="fa-regular fa-house"></i><em>Home</em></Link>
             </li>
             <li className={ clsx(`li`,{ 'active': pathname.includes('/products')}) }>
-              <a href={`/products`} className={"bt"}><i className="fa-solid fa-box"></i><em>Products</em></a>
+              <Link href={`/products`} className={"bt"}><i className="fa-solid fa-box"></i><em>Products</em></Link>
             </li>
             <li className={ clsx(`li`,{ 'active': pathname.includes('/search')}) }>
-              <a href={`/search`} className={"bt"}><i className="fa-regular fa-search"></i><em>Search</em></a>
+              <Link href={`/search`} className={"bt"}><i className="fa-regular fa-search"></i><em>Search</em></Link>
             </li>
             <li className={ clsx(`li`,{ 'active': pathname.includes('/user')}) }>
-              {/* <a href={`/user/${userInfo.uid}`} className={"bt"}> <i className="fa-regular fa-user"></i><em>Mypage</em></a> */}
-              <a href={`/user/login`} className={"bt"}><i className="fa-regular fa-user"></i><em>Login</em></a>
+              {/* <Linka href={`/user/${userInfo.uid}`} className={"bt"}> <i className="fa-regular fa-user"></i><em>Mypage</em></Link> */}
+              <Link href={`/user/login`} className={"bt"}><i className="fa-regular fa-user"></i><em>Login</em></Link>
             </li>
           </ul>
         </div>

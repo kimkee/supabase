@@ -1,13 +1,14 @@
 "use client"
 import Image from 'next/image'
-import Link from 'next/link'
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import React, { useState, useEffect } from 'react';
 import ui from '@/app/ui.js';
 import Loading from '@/app/components/Loading';
 export default function List() {
 
   const [products, setProducts] = useState([]);
-  
+  const router = useRouter();
   useEffect(() => {
     getProducts();
   },[]);
@@ -53,7 +54,7 @@ export default function List() {
               const time = new Intl.DateTimeFormat('ko-KR', { dateStyle: 'medium', timeStyle: 'short' }).format(createdAt);
               return(
                 <li key={idx}>
-                  <Link href={"/products/item/"+data.id}  className="unit-pd">
+                  <Link href={`/products/${data.id}`}  className="unit-pd">
                     <div className="thum">
                       <div className="pic"><img className="img" src={image} alt="이미지"  onError={ ui.error.poster } /></div>
                       
