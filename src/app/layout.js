@@ -3,6 +3,7 @@ import Head from 'next/head';
 import '@/app/globals.css'
 import '/public/css/common.css'
 import '/public/fontawesome/css/all.min.css'
+import ui from '@/app/ui.js';
 
 export const inter = Inter({
   subsets: ['latin'],
@@ -16,7 +17,6 @@ export const noto_sans = Noto_Sans({
   subsets: ['latin'],
   display: 'swap',
 })
-import ui from './ui.js';
 
 export const metadata = {
   title: '슈파마켓',
