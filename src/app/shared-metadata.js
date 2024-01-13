@@ -1,0 +1,1 @@
+export const openGraphImage = { images: ['https://supamarket.pages.dev/img/ogimage.png'] }

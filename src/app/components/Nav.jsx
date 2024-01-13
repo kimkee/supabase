@@ -3,7 +3,7 @@ import React, {  useEffect,useState } from 'react'; //useState, useEffect
 import { usePathname } from 'next/navigation';
 import Link from 'next/link'
 import clsx from 'clsx';
-import ui from '../ui.js';
+import ui from '@/app/ui.js';
 
 export default function Nav() {
   

@@ -275,9 +275,8 @@ html.is-lock {height: 100%;width: 100%;overflow: hidden;position: fixed;}
 .header .user .txt{color: #e1e1e1;margin-left: 10rem;line-height: 1.2;}
 
 .body>.wrap{min-height: 100dvh; display: flex; flex-direction: column;}
-.container { transition: opacity 1.5s; position: relative; z-index: 100; max-width: var(--mwide); margin: auto; background: #111111; }
-.container { flex: 1; width: 100%; display: flex; }
-.container .contents{width: 100%;}
+.container { display: flex; flex-direction: column; flex: 1; justify-content: left; width: 100%;  transition: opacity 1.5s; position: relative; z-index: 100; max-width: var(--mwide); margin: auto; background: #111111; }
+.container .contents{width: 100%; padding: 20rem 20rem 20rem 20rem;}
 
 
 /* 하단메뉴바 */
@@ -392,7 +391,7 @@ html.is-lock {height: 100%;width: 100%;overflow: hidden;position: fixed;}
 .tp-thum .unit-pd .boxs .dec .opt{margin-top: 4px;}
 
 
-.page.p404{align-items: center;}
+.page.p404{ align-items: center; justify-content: center; }
 .page.p404 .contents{text-align: center;}
 .page.p404 .contents .error-box{}
 .page.p404 .contents .error-box::before{content: ""; filter: blur(45px); position: absolute; left: 20%; top: 33%;transform: translate(-50%, -50%); display: block; width: 330rem; height: 220rem; display: block; background: var(--secondary-glow); z-index: -1;}
@@ -405,7 +404,7 @@ html.is-lock {height: 100%;width: 100%;overflow: hidden;position: fixed;}
 .page.p404 .contents .error-box .bts .btn+.btn{margin-left: 10rem;}
 
 
-.page.sign{align-items: center;}
+.page.sign{align-items: center; justify-content: center; }
 .page.sign.in .contents{ }
 .sign-form{max-width: 360rem;padding: 0rem 14rem;margin: 20rem auto 20rem;}
 .sign-form .hdt{text-align: center;font-size: 20rem;color:#eeeeee;padding: 10rem 0;margin-bottom: 15rem;}
