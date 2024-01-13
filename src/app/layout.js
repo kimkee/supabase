@@ -1,12 +1,10 @@
-
 import { Inter, Roboto_Mono , Noto_Sans } from 'next/font/google'
-
 import Head from 'next/head';
-import './globals.css'
+import '@/app/globals.css'
 import '/public/css/common.css'
 import '/public/fontawesome/css/all.min.css'
-import Nav from './components/Nav.jsx';
-import Header from './components/Header.jsx';
+import ui from '@/app/ui.js';
+
 export const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
@@ -19,7 +17,6 @@ export const noto_sans = Noto_Sans({
   subsets: ['latin'],
   display: 'swap',
 })
-import ui from './ui.js';
 
 export const metadata = {
   title: '슈파마켓',
