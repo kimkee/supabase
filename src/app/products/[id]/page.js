@@ -3,9 +3,11 @@ import Image from 'next/image'
 import Head from 'next/head';
 import { usePathname, useRouter, useParams  } from 'next/navigation';
 import '../page.css'
-
 import List from '../List.jsx';
 import ui from '../../ui.js';
+
+export const runtime = 'edge';
+
 export default function Page() {
  
   const params = useParams();
