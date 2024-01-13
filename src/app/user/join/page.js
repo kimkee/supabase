@@ -1,6 +1,7 @@
 "use client"
-import Image from 'next/image'
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import React, { useState, useEffect, useRef } from 'react';
 import ui from '@/app/ui.js';
 
@@ -113,7 +114,7 @@ export default function Login() {
               onClick={member.joinReq}><i className="fa-solid fa-right-to-bracket"></i><em>회원가입</em></button>
           </div>
           <div className="link">
-            이미 회원이신가요? <button type="button" className="bt"  onClick={ ()=> router.push(`/user/login`) }>로그인 하러가기 <i className="fa-solid fa-chevron-right"></i></button>
+            이미 회원이신가요? <Link className={`bt`} href={`/user/login`}>로그인 하러가기 <i className="fa-solid fa-chevron-right"></i></Link>
           </div>
         
         </div>   
