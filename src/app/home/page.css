@@ -1,6 +1,6 @@
 /* 홈 */
 .body>.wrap{}
-.container{ align-items: center; justify-content: center; }
+.page.home{ align-items: center; justify-content: center; }
 .contents{}
 .box { text-align: center; position: relative; }
 .box::before{content:"";filter: blur(45px); position: absolute; left: 20%; top: 0%; transform: translate(-50%, -50%);display: block; width: 500rem; height: 220rem; display: block;  background: var(--secondary-glow);}

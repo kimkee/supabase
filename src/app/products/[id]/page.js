@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Head from 'next/head';
 import { usePathname, useRouter, useParams  } from 'next/navigation';
 import '../page.css'
-// import { cookies } from 'next/headers';
+
 import List from '../List.jsx';
 import ui from '../../ui.js';
 export default function Page() {
@@ -12,12 +12,10 @@ export default function Page() {
  
   return (
     <div className="container page prds">
-<div class="dd">fdsfsdf</div>
+      <div class="dd">fdsfsdf</div>
       <main className={`contents`}>
 
         <div class="pop">{`params.id = ${params.id}`}</div>
-
- 
        
       </main>
     </div>
