@@ -1,13 +1,14 @@
 "use client"
 import Image from 'next/image'
-import Link from 'next/link'
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import React, { useState, useEffect } from 'react';
 import ui from '@/app/ui.js';
 import Loading from '@/app/components/Loading';
 export default function List() {
 
   const [products, setProducts] = useState([]);
-  
+  const router = useRouter();
   useEffect(() => {
     getProducts();
   },[]);
