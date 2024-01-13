@@ -42,7 +42,7 @@ export default function Login() {
 
   const member = {
     joinReq : async ()=> {
-      
+      // ui.alert("준비중입니다.");
       console.log( document.querySelector( `[name="avatar"]:checked` ).value );
       console.log(emailRef.current.value);
       console.log(passwordRef.current.value);

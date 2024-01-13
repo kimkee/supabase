@@ -1,12 +1,9 @@
-
 import { Inter, Roboto_Mono , Noto_Sans } from 'next/font/google'
-
 import Head from 'next/head';
-import './globals.css'
+import '@/app/globals.css'
 import '/public/css/common.css'
 import '/public/fontawesome/css/all.min.css'
-import Nav from './components/Nav.jsx';
-import Header from './components/Header.jsx';
+
 export const inter = Inter({
   subsets: ['latin'],
   display: 'swap',

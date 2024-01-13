@@ -2,8 +2,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react';
-import ui from '../ui.js';
-import Loading from '../components/Loading';
+import ui from '@/app/ui.js';
+import Loading from '@/app/components/Loading';
 export default function List() {
 
   const [products, setProducts] = useState([]);
