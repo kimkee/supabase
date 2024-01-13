@@ -30,9 +30,13 @@ export const metadata = {
   image: 'https://supabase.com/dashboard/favicon/favicon.ico',
   favicon: 'https://supabase.com/dashboard/favicon/favicon.ico',
   openGraph: {
-    title: '슈파마켓',
-    description: '합리적 소비 슈파마켓!',
+    title: 'SUPAMARKET',
+    description: '합리적 소비 솔루션 슈파마켓!',
+    url: 'https://supamarket.pages.dev/',
+    siteName: 'SUPAMARKET',
     ...openGraphImage,
+    locale: 'ko_KR',
+    type: 'website',
   },
 }
 
