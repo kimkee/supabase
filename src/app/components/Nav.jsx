@@ -1,10 +1,10 @@
 'use client'
-import React, {  useEffect,useState } from 'react'; //useState, useEffect
+import React, { useEffect, useState } from 'react'; //useState, useEffect
 import { usePathname } from 'next/navigation';
 import Link from 'next/link'
 import clsx from 'clsx';
 import ui from '@/app/ui.js';
-
+import { supabase } from '@/app/supabase.js'; 
 export default function Nav() {
   
   // const location = useLocation();
@@ -26,7 +26,24 @@ export default function Nav() {
   const goTop = ()=> ui.scrollTo("body", 0 , 200 );
   const [userInfo, setUserInfo] = useState({});
   
+  const [isLogin, setIsLogin] = useState(null);
+
+  const checkLogin = async ()=> {
+    const authInfo = await supabase.auth.getSession();
+    const session = authInfo.data.session;
+    
+    if (session === null) {
+      console.log('비 로그인');
+      setIsLogin(null);
+    } else {
+      console.log('로그인 됨');
+      setIsLogin(true);
+    }
+  }
+
+
   useEffect( () => {
+    checkLogin();
     window.addEventListener("scroll",scrollEvent);
   },[]);
 
@@ -48,8 +65,9 @@ export default function Nav() {
               <Link href={`/search`} className={"bt"}><i className="fa-regular fa-search"></i><em>Search</em></Link>
             </li>
             <li className={ clsx(`li`,{ 'active': pathname.includes('/user')}) }>
-              {/* <Linka href={`/user/${userInfo.uid}`} className={"bt"}> <i className="fa-regular fa-user"></i><em>Mypage</em></Link> */}
-              <Link href={`/user/login`} className={"bt"}><i className="fa-regular fa-user"></i><em>Login</em></Link>
+              {isLogin ? <Link href={`/user/${userInfo.uid}`} className={"bt"}> <i className="fa-regular fa-user"></i><em>Mypage</em></Link>
+                : <Link href={`/user/login`} className={"bt"}><i className="fa-regular fa-user"></i><em>Login</em></Link>
+              }
             </li>
           </ul>
         </div>

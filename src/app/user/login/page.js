@@ -2,8 +2,9 @@
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import React, { useRef } from 'react';
+import React, {  useEffect, useRef } from 'react';
 import ui from '@/app/ui.js';
+import { supabase } from '../../supabase.js'; 
 
 export default function Login() {
   const router = useRouter();
@@ -35,13 +36,58 @@ export default function Login() {
       });
     }
   }
-  const loginGithub = ()=>{
+  const loginGithub = async ()=>{
     console.log("loginGithub");
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: "github",
+      options: {
+        redirectTo: "http://localhost:9008",
+      },
+    });
   }
+  const loginGoogle = async ()=>{
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        queryParams: {
+          access_type: 'offline',
+          prompt: 'consent',
+        },
+      },
+    })
+  }
+  const loginKakao = async ()=>{
+    console.log("loginKakao");
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: "kakao",
+      options: {
+        redirectTo: "http://localhost:9008",
+      },
+    });
+  }
+
   const login = async ()=>{
     console.log("login");
     ui.alert("준비중입니다.");
   };
+
+  const checkLogin = async ()=> {
+    const authInfo = await supabase.auth.getSession();
+    const session = authInfo.data.session;
+    
+    if (session === null) {
+      console.log('비 로그인');
+      return '비 로그인'
+    } else {
+      console.log('로그인 됨');
+      return '로그인 됨'
+    }
+  }
+
+  useEffect(() => {
+    checkLogin();
+  },[]);
+
   return (
     <div className="container page sign in">
       <main className={`contents`}>
@@ -49,11 +95,11 @@ export default function Login() {
       <div className="sign-form">
 
           <div className="sns form">
-            <div className="tit"><em className="t">SNS 로그인</em></div>
+            <div className="tit"><em className="t">SNS 로그인 </em></div>
             <div className="bts">
-              <button type="button" className="btn" onClick={loginGithub  }><i className="fa-brands fa-github" /><em>Github </em></button>
-              <button type="button" className="btn" disabled><i className="fa-brands fa-google" /><em>Google </em></button>
-              <button type="button" className="btn" disabled><i className="fa-brands fa-kickstarter-k" /><em>Kakao </em></button>
+              <button type="button" className="btn" onClick={loginGithub}><i className="fa-brands fa-github" /><em>Github </em></button>
+              <button type="button" className="btn" onClick={loginGoogle}><i className="fa-brands fa-google" /><em>Google </em></button>
+              <button type="button" className="btn" onClick={loginKakao} disabled><i className="fa-brands fa-kickstarter-k" /><em>Kakao </em></button>
               <button type="button" className="btn" disabled><i className="fa-brands fa-twitter" /><em>Twitter </em></button>
             </div>
           </div>
