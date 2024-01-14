@@ -6,6 +6,8 @@ import React, {  useEffect, useRef, useState } from 'react';
 import ui from '@/app/ui.js';
 import { supabase } from '../../supabase.js'; 
 
+export const runtime = 'edge';
+
 export default function Page() {
   const router = useRouter();
 
