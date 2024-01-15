@@ -2,8 +2,8 @@
 
 import { Link } from 'next/navigation'
 import { useRouter } from 'next/navigation';
-import Nav from './components/Nav.jsx';
-import Header from './components/Header.jsx';
+import Nav from '@/app/components/Nav.jsx';
+import Header from '@/app/components/Header.jsx';
 
 export default function NotFoundPage() {
   const router = useRouter();

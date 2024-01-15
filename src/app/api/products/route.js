@@ -1,5 +1,5 @@
 
-import { supabase } from '../../supabase.js'; // supabase 설정 파일 불러오기
+import { supabase } from '@/app/supabase.js'; // supabase 설정 파일 불러오기
 export async function GET(req) {
   // const sortParam = req.query.sort || "id";
   const { data, error } = await supabase.from("products").select().order("id", { ascending: true });

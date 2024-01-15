@@ -3,8 +3,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import React, {  useEffect, useRef, useState } from 'react';
+import { supabase } from '@/app/supabase.js'; 
 import ui from '@/app/ui.js';
-import { supabase } from '../../supabase.js'; 
 
 export const runtime = 'edge';
 

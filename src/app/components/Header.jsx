@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 // import {NavLink , useLocation } from 'react-router-dom'; // Link  , useLocation, useSearchParams,useParams, useSearchParams
@@ -33,11 +34,11 @@ export default function Nav() {
       <header className={`header`}>
         <div className="inr">
           <div className="ldt">
-            <a href="/" className="logo">
+            <Link href="/" className="logo">
               <span className="btlogo"></span>
               <span className="txt">SUPAMARKET</span>
               <Image className="next" src="/next.svg" alt="Next.js Logo" width={26} height={27} priority />
-            </a>
+            </Link>
       
           </div>
           <div className="rdt">
