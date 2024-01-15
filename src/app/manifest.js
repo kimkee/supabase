@@ -1,7 +1,7 @@
 export default function manifest() {
   return {
-    name: 'SUPAMARKET',
-    short_name: 'SUPAMARKET',
+    name: 'SUPA MARKET',
+    short_name: 'SUPA MARKET',
     description: 'SUPAMARKET + Supabase + Nest.js',
     start_url: '/',
     display: 'standalone',
