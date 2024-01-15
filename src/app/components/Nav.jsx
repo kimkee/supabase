@@ -37,6 +37,7 @@ export default function Nav() {
       setIsLogin(null);
     } else {
       console.log('로그인 됨');
+      console.log(authInfo);
       setIsLogin(true);
     }
   }
