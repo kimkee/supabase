@@ -3,7 +3,7 @@
 .page.home{ align-items: center; justify-content: center; }
 .contents{}
 .box { text-align: center; position: relative; }
-.box::before{content:"";filter: blur(45px); position: absolute; left: 20%; top: 0%; transform: translate(-50%, -50%);display: block; width: 500rem; height: 220rem; display: block;  background: var(--secondary-glow);}
+.box::before{content:"";filter: blur(45px); position: absolute; left: 20%; top: 0%; transform: translate(-50%, -50%);display: none; width: 500rem; height: 220rem;  background: var(--secondary-glow);}
 
 .box p{margin-bottom: 10rem;}
 .box p img.next{width: 120rem; height: auto; filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);}
