@@ -42,6 +42,9 @@ export default function Nav() {
     }
   }
 
+  const regGoods = ()=>{
+    ui.alert("준비중 입니다!");
+  }
 
   useEffect( () => {
     checkLogin();
@@ -51,7 +54,17 @@ export default function Nav() {
   return (
     <>
       <div className={`floatnav ${ isOnTop ? `on-top` : `` }` }>
-        <button type="button" className="bt top" onClick={goTop}><i className="fa-solid fa-arrow-up"></i><em>위로</em></button>
+        <div className="inr">
+          <button type="button" className="bt top" onClick={goTop}><i className="fa-solid fa-arrow-up"></i><em>위로</em></button>
+          {pathname.includes('/products') &&
+            <button type="button" onClick={regGoods} className="bt reg">
+              <i className="sn fa-solid fa-plus"></i>
+              {/* <i className="sn fa-solid fa-caret-up"></i> */}
+              <i className="bn fa-solid fa-box-open"></i>
+              <em>상품등록</em>
+          </button>
+          }
+        </div>
       </div>
       <nav id="menubar" className="menubar">
         <div className="inr">
