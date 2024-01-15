@@ -10,7 +10,7 @@ export default function NotFoundPage() {
   const router = useRouter();
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <div className="container page p404">
         <main className={`contents`}>
           
@@ -25,7 +25,7 @@ export default function NotFoundPage() {
         
         </main>
       </div>
-      {/* <Nav /> */}
+      <Nav />
     </>
   );
 };

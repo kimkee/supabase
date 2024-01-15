@@ -34,7 +34,7 @@ export default function Nav() {
     
     if (session === null) {
       console.log('비 로그인');
-      setIsLogin(null);
+      setIsLogin(false);
     } else {
       console.log('로그인 됨');
       console.log(authInfo);
@@ -66,8 +66,11 @@ export default function Nav() {
               <Link href={`/search`} className={"bt"}><i className="fa-regular fa-search"></i><em>Search</em></Link>
             </li>
             <li className={ clsx(`li`,{ 'active': pathname.includes('/user')}) }>
-              {isLogin ? <Link href={`/user/${userInfo.uid}`} className={"bt"}> <i className="fa-regular fa-user"></i><em>Mypage</em></Link>
-                : <Link href={`/user/login`} className={"bt"}><i className="fa-regular fa-user"></i><em>Login</em></Link>
+              {isLogin === true
+                ? 
+                <Link href={`/user/${userInfo.uid}`} className={"bt"}> <i className="fa-regular fa-user"></i><em>Mypage</em></Link>
+                : 
+                <Link href={`/user/login`} className={"bt"}><i className="fa-regular fa-user"></i><em>Login</em></Link>
               }
             </li>
           </ul>
