@@ -2,11 +2,11 @@ import Nav from '@/app/components/Nav.jsx';
 import Header from '@/app/components/Header.jsx';
 
 
-export const metadata = {
-  openGraph: {
-    title: '상품',
-  },
-}
+// export const metadata = {
+//   openGraph: {
+//     title: '상품',
+//   },
+// }
 
 export default function Layout({ children }) {
   return (

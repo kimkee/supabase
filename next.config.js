@@ -1,22 +1,26 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+
+
+module.exports = {
 	async redirects() {
-	  return [
+	return [
 		{
-		  source: '/404',
-		  destination: '/404', // 커스텀 404 페이지 경로
-		  permanent: true,
+			source: '/404',
+			destination: '/404', // 커스텀 404 페이지 경로
+			permanent: true,
 		},
-	  ];
+		{
+			source: '/',
+			destination: '/home', // Matched parameters can be used in the destination
+			permanent: true,
+		},
+	];
 	},
 	remotePatterns: [
 		{
-		  // 도메인 이름
-		  domain: "fonts.googleapis.com",
-		  // 패턴
-		  patterns: ["/earlyaccess/notosanskr.css"],
+		// 도메인 이름
+		domain: "fonts.googleapis.com",
+		// 패턴
+		patterns: ["/earlyaccess/notosanskr.css"],
 		},
-	  ],
-  }
-
-module.exports = nextConfig
+	],
+}

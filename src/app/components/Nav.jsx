@@ -1,10 +1,10 @@
 'use client'
-import React, {  useEffect,useState } from 'react'; //useState, useEffect
+import React, { useEffect, useState } from 'react'; //useState, useEffect
 import { usePathname } from 'next/navigation';
 import Link from 'next/link'
 import clsx from 'clsx';
 import ui from '@/app/ui.js';
-
+import { supabase } from '@/app/supabase.js'; 
 export default function Nav() {
   
   // const location = useLocation();
@@ -26,14 +26,45 @@ export default function Nav() {
   const goTop = ()=> ui.scrollTo("body", 0 , 200 );
   const [userInfo, setUserInfo] = useState({});
   
+  const [isLogin, setIsLogin] = useState(null);
+
+  const checkLogin = async ()=> {
+    const authInfo = await supabase.auth.getSession();
+    const session = authInfo.data.session;
+    
+    if (session === null) {
+      console.log('비 로그인');
+      setIsLogin(false);
+    } else {
+      console.log('로그인 됨');
+      console.log(authInfo);
+      setIsLogin(true);
+    }
+  }
+
+  const regGoods = ()=>{
+    ui.alert("준비중 입니다!");
+  }
+
   useEffect( () => {
+    checkLogin();
     window.addEventListener("scroll",scrollEvent);
   },[]);
 
   return (
     <>
       <div className={`floatnav ${ isOnTop ? `on-top` : `` }` }>
-        <button type="button" className="bt top" onClick={goTop}><i className="fa-solid fa-arrow-up"></i><em>위로</em></button>
+        <div className="inr">
+          <button type="button" className="bt top" onClick={goTop}><i className="fa-solid fa-arrow-up"></i><em>위로</em></button>
+          {pathname.includes('/products') &&
+            <button type="button" onClick={regGoods} className="bt reg">
+              <i className="sn fa-solid fa-plus"></i>
+              {/* <i className="sn fa-solid fa-caret-up"></i> */}
+              <i className="bn fa-solid fa-box-open"></i>
+              <em>상품등록</em>
+          </button>
+          }
+        </div>
       </div>
       <nav id="menubar" className="menubar">
         <div className="inr">
@@ -48,8 +79,12 @@ export default function Nav() {
               <Link href={`/search`} className={"bt"}><i className="fa-regular fa-search"></i><em>Search</em></Link>
             </li>
             <li className={ clsx(`li`,{ 'active': pathname.includes('/user')}) }>
-              {/* <Linka href={`/user/${userInfo.uid}`} className={"bt"}> <i className="fa-regular fa-user"></i><em>Mypage</em></Link> */}
-              <Link href={`/user/login`} className={"bt"}><i className="fa-regular fa-user"></i><em>Login</em></Link>
+              {isLogin === true
+                ? 
+                <Link href={`/user/${userInfo.uid}`} className={"bt"}> <i className="fa-regular fa-user"></i><em>Mypage</em></Link>
+                : 
+                <Link href={`/user/login`} className={"bt"}><i className="fa-regular fa-user"></i><em>Login</em></Link>
+              }
             </li>
           </ul>
         </div>
