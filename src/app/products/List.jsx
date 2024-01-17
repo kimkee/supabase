@@ -10,14 +10,19 @@ export default function List() {
   const [products, setProducts] = useState([]);
   const router = useRouter();
   useEffect(() => {
-    getProducts();
+    getProducts({
+      opt:'sort',
+      colum:'updated_at',
+      asc:'desc'
+    });
   },[]);
 
-  const getProducts = async ()=> {
+  const getProducts = async (prams)=> {
     const tpData = localStorage.getItem("prdType") || 'tp-list';
     setIsTpList(tpData)
+    console.log(prams);
     // const response = await fetch('https://api.kimkee7.workers.dev/',{ cache: 'no-store' }).then((response) => response.json())
-    const response = await fetch('/api/products',{ cache: 'no-store' }).then((response) => response.json())
+    const response = await fetch(`/api/products/${prams.opt}/${prams.colum}/${prams.asc}`,{ cache: 'no-store' }).then((response) => response.json())
     setProducts(response);
     // console.log(response);  
   }
@@ -43,6 +48,7 @@ export default function List() {
         <div className="bbs-opt">
           <div className="tots"><i className="fa-regular fa-square-poll-horizontal"></i> Total : {products.length} </div>
           <div className={`tbts ${isTpList}`}>
+            {/* <button type="button" onClick={(e)=>{ getProducts({'opt1':'sort','opt2':'price'});  }} className={`bt-tog tp-list`}><i className="fa-solid fa-list"></i><b>LIST</b></button> */}
             <button type="button" onClick={(e)=>{togTpList(e,'tp-list')}} className={`bt-tog tp-list`}><i className="fa-solid fa-list"></i><b>LIST</b></button>
             <button type="button" onClick={(e)=>{togTpList(e,'tp-thum')}} className={`bt-tog tp-thum`}><i className="fa-solid fa-grip"></i><b>GRID</b></button>
           </div>
@@ -54,7 +60,7 @@ export default function List() {
               // const time = new Intl.DateTimeFormat('ko-KR', { dateStyle: 'medium', timeStyle: 'short' }).format(createdAt);
               const time = ui.timeForm(createdAt);
               return(
-                <li key={idx}>
+                <li key={idx} data-id={data.id}>
                   <Link href={`/products/${data.id}`}  className="unit-pd">
                     <div className="thum">
                       <div className="pic"><img className="img" src={image} alt="이미지"  onError={ ui.error.poster } /></div>
