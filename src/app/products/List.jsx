@@ -43,15 +43,16 @@ export default function List() {
         <div className="bbs-opt">
           <div className="tots"><i className="fa-regular fa-square-poll-horizontal"></i> Total : {products.length} </div>
           <div className={`tbts ${isTpList}`}>
-            <button type="button" onClick={(e)=>{togTpList(e,'tp-list')}} className={`bt-tog tp-list`}><i className="fa-solid fa-list"></i></button>
-            <button type="button" onClick={(e)=>{togTpList(e,'tp-thum')}} className={`bt-tog tp-thum`}><i className="fa-solid fa-grip"></i></button>
+            <button type="button" onClick={(e)=>{togTpList(e,'tp-list')}} className={`bt-tog tp-list`}><i className="fa-solid fa-list"></i><b>LIST</b></button>
+            <button type="button" onClick={(e)=>{togTpList(e,'tp-thum')}} className={`bt-tog tp-thum`}><i className="fa-solid fa-grip"></i><b>GRID</b></button>
           </div>
         </div>
         <ul className={`list ${isTpList}`}>
           { products.map( (data,idx) =>{
               const image = process.env.NEXT_PUBLIC_SUPABASE_URL+data.images_url[0] || "";
               const createdAt = new Date(data.created_at);
-              const time = new Intl.DateTimeFormat('ko-KR', { dateStyle: 'medium', timeStyle: 'short' }).format(createdAt);
+              // const time = new Intl.DateTimeFormat('ko-KR', { dateStyle: 'medium', timeStyle: 'short' }).format(createdAt);
+              const time = ui.timeForm(createdAt);
               return(
                 <li key={idx}>
                   <Link href={`/products/${data.id}`}  className="unit-pd">
@@ -70,7 +71,7 @@ export default function List() {
                       <div className="tit">{data.title}</div>
                       <div className="prc"><em className="p">{ui.commas.add(data.price)}</em><i className="w">원</i></div>
                       <div className="inf">
-                        <em className="time">{time}</em>
+                        <em className="time" dangerouslySetInnerHTML={{ __html: time }}></em>
                         {/* <em className="name">{data.location}</em> */}
                       </div>
                       <div className="dec">
