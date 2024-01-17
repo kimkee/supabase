@@ -79,7 +79,33 @@ const ui = {
                 : document.documentElement.classList.remove("is-pwa-standalone");
             
         }
-    }, 
+    },
+    timeForm: function (date, opt) {
+        const start = new Date(date);
+        const end = new Date(); // 현재 날짜
+        const diff = (end - start) / 1000; // 경과 시간
+        const times = [
+            { name: '년', milliSeconds: 60 * 60 * 24 * 365, icon: '<i class="fa-regular fa-calendar-days"></i>' },
+            { name: '개월', milliSeconds: 60 * 60 * 24 * 30, icon: '<i class="fa-regular fa-calendar-days"></i>' },
+            { name: '일', milliSeconds: 60 * 60 * 24, icon: '<i class="fa-regular fa-calendar-days"></i>' },
+            { name: '시간', milliSeconds: 60 * 60, icon: '<i class="fa-regular fa-clock"></i>' },
+            { name: '분', milliSeconds: 60, icon: '<i class="fa-regular fa-clock"></i>' },
+        ];
+        // 년 단위부터 알맞는 단위 찾기
+        for (const value of times) {
+            const betweenTime = Math.floor(diff / value.milliSeconds);
+            // 큰 단위는 0보다 작은 소수 단위 나옴
+            if (betweenTime > 0) {
+                if (opt == true) {
+                    return `${betweenTime}${value.name} 전`;
+                } else {
+                    return `${value.icon} <b>${betweenTime}${value.name} 전</b>`;
+                }
+            }
+        }
+        // 모든 단위가 맞지 않을 시
+        return "방금 전";
+    },
     scrollTo: (selector, position, duration, callback) => {
         // ui.scrollTo(boxElement, 100, 200, () => {
         //     console.log(".box 도착");
