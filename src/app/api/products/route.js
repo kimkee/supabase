@@ -1,10 +1,10 @@
 
 import { supabase } from '@/app/supabase.js'; // supabase 설정 파일 불러오기
-export async function GET(req, {context: { params }}) {
+export async function GET(req) {
   // const sortParam = req.query.sort || "id";
-  const { data, error } = await supabase.from("products").select().order("updated_at", { ascending: true });
+  const { data, error } = await supabase.from("products").select().order("id", { ascending: true });
   console.log(req);
-  return Response.json(req);
+  return Response.json(data);
 }
 
 
