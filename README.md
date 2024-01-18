@@ -7,6 +7,13 @@
 
 <img src="https://supabase.com/docs/_next/image?url=%2Fdocs%2Fsupabase-dark.svg&w=96&q=75" width="200">
 
+```js
+import { supabase } from '@/app/supabase.js';
+export async function  GET(req) {
+  const { data, error } = await supabase.from("products").select().order( id, { ascending: asc });
+  return Response.json(data);
+}
+```
 
 ```js
   import { useEffect, useState } from "react";
