@@ -38,7 +38,6 @@ export default function Login() {
   }
   const loginGithub = async ()=>{
     console.log("loginGithub");
-    console.log(redirectURL);
     ui.loading.show(`glx`);
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "github",
