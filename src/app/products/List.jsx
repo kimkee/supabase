@@ -56,7 +56,7 @@ export default function List() {
         <ul className={`list ${isTpList}`}>
           { products.map( (data,idx) =>{
               const image = process.env.NEXT_PUBLIC_SUPABASE_URL+data.images_url[0] || "";
-              const createdAt = new Date(data.created_at);
+              const createdAt = new Date(data.updated_at);
               // const time = new Intl.DateTimeFormat('ko-KR', { dateStyle: 'medium', timeStyle: 'short' }).format(createdAt);
               const time = ui.timeForm(createdAt);
               return(

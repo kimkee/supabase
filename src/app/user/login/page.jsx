@@ -41,7 +41,7 @@ export default function Login() {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
-        redirectTo: "/",
+        redirectTo: location.origin,
       },
     });
   }
@@ -53,6 +53,7 @@ export default function Login() {
           access_type: 'offline',
           prompt: 'consent',
         },
+        redirectTo: location.origin
       },
     })
   }
@@ -61,7 +62,7 @@ export default function Login() {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "kakao",
       options: {
-        redirectTo: "/",
+        redirectTo: location.origin
       },
     });
   }
