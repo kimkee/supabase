@@ -1,4 +1,6 @@
-<p align="center">  </p>
+<p align="center"> <a href="https://supabase.com">
+  <img width="168" height="30" src="https://supabase.com/badge-made-with-supabase.svg" alt="Made with Supabase"  />
+</a> </p>
 
 <p align="center"><img width="70%" src="https://supamarket.pages.dev/img/supamarket.png"></p>
 
@@ -6,9 +8,7 @@
 
 [supamarket.pages.dev](https://supamarket.pages.dev)
 
-<a href="https://supabase.com">
-  <img width="168" height="30" src="https://supabase.com/badge-made-with-supabase.svg" alt="Made with Supabase"  />
-</a>
+
 
 
 <!-- <img src="https://supabase.com/docs/_next/image?url=%2Fdocs%2Fsupabase-dark.svg&w=96&q=75" width="200"> -->
