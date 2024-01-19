@@ -11,7 +11,7 @@ import Header from '@/app/components/Header.jsx';
 export default function Layout({ children }) {
   return (
 	<>
-    <Header />
+    <Header opts={{type:'main', cate: 'products'}}/>
       {children}
 	  <Nav />
 	</>
