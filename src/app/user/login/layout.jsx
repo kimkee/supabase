@@ -3,7 +3,7 @@ import Header from '@/app/components/Header.jsx';
 export default function Layout({ children }) {
   return (
 	<>
-    <Header />
+    <Header opts={{type:'sub', cate: 'user'}}/>
       {children}
 	  <Nav />
 	</>

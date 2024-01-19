@@ -3,9 +3,9 @@ import Header from '@/app/components/Header.jsx';
 export default function Layout({ children }) {
   return (
 	<>
-    <Header />
-    {children}
-	<Nav />
+    <Header opts={{type:'main', cate: 'home'}}/>
+      {children}
+    <Nav />
 	</>
   )
 }
