@@ -7,35 +7,42 @@
 
 <img src="https://supabase.com/docs/_next/image?url=%2Fdocs%2Fsupabase-dark.svg&w=96&q=75" width="200">
 
+```js
+import { supabase } from '@/app/supabase.js';
+export async function  GET(req) {
+  const { data, error } = await supabase.from("products").select().order( id, { ascending: asc });
+  return Response.json(data);
+}
+```
 
 ```js
-  import { useEffect, useState } from "react";
-  import { createClient } from "@supabase/supabase-js";
+import { useEffect, useState } from "react";
+import { createClient } from "@supabase/supabase-js";
 
-  const supabase = createClient("https://<project>.supabase.co", "<your-anon-key>");
+const supabase = createClient("https://<project>.supabase.co", "<your-anon-key>");
 
-  function App() {
-    const [countries, setCountries] = useState([]);
+function App() {
+  const [countries, setCountries] = useState([]);
 
-    useEffect(() => {
-      getCountries();
-    }, []);
+  useEffect(() => {
+    getCountries();
+  }, []);
 
-    async function getCountries() {
-      const { data } = await supabase.from("countries").select();
-      setCountries(data);
-    }
-
-    return (
-      <ul>
-        {countries.map((country) => (
-          <li key={country.name}>{country.name}</li>
-        ))}
-      </ul>
-    );
+  async function getCountries() {
+    const { data } = await supabase.from("countries").select();
+    setCountries(data);
   }
 
-  export default App;
+  return (
+    <ul>
+      {countries.map((country) => (
+        <li key={country.name}>{country.name}</li>
+      ))}
+    </ul>
+  );
+}
+
+export default App;
 ```
 
 

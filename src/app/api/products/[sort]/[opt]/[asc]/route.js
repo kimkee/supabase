@@ -1,5 +1,8 @@
 
 import { supabase } from '@/app/supabase.js'; // supabase 설정 파일 불러오기
+
+export const runtime = 'edge';
+
 export async function  GET(req, {params}) {
   // const sortParam = req.query.sort || "id";
   // const team = params.id // '1'
@@ -8,7 +11,6 @@ export async function  GET(req, {params}) {
   // // console.log(req);
   return Response.json(data);
 }
-
 
 
 // export default async function handler(req, res) {

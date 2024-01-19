@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'; //useState, useEffect
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link'
 import clsx from 'clsx';
 import ui from '@/app/ui.js';
@@ -9,6 +9,7 @@ export default function Nav() {
   
   // const location = useLocation();
   const pathname = usePathname();
+  const router = useRouter();
 
   // const isActive = els => location.pathname.includes(`${els}`) ? "active" : "";
   const isActive = function(els)  {
@@ -43,7 +44,8 @@ export default function Nav() {
   }
 
   const regGoods = ()=>{
-    ui.alert("준비중 입니다!");
+    router.push('/posts/write');
+    // ui.alert("준비중 입니다!");
   }
 
   useEffect( () => {
@@ -56,8 +58,8 @@ export default function Nav() {
       <div className={`floatnav ${ isOnTop ? `on-top` : `` }` }>
         <div className="inr">
           <button type="button" className="bt top" onClick={goTop}><i className="fa-solid fa-arrow-up"></i><em>위로</em></button>
-          {pathname.includes('/products') &&
-            <button type="button" onClick={regGoods} className="bt reg">
+          {pathname == ('/products') &&
+          <button type="button" onClick={regGoods} className="bt reg">
               <i className="sn fa-solid fa-plus"></i>
               {/* <i className="sn fa-solid fa-caret-up"></i> */}
               <i className="bn fa-solid fa-box-open"></i>

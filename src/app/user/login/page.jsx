@@ -1,6 +1,6 @@
 "use client"
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import React, {  useEffect, useRef } from 'react';
 import { supabase } from '@/app/supabase.js'; 
@@ -8,10 +8,10 @@ import ui from '@/app/ui.js';
 
 export default function Login() {
   const router = useRouter();
+  const searchPrams = useSearchParams();
   const userEmail = useRef(null);
   const userPassword = useRef(null);
   const autoLogin = useRef(null);
-  
   const saveSheck = ()=> {
     const saveLogin = autoLogin.current.checked;
     console.log(saveLogin);
@@ -38,14 +38,17 @@ export default function Login() {
   }
   const loginGithub = async ()=>{
     console.log("loginGithub");
+    ui.loading.show(`glx`);
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
-        redirectTo: "/",
+        redirectTo: location.origin,
       },
     });
   }
   const loginGoogle = async ()=>{
+    console.log("loginGoogle");
+    ui.loading.show(`glx`);
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
@@ -53,6 +56,7 @@ export default function Login() {
           access_type: 'offline',
           prompt: 'consent',
         },
+        redirectTo: location.origin
       },
     })
   }
@@ -61,7 +65,7 @@ export default function Login() {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "kakao",
       options: {
-        redirectTo: "/",
+        redirectTo: location.origin
       },
     });
   }
