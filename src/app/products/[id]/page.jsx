@@ -14,9 +14,9 @@ export default function Page() {
  
   return (
     <div className="container page prds">
-      <div class="dd">fdsfsdf</div>
       <main className={`contents`}>
 
+        <div class="dd">fdsfsdf</div>
         <div class="pop">{`params.id = ${params.id}`}</div>
        
       </main>
