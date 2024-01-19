@@ -1,11 +1,17 @@
-# Learn to Supabase + Next.js
+<p align="center"> <a href="https://supamarket.pages.dev">
+  <img width="168" height="30" src="https://supabase.com/badge-made-with-supabase.svg" alt="Made with Supabase"  />
+</a> </p>
 
-[supabase.com](https://supabase.com)
+<p align="center"> <a href="https://supamarket.pages.dev"> <img width="70%" src="https://supamarket.pages.dev/img/supamarket.png"> </a></p>
 
-[supamarket.pages.dev](https://supamarket.pages.dev)
+<h1 align="center"> Learn to Supabase + Next.js</h1>
+
+<p align="center"> https://supamarket.pages.dev </p>
 
 
-<img src="https://supabase.com/docs/_next/image?url=%2Fdocs%2Fsupabase-dark.svg&w=96&q=75" width="200">
+
+
+<!-- <img src="https://supabase.com/docs/_next/image?url=%2Fdocs%2Fsupabase-dark.svg&w=96&q=75" width="200"> -->
 
 ```js
 import { supabase } from '@/app/supabase.js';
@@ -45,6 +51,7 @@ function App() {
 export default App;
 ```
 
+[supabase.com](https://supabase.com)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
