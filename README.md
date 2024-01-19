@@ -1,12 +1,12 @@
-<p align="center"> <a href="https://supabase.com">
+<p align="center"> <a href="https://supamarket.pages.dev">
   <img width="168" height="30" src="https://supabase.com/badge-made-with-supabase.svg" alt="Made with Supabase"  />
 </a> </p>
 
-<p align="center"><img width="70%" src="https://supamarket.pages.dev/img/supamarket.png"></p>
+<p align="center"> <a href="https://supamarket.pages.dev"> <img width="70%" src="https://supamarket.pages.dev/img/supamarket.png"> </a></p>
 
-# Learn to Supabase + Next.js
+<h1 align="center"> Learn to Supabase + Next.js</h1>
 
-[supamarket.pages.dev](https://supamarket.pages.dev)
+<p align="center"> https://supamarket.pages.dev </p>
 
 
 
