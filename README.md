@@ -1,3 +1,7 @@
+<p align="center">  </p>
+
+<p align="center"><img width="70%" src="https://supamarket.pages.dev/img/supamarket.png"></p>
+
 # Learn to Supabase + Next.js
 
 [supamarket.pages.dev](https://supamarket.pages.dev)
