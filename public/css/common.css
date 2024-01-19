@@ -258,7 +258,7 @@ html.is-lock {height: 100%;width: 100%;overflow: hidden;position: fixed;}
 .header .logo .txt{font-size: 18rem; letter-spacing: 1rem; color: #ffffff; display: inline-flex; vertical-align: middle; margin-left: 8rem; font-weight: 600;}
 .header .logo .next{filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70); margin: 9rem 0rem 0rem 3rem;}
 .header .bt{width: 24rem;height: 24rem;font-size:0rem;background: no-repeat center;background-size: 24rem auto;color: #eeeeee;display: flex;align-items: center;justify-content: center;}
-.header .bt i{font-size: 28rem;text-shadow: 0rem 1rem 3rem rgb(0 0 0 / 36%);}
+.header .bt i{font-size: 24rem;text-shadow: 0rem 1rem 3rem rgb(0 0 0 / 36%);}
 .header .bt+.bt{margin-left: 10rem;}
 .header .bt.back{color: #aaaaaa;}
 .header .bt.back{color: #eeeeee; background-size: 24rem auto;}
