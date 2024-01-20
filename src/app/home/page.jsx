@@ -1,8 +1,7 @@
-'use client';
 import Image from 'next/image';
 import './page.css';
 
-export default function Home() {
+export default async function Home() {
   return (
     <div className="container page home">
       <main className={`contents`}>
