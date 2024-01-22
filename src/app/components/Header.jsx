@@ -9,34 +9,20 @@ import React, { useEffect, useState } from 'react';
 
 export default function Header( {opts} ) {
   
-  // opts = opts ? opts : {type:'sub',cate:'page'}
-  
-  /* if( typeof opts == "object" ){
+  /* 
+  if( typeof opts == "object" ){
     opts = Object.assign({type:'sub',cate:'page'},opts);
   }else{
     opts = Object.assign({type:'sub',cate:'page'});
-  } */
-
+  } 
+  */
+ 
   opts ??= {};
   opts.type ??= "sub";
   opts.cate ??= "page";
 
-  // const location = useLocation();
   const router = useRouter();
 
-  const isActive = els => location.pathname.includes(`${els}`) ? "active" : "";
-  
-  const [isOnTop, setIsOnTop] = useState('');
-  const scrollEvent = ()=> {
-    if ( ui.lock.stat ) return;
-    ui.viewport.scrollTop() > 50 ? setIsOnTop(true) : setIsOnTop(false);
-  };
-
-  const goTop = ()=> ui.scrollTo("body", 0 , 200 );
-
-
-  const [userInfo, setUserInfo] = useState({});
-  
   useEffect( () => {
     console.log(opts);
   });
