@@ -11,11 +11,15 @@ export default function Header( {opts} ) {
   
   // opts = opts ? opts : {type:'sub',cate:'page'}
   
-  if( typeof opts == "object" ){
+  /* if( typeof opts == "object" ){
     opts = Object.assign({type:'sub',cate:'page'},opts);
   }else{
     opts = Object.assign({type:'sub',cate:'page'});
-  }
+  } */
+
+  opts ??= {};
+  opts.type ??= "sub";
+  opts.cate ??= "page";
 
   // const location = useLocation();
   const router = useRouter();
