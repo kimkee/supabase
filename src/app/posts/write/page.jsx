@@ -44,10 +44,10 @@ export default function Page() {
               <div className="dd">
                 <span className="select-pop">
                   <select className="slist" name="select_pop_cate">
+                    <option>가전/디지털</option>
                     <option>가구/인테리어</option>
                     <option>생활/주방용품</option>
-                    <option>남성의류</option>
-                    <option>여성의류</option>
+                    <option>의류</option>
                     <option>패션잡화</option>
                     <option>뷰티/미용</option>
                     <option>유아용품</option>
