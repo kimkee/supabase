@@ -63,9 +63,9 @@ export default function Page() {
             <li>
               <label className="dt">상품상태</label>
               <div className="dd">
-                <label className="radio"><input type="radio" name="radio1" /><span className="txt">새상품</span></label>
-                <label className="radio"><input type="radio" name="radio1" /><span className="txt">단순개봉</span></label>
-                <label className="radio"><input type="radio" name="radio1" /><span className="txt">중고</span></label>
+                <label class="radio-check round"><input type="radio" name="radio1" /><em class="txt">새상품</em><i class="tcx"></i></label>
+                <label class="radio-check round"><input type="radio" name="radio1" /><em class="txt">단순개봉</em><i class="tcx"></i></label>
+                <label class="radio-check round"><input type="radio" name="radio1" /><em class="txt">중고</em><i class="tcx"></i></label>
               </div>
             </li>
             <li>
