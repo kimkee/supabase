@@ -181,6 +181,34 @@ input[type="checkbox"]{width:30rem;height:30rem;display:inline-block;vertical-al
 .radio>input:checked:disabled + .txt::before{ background-position-y:-90rem; }
 .radio>.txt{display: inline-block;vertical-align: middle;padding-top: 0rem;}
 
+/* checkbox */
+.radio-check{position:relative;display:inline-block;vertical-align:middle;line-height: 1.2;font-size: 14px;min-height: 24px;cursor: pointer;}
+.radio-check{--check-color: #3ecf8e}
+.radio-check+.radio-check{margin-left:10px;cursor: pointer;}
+.radio-check>.txt{display: inline-flex;vertical-align: middle;padding-left: 32px;line-height: 1.3;min-height: 24px;align-items: center;padding-top: 2px;padding-bottom: 2px;padding: 2px 0px 2px 32px;word-break: break-word;}
+.radio-check>.txt:empty{padding-left: 24px;}
+.radio-check .tcx{width: 24px;height: 24px;border: #bbbbbb7d solid 1px;border-radius: 4px;content:"";display: inline-block;position: absolute;left: 0px;top: 0px;}
+.radio-check>.tcx::before,
+.radio-check>.tcx::after{background: #dddddd;position: absolute;content:"";display: block;}
+.radio-check>.tcx::before{width: 6px;height: 2px;left: 6px;top: 10px;border-radius: 2px 0px 0px 2px;transform: rotate(45deg);transform-origin: left;}
+.radio-check>.tcx::after{width: 10px;height: 2px;left: 9px;top: 14px;border-radius: 0px 2px 2px 0px;transform: rotate(-45deg);transform-origin: left;}
+.radio-check>input{position:absolute;left:0px;top:0px;padding:0px;z-index: 10;margin: 0;width: 24px;height: 24px;display:inline-block;vertical-align:middle;opacity:0;cursor: pointer;}
+.radio-check>input:checked~.tcx {}
+.radio-check>input:checked~.tcx::before,
+.radio-check>input:checked~.tcx::after{ background-color: #ffffff; }
+.radio-check>input:checked~.tcx::before{ animation: check-ani  ease 0.2s backwards}
+.radio-check>input:checked~.tcx::after{ animation: check-ani 0.2s ease 0.2s backwards}
+.radio-check>input:checked~.tcx{ background: var(--check-color); border-color: var(--check-color); }
+.radio-check>input:checked~.txt{font-weight: 500;}
+.radio-check>input:disabled~.tcx { opacity: 0.5; }
+.radio-check>input:disabled~.txt { opacity: 0.5; }
+.radio-check>input:checked:disabled~.tcx::before{}
+.radio-check.round>.tcx{ border-radius: 100%;}
+@keyframes check-ani {
+    0%{ background-color: transparent; width: 0; }
+}
+
+
 .body.is-lock{height: 100%;overflow-y:initial;padding-right: var(--scrPad);}
 html.is-lock {height: 100%;width: 100%;overflow: hidden;position: fixed;}
 
