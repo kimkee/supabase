@@ -32,7 +32,7 @@ export default function Page() {
         <h1 className="dd">Product Detail</h1>
         <div className="pop">{`params.id = ${params.id}`}</div>
         {products.title}
-        <pre>{ JSON.stringify( products,false)}</pre>
+        <pre>{ JSON.stringify( products, null, 2)}</pre>
       </main>
     </div>
   )
