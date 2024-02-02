@@ -23,8 +23,8 @@ export default function Page() {
 
     console.log(prams);
     const response = await fetch(`/api/goods/${params.id}`,{ cache: 'no-store' }).then((response) => response.json())
-    setProducts(response[0]);
-    console.log(response[0]);  
+    setProducts(response);
+    console.log(response);  
   }
   return (
     <div className="container page prds">

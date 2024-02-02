@@ -8,7 +8,7 @@ export async function  GET(req, {params}) {
   // const team = params.id // '1'
   const { data, error } = await supabase.from("products").select().eq("id", params.id);
   console.log(req);
-  return Response.json(data);
+  return Response.json(data[0]);
 }
 
 
