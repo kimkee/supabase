@@ -6,7 +6,6 @@ export const runtime = 'edge';
 export async function  GET(req, {params}) {
   // const sortParam = req.query.sort || "id";
   // const team = params.id // '1'
-  const asc = params.asc == 'asc' ? true : false;
   const { data, error } = await supabase.from("products").select().eq("id", params.id);
   console.log(req);
   return Response.json(data);

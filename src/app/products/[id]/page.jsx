@@ -16,6 +16,7 @@ export default function Page() {
   const router = useRouter();
   useEffect(() => {
     getPrdtail(params.id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[params.id]);
 
   const getPrdtail = async (prams)=> {
@@ -32,7 +33,7 @@ export default function Page() {
         <h1 className="dd">Product Detail</h1>
         <div className="pop">{`params.id = ${params.id}`}</div>
         {products.title}
-        <pre>{ JSON.stringify( products, null, 2)}</pre>
+        <pre>{ JSON.stringify( products, null, 4)}</pre>
       </main>
     </div>
   )
