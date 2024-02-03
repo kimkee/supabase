@@ -3,7 +3,7 @@
 
 .page.prds{}
 .page.prds .contents{ }
-.page.prds pre{ white-space: pre-wrap; }
+.page.prds pre{ white-space: pre-wrap;word-break: break-all; }
 
 .table{ width: 100%; border-collapse: collapse;}
 .table tr{}

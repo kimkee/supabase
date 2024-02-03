@@ -332,7 +332,7 @@ html.is-lock {height: 100%;width: 100%;overflow: hidden;position: fixed;}
 /* 헤더 */
 .header{height: calc( 54rem + var(--safe-top) + var(--safe-watch) );text-align:center;display:block;z-index: 500;position: relative;}
 .header>.inr{display:flex;height: calc( 54rem + var(--safe-top) + var(--safe-watch)  );align-items: center;justify-content: space-between;align-items: center;position: fixed;left: 0;right: 0;z-index: 500;top: 0rem;background: #1a1a1a;border-bottom: rgb(57 57 57 / 24%) solid 1rem;padding: 0rem 20rem;padding-top: calc(  var(--safe-top) + var(--safe-watch)  );touch-action: none;transition: background-color 0.3s;left: 50%;width: 100%;max-width: var(--mwide);transform: translateX(-50%);margin-left: calc( 0rem - var(--scrPad) /2 );}
-.header.home{height: 0rem;}
+.header.home{}
 .header.home>.inr{ /* background-color: transparent; *//* border-color: transparent; */}
 .header.trans{height: 0rem; }
 .header.hide{display: none;}
