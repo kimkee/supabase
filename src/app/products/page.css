@@ -3,6 +3,7 @@
 
 .page.prds{}
 .page.prds .contents{ }
+.page.prds pre{ white-space: pre-wrap; }
 
 .table{ width: 100%; border-collapse: collapse;}
 .table tr{}
