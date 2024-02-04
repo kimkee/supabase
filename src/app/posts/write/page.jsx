@@ -1,9 +1,24 @@
 'use client'
 import Files from '@/app/components/Files.jsx';
+import { supabase } from '@/app/supabase.js'; // supabase 설정 파일 불러오기
 import ui from '@/app/ui.js';
 import React, { useState, useEffect } from 'react';
 
 export default function Page() {
+
+
+  const writePost = async ()=> {
+    
+
+
+    /* const { data, error } = await supabase.from('products').insert([
+      {
+        title: '타이틀', description: '상품 설명 ㄷㄷ' 
+      },
+    ]).select(); */
+    console.log(data);
+  }
+
   useEffect(() => {
     // ui.popsel.init();
   },[]);
@@ -84,7 +99,7 @@ export default function Page() {
         <div className="inr">
           <div className="btsbox btn-set">
             <button type="button" className="btn"><i className="fa-solid fa-list"></i><em>취소</em></button>
-            <button type="button" className="btn" disabled=""><i className="fa-solid fa-pen-to-square"></i><em>등록</em></button>
+            <button type="button" className="btn" disabled="" onClick={()=>{writePost()}}><i className="fa-solid fa-pen-to-square"></i><em>등록</em></button>
           </div>
         </div>
       </nav>
