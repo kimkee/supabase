@@ -10,8 +10,11 @@
 
 
 ## API 
-- 상품   
+- 상품 리스트  
   https://supamarket.pages.dev/api/products
+
+- 상품 정보  
+  https://supamarket.pages.dev/api/goods/1
 
 - 카테고리  
   https://supamarket.pages.dev/api/category
