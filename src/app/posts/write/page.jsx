@@ -1,11 +1,13 @@
 'use client'
 import Files from '@/app/components/Files.jsx';
+import { usePathname, useRouter } from 'next/navigation';
 import { supabase } from '@/app/supabase.js'; // supabase 설정 파일 불러오기
 import ui from '@/app/ui.js';
 import React, { useState, useEffect } from 'react';
 
 export default function Page() {
-
+  const router = useRouter();
+  
   const [category, setCategory] = useState([]);
   const [location, setLocation] = useState([]);
   const [condition, setCondition] = useState([]);
@@ -118,7 +120,7 @@ export default function Page() {
       <nav className="floatbots">
         <div className="inr">
           <div className="btsbox btn-set">
-            <button type="button" className="btn"><i className="fa-solid fa-list"></i><em>취소</em></button>
+            <button type="button" className="btn" onClick={()=>{ router.back() }}><i className="fa-solid fa-list"></i><em>취소</em></button>
             <button type="button" className="btn" disabled="" onClick={()=>{writePost()}}><i className="fa-solid fa-pen-to-square"></i><em>등록</em></button>
           </div>
         </div>
