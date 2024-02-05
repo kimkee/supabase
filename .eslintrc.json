@@ -6,5 +6,6 @@
   "rules": {
     // 다른 규칙들...
     "@next/next/no-img-element": "off"
+    // "react-hooks/exhaustive-deps": "off"
   }
 }

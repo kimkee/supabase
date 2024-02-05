@@ -1,12 +1,45 @@
 'use client'
 import Files from '@/app/components/Files.jsx';
+import { usePathname, useRouter } from 'next/navigation';
+import { supabase } from '@/app/supabase.js'; // supabase 설정 파일 불러오기
 import ui from '@/app/ui.js';
 import React, { useState, useEffect } from 'react';
 
 export default function Page() {
+  const router = useRouter();
+  
+  const [category, setCategory] = useState([]);
+  const [location, setLocation] = useState([]);
+  const [condition, setCondition] = useState([]);
+
+  const writePost = async ()=> {
+    /* const { data, error } = await supabase.from('products').insert([
+      {
+        title: '타이틀', description: '상품 설명 ㄷㄷ' 
+      },
+    ]).select(); */
+    console.log(data);
+  }
+
+  const getCategory = async ()=>{
+    const category = await fetch('/api/category').then((result) => result.json())
+    setCategory(category);
+  }
+  const getLocation = async ()=>{
+    const location = await fetch('/api/location').then((result) => result.json())
+    setLocation(location);
+  }
+  const getCondition = async ()=>{
+    const condition = await fetch('/api/condition').then((result) => result.json())
+    setCondition(condition);
+  }
+
   useEffect(() => {
-    // ui.popsel.init();
+    getCategory();
+    getLocation();
+    getCondition();
   },[]);
+
   return (
     <div className="container page post write">
       <main className={`contents`}>
@@ -25,7 +58,7 @@ export default function Page() {
             <li>
               <label className="dt">판매가격</label>
               <div className="dd">
-                <span className="input"><input type="text" placeholder="입력하세요" /></span>
+                <span className="input"><input type="tel" placeholder="입력하세요" /></span>
               </div>
             </li>
             <li>
@@ -33,8 +66,12 @@ export default function Page() {
               <div className="dd">
                 <span className="select-pop">
                   <select className="slist" name="select_pop_saiearea">
-                    <option>서울</option>
-                    <option>경기</option>
+                    <option value="0">선택해주세요</option>
+                    { location.length > 0 &&
+                      location.map((data,idx) =>{
+                        return <option key={idx} value={data.id}>{data.location}</option>
+                      })
+                    }
                   </select>
                 </span>
               </div>
@@ -44,18 +81,12 @@ export default function Page() {
               <div className="dd">
                 <span className="select-pop">
                   <select className="slist" name="select_pop_cate">
-                    <option>가전/디지털</option>
-                    <option>가구/인테리어</option>
-                    <option>생활/주방용품</option>
-                    <option>의류</option>
-                    <option>패션잡화</option>
-                    <option>뷰티/미용</option>
-                    <option>유아용품</option>
-                    <option>스포츠/레져</option>
-                    <option>도서/취미</option>
-                    <option>반려동물용품</option>
-                    <option>중고차</option>
-                    <option>기타상품</option>
+                    <option value="0">선택해주세요</option>
+                    { category.length > 0 &&
+                      category.map((data,idx) =>{
+                        return <option key={idx} value={data.id}>{data.category}</option>
+                      })
+                    }
                   </select>
                 </span>
               </div>
@@ -63,9 +94,15 @@ export default function Page() {
             <li>
               <label className="dt">상품상태</label>
               <div className="dd">
-                <label className="radio-check round"><input type="radio" name="radio1" /><em className="txt">새상품</em><i className="tcx"></i></label>
-                <label className="radio-check round"><input type="radio" name="radio1" /><em className="txt">단순개봉</em><i className="tcx"></i></label>
-                <label className="radio-check round"><input type="radio" name="radio1" /><em className="txt">중고</em><i className="tcx"></i></label>
+                { condition.length > 0 &&
+                  condition.map( (data,idx) => {
+                  return (
+                    <label className="radio-check round" key={idx}>
+                      <input type="radio" name="radio1" value={data.id} defaultChecked={idx == 0 } />
+                      <em className="txt">{data.condition}</em><i className="tcx"></i>
+                    </label>
+                  )
+                })}
               </div>
             </li>
             <li>
@@ -83,8 +120,8 @@ export default function Page() {
       <nav className="floatbots">
         <div className="inr">
           <div className="btsbox btn-set">
-            <button type="button" className="btn"><i className="fa-solid fa-list"></i><em>취소</em></button>
-            <button type="button" className="btn" disabled=""><i className="fa-solid fa-pen-to-square"></i><em>등록</em></button>
+            <button type="button" className="btn" onClick={()=>{ router.back() }}><i className="fa-solid fa-list"></i><em>취소</em></button>
+            <button type="button" className="btn" disabled="" onClick={()=>{writePost()}}><i className="fa-solid fa-pen-to-square"></i><em>등록</em></button>
           </div>
         </div>
       </nav>

@@ -121,7 +121,7 @@ export default function Login() {
               <Link className={`bt`} href={`/user/join`}>
                 회원가입하러 가기 <i className="fa-solid fa-chevron-right"></i>
               </Link>
-              <label className="checkbox"><input type="checkbox" ref={autoLogin} onChange={saveSheck} /><span className="txt">자동 로그인</span></label>
+              <label className="radio-check"><input type="checkbox" ref={autoLogin} onChange={saveSheck} /><span className="txt">자동 로그인</span><i className="tcx"></i></label>
             </div>
             <div className="btsbox btn-set"><button type="button" className="btn" onClick={login}><i className="fa-solid fa-right-to-bracket"></i><em>로그인</em></button></div>
           </div>
