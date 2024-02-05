@@ -182,9 +182,9 @@ input[type="checkbox"]{width:30rem;height:30rem;display:inline-block;vertical-al
 .radio>.txt{display: inline-block;vertical-align: middle;padding-top: 0rem;}
 
 /* checkbox */
-.radio-check{position:relative;display:inline-block;vertical-align:middle;line-height: 1.2;font-size: 14rem;min-height: 24rem;cursor: pointer;}
+.radio-check{margin:5rem 20rem 5rem 0rem;position:relative;display:inline-block;vertical-align:middle;line-height: 1.2;font-size: 14rem;min-height: 24rem;cursor: pointer;}
 .radio-check{--check-color: #3ecf8e}
-.radio-check+.radio-check{margin-left:20rem;cursor: pointer;}
+.radio-check:last-child{margin-right: 0rem;}
 .radio-check>.txt{display: inline-flex;vertical-align: middle;padding-left: 32rem;line-height: 1.3;min-height: 24rem;align-items: center;padding-top: 2rem;padding-bottom: 2rem;padding: 2rem 0rem 2rem 32rem;word-break: break-word;}
 .radio-check>.txt:empty{padding-left: 24rem;}
 .radio-check .tcx{width: 24rem;height: 24rem;border: #bbbbbb7d solid 1rem;border-radius: 4rem;content:"";display: inline-block;position: absolute;left: 0rem;top: 0rem;}

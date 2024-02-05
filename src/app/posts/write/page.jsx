@@ -8,6 +8,7 @@ export default function Page() {
 
   const [category, setCategory] = useState([]);
   const [location, setLocation] = useState([]);
+  const [condition, setCondition] = useState([]);
 
   const writePost = async ()=> {
     /* const { data, error } = await supabase.from('products').insert([
@@ -26,10 +27,15 @@ export default function Page() {
     const location = await fetch('/api/location').then((result) => result.json())
     setLocation(location);
   }
+  const getCondition = async ()=>{
+    const condition = await fetch('/api/condition').then((result) => result.json())
+    setCondition(condition);
+  }
 
   useEffect(() => {
     getCategory();
     getLocation();
+    getCondition();
   },[]);
 
   return (
@@ -86,9 +92,15 @@ export default function Page() {
             <li>
               <label className="dt">상품상태</label>
               <div className="dd">
-                <label className="radio-check round"><input type="radio" name="radio1" value="1" /><em className="txt">새상품</em><i className="tcx"></i></label>
-                <label className="radio-check round"><input type="radio" name="radio1" value="2" /><em className="txt">단순개봉</em><i className="tcx"></i></label>
-                <label className="radio-check round"><input type="radio" name="radio1" value="3" /><em className="txt">중고</em><i className="tcx"></i></label>
+                { condition.length > 0 &&
+                  condition.map( (data,idx) => {
+                  return (
+                    <label className="radio-check round" key={idx}>
+                      <input type="radio" name="radio1" value={data.id} defaultChecked={idx == 0 } />
+                      <em className="txt">{data.condition}</em><i className="tcx"></i>
+                    </label>
+                  )
+                })}
               </div>
             </li>
             <li>
