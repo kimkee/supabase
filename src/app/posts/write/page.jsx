@@ -6,11 +6,10 @@ import React, { useState, useEffect } from 'react';
 
 export default function Page() {
 
+  const [category, setCategory] = useState([]);
+  const [location, setLocation] = useState([]);
 
   const writePost = async ()=> {
-    
-
-
     /* const { data, error } = await supabase.from('products').insert([
       {
         title: '타이틀', description: '상품 설명 ㄷㄷ' 
@@ -19,9 +18,20 @@ export default function Page() {
     console.log(data);
   }
 
+  const getCategory = async ()=>{
+    const category = await fetch('/api/category').then((result) => result.json())
+    setCategory(category);
+  }
+  const getLocation = async ()=>{
+    const location = await fetch('/api/location').then((result) => result.json())
+    setLocation(location);
+  }
+
   useEffect(() => {
-    // ui.popsel.init();
+    getCategory();
+    getLocation();
   },[]);
+
   return (
     <div className="container page post write">
       <main className={`contents`}>
@@ -40,7 +50,7 @@ export default function Page() {
             <li>
               <label className="dt">판매가격</label>
               <div className="dd">
-                <span className="input"><input type="text" placeholder="입력하세요" /></span>
+                <span className="input"><input type="tel" placeholder="입력하세요" /></span>
               </div>
             </li>
             <li>
@@ -48,8 +58,12 @@ export default function Page() {
               <div className="dd">
                 <span className="select-pop">
                   <select className="slist" name="select_pop_saiearea">
-                    <option>서울</option>
-                    <option>경기</option>
+                    <option value="0">선택해주세요</option>
+                    { location.length > 0 &&
+                      location.map((data,idx) =>{
+                        return <option key={idx} value={data.id}>{data.location}</option>
+                      })
+                    }
                   </select>
                 </span>
               </div>
@@ -59,18 +73,12 @@ export default function Page() {
               <div className="dd">
                 <span className="select-pop">
                   <select className="slist" name="select_pop_cate">
-                    <option>가전/디지털</option>
-                    <option>가구/인테리어</option>
-                    <option>생활/주방용품</option>
-                    <option>의류</option>
-                    <option>패션잡화</option>
-                    <option>뷰티/미용</option>
-                    <option>유아용품</option>
-                    <option>스포츠/레져</option>
-                    <option>도서/취미</option>
-                    <option>반려동물용품</option>
-                    <option>중고차</option>
-                    <option>기타상품</option>
+                    <option value="0">선택해주세요</option>
+                    { category.length > 0 &&
+                      category.map((data,idx) =>{
+                        return <option key={idx} value={data.id}>{data.category}</option>
+                      })
+                    }
                   </select>
                 </span>
               </div>
@@ -78,9 +86,9 @@ export default function Page() {
             <li>
               <label className="dt">상품상태</label>
               <div className="dd">
-                <label className="radio-check round"><input type="radio" name="radio1" /><em className="txt">새상품</em><i className="tcx"></i></label>
-                <label className="radio-check round"><input type="radio" name="radio1" /><em className="txt">단순개봉</em><i className="tcx"></i></label>
-                <label className="radio-check round"><input type="radio" name="radio1" /><em className="txt">중고</em><i className="tcx"></i></label>
+                <label className="radio-check round"><input type="radio" name="radio1" value="1" /><em className="txt">새상품</em><i className="tcx"></i></label>
+                <label className="radio-check round"><input type="radio" name="radio1" value="2" /><em className="txt">단순개봉</em><i className="tcx"></i></label>
+                <label className="radio-check round"><input type="radio" name="radio1" value="3" /><em className="txt">중고</em><i className="tcx"></i></label>
               </div>
             </li>
             <li>
