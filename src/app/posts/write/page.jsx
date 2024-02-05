@@ -5,7 +5,7 @@ import { supabase } from '@/app/supabase.js'; // supabase 설정 파일 불러�
 import ui from '@/app/ui.js';
 import React, { useState, useEffect } from 'react';
 
-export default function Page() {
+export default function Write() {
   const router = useRouter();
   
   const [category, setCategory] = useState([]);

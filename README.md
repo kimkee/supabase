@@ -9,7 +9,20 @@
 <p align="center"> https://supamarket.pages.dev </p>
 
 
+## API 
+- 상품   
+  https://supamarket.pages.dev/api/products
 
+- 카테고리  
+  https://supamarket.pages.dev/api/category
+
+- 판매장소  
+  https://supamarket.pages.dev/api/location
+
+- 상품상태  
+  https://supamarket.pages.dev/api/condition
+
+<br>
 
 <!-- <img src="https://supabase.com/docs/_next/image?url=%2Fdocs%2Fsupabase-dark.svg&w=96&q=75" width="200"> -->
 
@@ -21,35 +34,6 @@ export async function  GET(req) {
 }
 ```
 
-```js
-import { useEffect, useState } from "react";
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient("https://<project>.supabase.co", "<your-anon-key>");
-
-function App() {
-  const [countries, setCountries] = useState([]);
-
-  useEffect(() => {
-    getCountries();
-  }, []);
-
-  async function getCountries() {
-    const { data } = await supabase.from("countries").select();
-    setCountries(data);
-  }
-
-  return (
-    <ul>
-      {countries.map((country) => (
-        <li key={country.name}>{country.name}</li>
-      ))}
-    </ul>
-  );
-}
-
-export default App;
-```
 
 [supabase.com](https://supabase.com)
 
