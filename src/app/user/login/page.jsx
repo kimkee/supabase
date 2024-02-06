@@ -8,7 +8,7 @@ import ui from '@/app/ui.js';
 
 export default function Login() {
   const router = useRouter();
-  const searchPrams = useSearchParams();
+  // const searchPrams = useSearchParams();
   const userEmail = useRef(null);
   const userPassword = useRef(null);
   const autoLogin = useRef(null);
