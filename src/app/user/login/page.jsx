@@ -1,6 +1,5 @@
 "use client"
-import Image from 'next/image';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import React, {  useEffect, useRef } from 'react';
 import { supabase } from '@/app/supabase.js'; 
@@ -8,7 +7,6 @@ import ui from '@/app/ui.js';
 
 export default function Login() {
   const router = useRouter();
-  // const searchPrams = useSearchParams();
   const userEmail = useRef(null);
   const userPassword = useRef(null);
   const autoLogin = useRef(null);
