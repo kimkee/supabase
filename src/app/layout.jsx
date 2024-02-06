@@ -5,7 +5,7 @@ import '@/app/globals.css'
 import '/public/css/common.css'
 import '/public/fontawesome/css/all.min.css'
 import ui from '@/app/ui.js';
-import { GoogleAnalytics } from '@next/third-parties/google'
+// import { GoogleAnalytics } from '@next/third-parties/google'
 export const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
           {children}
         </div>
       </body>
-      <GoogleAnalytics gaId="G-21BR0MNR32" />
+      {/* <GoogleAnalytics gaId="G-21BR0MNR32" /> */}
     </html>
   )
 }
