@@ -46,23 +46,23 @@ export default function Write() {
         <div className="board-write">
           <ul className="list">
             <li>
-              {/* <label className="dt">사진</label> */}
+              <label className="dt">사진</label>
               <Files opts="{mode:'write', page:'bbs', max:5}"/>
             </li>
             <li>
-              <label className="dt">상품명</label>
+              <div className="dt">상품명 <i className="chk fa-solid fa-check"></i></div>
               <div className="dd">
-                <span className="input"><input type="text" placeholder="'입력하세요(최대'+titleMax+'글자)'" /></span>
+                <span className="input"><input type="text" placeholder={`입력하세요 (최대'${50}'글자)`} /></span>
               </div>
             </li>
             <li>
-              <label className="dt">판매가격</label>
+              <div className="dt">판매가격 <i className="chk fa-solid fa-check"></i></div>
               <div className="dd">
                 <span className="input"><input type="tel" placeholder="입력하세요" /></span>
               </div>
             </li>
             <li>
-              <label className="dt">판매지역</label>
+              <div className="dt">판매지역 <i className="chk fa-solid fa-check"></i></div>
               <div className="dd">
                 <span className="select-pop">
                   <select className="slist" name="select_pop_saiearea">
@@ -77,7 +77,7 @@ export default function Write() {
               </div>
             </li>
             <li>
-              <label className="dt">카테고리</label>
+              <div className="dt">카테고리 <i className="chk fa-solid fa-check"></i></div>
               <div className="dd">
                 <span className="select-pop">
                   <select className="slist" name="select_pop_cate">
@@ -92,25 +92,27 @@ export default function Write() {
               </div>
             </li>
             <li>
-              <label className="dt">상품상태</label>
+              <div className="dt">상품상태 <i className="chk fa-solid fa-check"></i></div>
               <div className="dd">
-                { condition.length > 0 &&
+                { condition.length > 0 ?
                   condition.map( (data,idx) => {
                   return (
                     <label className="radio-check round" key={idx}>
-                      <input type="radio" name="radio1" value={data.id} defaultChecked={idx == 0 } />
+                      <input type="radio" name="radio1" value={data.id} /* defaultChecked={idx == 0 } */ />
                       <em className="txt">{data.condition}</em><i className="tcx"></i>
                     </label>
                   )
-                })}
+                }):
+                <p style={{"height":"34rem","padding": "7rem 0"}}>Loading....</p>
+                }
               </div>
             </li>
             <li>
-              <label className="dt">상품설명</label>
+              <div className="dt">상품설명 <i className="chk fa-solid fa-check"></i></div>
               <div className="dd">
                 <span className="textarea">
-                  <textarea className="reply" data-ui="autoheight" placeholder="'입력하세요(최대'1000'글자)'"></textarea>
-                  <span className="num"><i className="i">{0}</i><b className="n">{5}</b></span>
+                  <textarea className="reply" data-ui="autoheight" placeholder={`입력하세요(최대'${`1,000`}'글자)`}></textarea>
+                  <span className="num"><i className="i">{0}</i><b className="n">{`1,000`}</b></span>
                 </span>
               </div>
             </li>

@@ -550,9 +550,10 @@ html.is-lock {height: 100%;width: 100%;overflow: hidden;position: fixed;}
 
 .board-write{margin-top: 0rem;}
 .board-write .list{}
-.board-write .list>li{}
-.board-write .list>li+li{margin-top: 20rem;}
+.board-write .list>li{position: relative;}
+.board-write .list>li+li{margin-top: 30rem;}
 .board-write .list>li .dt{display: block; margin-bottom: 10rem;}
+.board-write .list>li .chk{ color: #61dafb; font-weight: 900; font-size: 12rem; margin-left: 5rem;}
 .board-write .list>li .dd{display: block;}
 .board-write .btn-set{margin-top: 20rem;}
 
