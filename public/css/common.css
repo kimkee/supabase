@@ -232,6 +232,9 @@ html.is-lock {height: 100%;width: 100%;overflow: hidden;position: fixed;}
 .select-pop .slist>li input{}
 .select-pop .slist>li .txt{}
 .select-pop .btsel.on .tit{display:none;}
+
+.select-pop.sm{}
+.select-pop.sm .slist{height: 34rem; background-position: right 10rem top 10rem;}
 .pop-select{display: block;position:fixed;left:0rem;right:0rem;top:0rem;bottom:0;z-index:1000;background-color: rgba(0,0,0,0);outline:none;transition: background-color 0.4s;}
 .pop-select.on{/* display:block; */background-color: rgba(0,0,0,0.5);}
 .pop-select{white-space:nowrap;text-align:center;font-size: 0rem;padding: 10rem 0rem 0rem 0rem;}
@@ -549,6 +552,11 @@ html.is-lock {height: 100%;width: 100%;overflow: hidden;position: fixed;}
 
 
 .board-write{margin-top: 0rem;}
+.board-write .sales{    position: absolute;
+    right: 20px;
+    top: 15px;
+    width: 120rem;
+    z-index: 10;}
 .board-write .list{}
 .board-write .list>li{position: relative;}
 .board-write .list>li+li{margin-top: 30rem;}
