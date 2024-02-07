@@ -24,7 +24,7 @@ export default function List() {
     // const response = await fetch('https://api.kimkee7.workers.dev/',{ cache: 'no-store' }).then((response) => response.json())
     const response = await fetch(`/api/products/${prams.opt}/${prams.colum}/${prams.asc}`,{ cache: 'no-store' }).then((response) => response.json())
     setProducts(response);
-    // console.log(response);  
+    console.log(response);  
   }
   
   const [isTpList, setIsTpList] = useState('tp-list');
@@ -59,6 +59,7 @@ export default function List() {
               const createdAt = new Date(data.updated_at);
               // const time = new Intl.DateTimeFormat('ko-KR', { dateStyle: 'medium', timeStyle: 'short' }).format(createdAt);
               const time = ui.timeForm(createdAt);
+              const price = ui.commas.add(data.price || '');
               return(
                 <li key={idx} data-id={data.id}>
                   <Link href={`/products/${data.id}`}  className="unit-pd">
@@ -75,7 +76,7 @@ export default function List() {
                     </div>
                     <div className="boxs">
                       <div className="tit">{data.title}</div>
-                      <div className="prc"><em className="p">{ui.commas.add(data.price)}</em><i className="w">원</i></div>
+                      <div className="prc"><em className="p">{price}</em><i className="w">원</i></div>
                       <div className="inf">
                         <em className="time" dangerouslySetInnerHTML={{ __html: time }}></em>
                         {/* <em className="name">{data.location}</em> */}
@@ -86,8 +87,8 @@ export default function List() {
                           <em className="ht like"><i className="fa-regular fa-heart"></i><b>12</b></em>
                         </div>
                         <div className="opt">
-                          <em className="ut-bdg a bdg">{data.location}</em>
-                          <em className="ut-bdg a bdg">{data.condition}</em>
+                          <em className="ut-bdg a bdg">{data.location_id}</em>
+                          <em className="ut-bdg a bdg">{data.condition_id}</em>
                         </div>
                       </div>
                     </div>

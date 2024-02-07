@@ -56,10 +56,7 @@ const ui = {
         watch: ()=> parseInt( getComputedStyle(document.documentElement).getPropertyValue("--safe-watch")  ) || 0
     },
     commas:{
-        add: (str)=> {
-            str = str+"";
-            str.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-        },
+        add: (str)=> str.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','),
         del: (str)=> parseInt(str.replace(/,/g , '') || 0)
     },
     numToCommaHan : function(num) {

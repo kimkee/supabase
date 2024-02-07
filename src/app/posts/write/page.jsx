@@ -14,7 +14,7 @@ export default function Write() {
   const [status, setStatus] = useState([]);
   const [priceTxt, setPriceTxt] = useState('');
 
-  const [titleRef, descriptRef, priceRef, categoryRef, locationRef,  salesRef] = [useRef(), useRef(), useRef(), useRef(), useRef(), useRef()];
+  const [titleRef, descriptRef, priceRef, categoryRef, locationRef,  statusRef] = [useRef(), useRef(), useRef(), useRef(), useRef(), useRef()];
   
   const [conditionVal, setStatusVal] = useState('0');
   const handleRadioChange = (event) => {
@@ -22,25 +22,59 @@ export default function Write() {
   };
 
   const writePost = async ()=> {
-    /* const { data, error } = await supabase.from('products').insert([
-      {
-        title: '타이틀', description: '상품 설명 ㄷㄷ' 
-      },
-    ]).select(); */
+
     const title = titleRef.current.value;
     const price = ui.commas.del(priceTxt);
     const location = locationRef.current.value;
-    const sales = salesRef.current.value;
+    const status = statusRef.current.value;
     const category = categoryRef.current.value;
-    const descript = descriptRef.current.value;
+    const description = descriptRef.current.value;
+    
 
     console.log(`상품타이틀 = `+ title);
     console.log(`판매가격 = `+ price);
     console.log(`판매장소 = `+location);
     console.log(`상품분류 = `+category);
     console.log(`상품상태 = `+conditionVal);
-    console.log(`상품설명 = `+descript);
-    console.log(`판매상태 = `+sales);
+    console.log(`상품설명 = `+description);
+    console.log(`판매상태 = `+status);
+    console.log(`등록시간 = `+ new Date());
+/*     const ddd ={
+      title:title,
+      price:price,
+      location:location,
+      category:category,
+      conditionVal:conditionVal,
+      description:description,
+      status:status,
+      created_at: new Date(),
+      updated_at: new Date()
+    } */
+    // console.table(data);
+    
+    
+    const { data, error } = await supabase
+    .from('products')
+    .insert([
+      {
+        title:title,
+        price:price,
+        location:location,
+        location_id:location,
+        category:category,
+        category_id:category,
+        condition:conditionVal,
+        condition_id:conditionVal,
+        description:description,
+        status:status,
+        status_id:status,
+        created_at: new Date(),
+        updated_at: new Date()
+      }
+    ])
+    .select()
+    console.log(data);
+            
   }
 
   const getCategory = async ()=>{
@@ -112,7 +146,7 @@ export default function Write() {
       <main className={`contents`}>
         <div className="board-write">
           <div className="sales select-pop sm">
-            <select className="slist" name="select_pop_saiearea" ref={salesRef}>
+            <select className="slist" name="select_pop_saiearea" ref={statusRef}>
               { status.length > 0 &&
                 status.map((data,idx) =>{
                   return <option key={idx} value={data.id}>{data.status}</option>
