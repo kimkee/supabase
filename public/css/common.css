@@ -148,10 +148,10 @@ input[type="checkbox"]{width:30rem;height:30rem;display:inline-block;vertical-al
 /* textarea */
 .textarea{padding: 10rem 15rem 10rem 15rem; }
 .textarea>textarea{padding: 0;}
-.textarea .num{font-size:12rem;position: relative;margin: 6rem 0rem -1rem 0rem;display: block;text-align: right;color: #666666;}
-.textarea .num .i{color: #aaaaaa;font-style: normal;}
+.textarea .num{font-size:13rem;position: relative;margin: 6rem 0rem -1rem 0rem;display: block;text-align: right;color: #666666;}
+.textarea .num .i{font-style: normal;}
 .textarea .num .n:before{content:"/";margin: 0rem 2rem;font-size: 10rem;}
-.textarea .num .n{color: #aaaaaa;font-weight: normal;}
+.textarea .num .n{font-weight: normal;}
 .textarea.coms .num{}
 .textarea.coms .num .i{color: #f1344d;}
 .textarea.coms .num .n{color: #666666;font-weight: normal;}
@@ -551,16 +551,22 @@ html.is-lock {height: 100%;width: 100%;overflow: hidden;position: fixed;}
 .msg-valid{color: #838383;font-size: 12rem;margin: 3rem 2rem 0rem 14rem;text-align: right;}
 
 
-.board-write{margin-top: 0rem;}
-.board-write .sales{    position: absolute;
-    right: 20px;
-    top: 15px;
-    width: 120rem;
-    z-index: 10;}
+.board-write{margin-bottom: 20rem;}
+.board-write .sales{ position: absolute; right: 20px; top: 15px; width: 120rem; z-index: 10;}
+.board-write .input.price{display: flex; align-items: center;  }
+.board-write .input.price input{background-color: transparent; letter-spacing: 1rem;   z-index: 0;  color: #aaa;}
+.board-write .input.price input::placeholder{font-size:14rem; height: 50rem;}
+.board-write .input.price .w{ font-size: 16rem; font-style: normal; margin-left: -15rem; margin-top: 4rem; color: #5b5b5b; display: none; }
+.board-write .input.price input.now{width: 100% !important;}
+.board-write .input.price input.won{font-size:22rem; height: 50rem; }
+.board-write .input.price input.won+.w{display: inline-block;}
+.board-write  .textarea.memo{position: relative;}
+.board-write  .textarea.memo .num{ position: absolute; right: 1rem; top: -32rem; margin-top: 0rem; color: #5c7e52;}
 .board-write .list{}
 .board-write .list>li{position: relative;}
 .board-write .list>li+li{margin-top: 30rem;}
 .board-write .list>li .dt{display: block; margin-bottom: 10rem;}
+.board-write .list>li .han{color: #5ea582; position: absolute; right: 4rem; top: 4rem;}
 .board-write .list>li .chk{ color: #61dafb; font-weight: 900; font-size: 12rem; margin-left: 5rem;}
 .board-write .list>li .dd{display: block;}
 .board-write .btn-set{margin-top: 20rem;}

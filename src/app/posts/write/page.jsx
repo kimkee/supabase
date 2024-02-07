@@ -60,10 +60,21 @@ export default function Write() {
     setStatus(status);
   }
   const priceForm = (e)=>{
-    console.log(e.value);
-    const val = ui.commas.add( ui.commas.del( e.value ) || "" );
-    console.log(val);
-    setPriceTxt(val);
+    const num = ui.commas.del( e.currentTarget.value );
+    const txt = ui.commas.add( num || "" );
+    console.log(e.currentTarget.value);
+    if( num > 99999999999999)  return
+    
+    console.log(txt);
+    setPriceTxt(txt);
+    const $els = e.target;
+    let tboxS;
+    $els.style.width = "1rem";
+    setTimeout(() => {     
+      tboxS = $els.scrollWidth;
+      $els.style.width = tboxS + "rem";
+    });
+
   }
 
   // const revText = useRef('');
@@ -117,19 +128,21 @@ export default function Write() {
             <li>
               <div className="dt">상품명 <i className="chk fa-solid fa-check"></i></div>
               <div className="dd">
-                <span className="input"><input type="text" ref={titleRef} placeholder={`입력하세요 (최대'${50}'글자)`} /></span>
+                <span className="input"><input type="text" ref={titleRef} maxLength={50} placeholder={`입력하세요 (최대'${50}'글자)`} /></span>
               </div>
             </li>
             <li>
-              <div className="dt">판매가격 <i className="chk fa-solid fa-check"></i></div>
+              <div className="dt">판매가격 <i className="chk fa-solid fa-check"></i> <span className="han"> {ui.numToCommaHan(priceTxt)}{ui.commas.del(priceTxt)>0?'원':''}</span></div>
               <div className="dd">
-                <span className="input price">
+                <label className="input price">
                   <input ref={priceRef} type="tel" 
                     value={priceTxt}
-                    onInput={(e)=>priceForm(e.currentTarget)}
+                    onInput={priceForm}
                     placeholder="판매가격을 입력하세요"
+                    className={ui.commas.del(priceTxt)>0?'won':'now'}
                   />
-                </span>
+                  <i className="w">원</i>
+                </label>
               </div>
             </li>
             <li>
@@ -186,7 +199,7 @@ export default function Write() {
             <li>
               <div className="dt">상품설명 <i className="chk fa-solid fa-check"></i></div>
               <div className="dd">
-                <span className="textarea">
+                <span className="textarea memo">
                   <textarea className="reply" onInput={autoheight}  ref={descriptRef} data-ui="autoheight" placeholder={`입력하세요(최대'${`1,000`}'글자)`}></textarea>
                   <span className="num"><i className="i">{revNumNow}</i><b className="n">{ui.commas.add(revNumMax)}</b></span>
                 </span>
