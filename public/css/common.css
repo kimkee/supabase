@@ -561,13 +561,14 @@ html.is-lock {height: 100%;width: 100%;overflow: hidden;position: fixed;}
 .board-write .input.price input.won{font-size:22rem; height: 50rem; }
 .board-write .input.price input.won+.w{display: inline-block;}
 .board-write  .textarea.memo{position: relative;}
-.board-write  .textarea.memo .num{ position: absolute; right: 1rem; top: -32rem; margin-top: 0rem; color: #5c7e52;}
+.board-write  .textarea.memo .num{ position: absolute; right: 1rem; top: -32rem; margin-top: 0rem; color: var(--active-color);filter: opacity(0.8);}
 .board-write .list{}
 .board-write .list>li{position: relative;}
 .board-write .list>li+li{margin-top: 30rem;}
 .board-write .list>li .dt{display: block; margin-bottom: 10rem;}
-.board-write .list>li .han{color: #5ea582; position: absolute; right: 4rem; top: 4rem;}
-.board-write .list>li .chk{ color: #61dafb; font-weight: 900; font-size: 12rem; margin-left: 5rem;}
+.board-write .list>li .han{color: var(--active-color); filter: opacity(0.8); position: absolute; right: 4rem; top: 4rem;}
+.board-write .list>li .chk{ color: #61dafb; font-weight: 900; font-size: 12rem; margin-left: 5rem; display: none;}
+.board-write .list>li .chk.ok{display: inline-block;}
 .board-write .list>li .dd{display: block;}
 .board-write .btn-set{margin-top: 20rem;}
 

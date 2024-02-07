@@ -14,9 +14,9 @@ export default function Write() {
   const [status, setStatus] = useState([]);
   const [priceTxt, setPriceTxt] = useState('');
 
-  const [titleRef, descriptRef, priceRef, categoryRef, locationRef, conditionRef , salesRef] = [useRef(), useRef(), useRef(), useRef(), useRef(), useRef(), useRef()];
+  const [titleRef, descriptRef, priceRef, categoryRef, locationRef,  salesRef] = [useRef(), useRef(), useRef(), useRef(), useRef(), useRef()];
   
-  const [statusVal, setStatusVal] = useState('0');
+  const [conditionVal, setStatusVal] = useState('0');
   const handleRadioChange = (event) => {
     setStatusVal(event.target.value || 0);
   };
@@ -28,17 +28,17 @@ export default function Write() {
       },
     ]).select(); */
     const title = titleRef.current.value;
-    const price = priceRef.current.value;
+    const price = ui.commas.del(priceTxt);
     const location = locationRef.current.value;
     const sales = salesRef.current.value;
     const category = categoryRef.current.value;
     const descript = descriptRef.current.value;
 
     console.log(`상품타이틀 = `+ title);
-    console.log(`판매가격 = `+ ui.commas.del(priceTxt));
+    console.log(`판매가격 = `+ price);
     console.log(`판매장소 = `+location);
     console.log(`상품분류 = `+category);
-    console.log(`상품상태 = `+statusVal);
+    console.log(`상품상태 = `+conditionVal);
     console.log(`상품설명 = `+descript);
     console.log(`판매상태 = `+sales);
   }
@@ -126,13 +126,13 @@ export default function Write() {
               <Files opts="{mode:'write', page:'bbs', max:5}"/>
             </li>
             <li>
-              <div className="dt">상품명 <i className="chk fa-solid fa-check"></i></div>
+              <div className="dt">상품명 <i className={`chk fa-solid fa-check ${true&&'ok'}`}></i></div>
               <div className="dd">
                 <span className="input"><input type="text" ref={titleRef} maxLength={50} placeholder={`입력하세요 (최대'${50}'글자)`} /></span>
               </div>
             </li>
             <li>
-              <div className="dt">판매가격 <i className="chk fa-solid fa-check"></i> <span className="han"> {ui.numToCommaHan(priceTxt)}{ui.commas.del(priceTxt)>0?'원':''}</span></div>
+              <div className="dt">판매가격 <i className={`chk fa-solid fa-check ${true&&'ok'}`}></i> <span className="han"> {ui.numToCommaHan(priceTxt)}{ui.commas.del(priceTxt)>0?'원':''}</span></div>
               <div className="dd">
                 <label className="input price">
                   <input ref={priceRef} type="tel" 
@@ -146,7 +146,7 @@ export default function Write() {
               </div>
             </li>
             <li>
-              <div className="dt">판매지역 <i className="chk fa-solid fa-check"></i></div>
+              <div className="dt">판매지역 <i className={`chk fa-solid fa-check`}></i></div>
               <div className="dd">
                 <span className="select-pop">
                   <select className="slist" name="select_pop_saiearea" ref={locationRef}>
@@ -161,7 +161,7 @@ export default function Write() {
               </div>
             </li>
             <li>
-              <div className="dt">카테고리 <i className="chk fa-solid fa-check"></i></div>
+              <div className="dt">카테고리 <i className={`chk fa-solid fa-check`}></i></div>
               <div className="dd">
                 <span className="select-pop">
                   <select className="slist" name="select_pop_cate" ref={categoryRef}>
@@ -176,7 +176,7 @@ export default function Write() {
               </div>
             </li>
             <li>
-              <div className="dt">상품상태 <i className="chk fa-solid fa-check"></i></div>
+              <div className="dt">상품상태 <i className={`chk fa-solid fa-check`}></i></div>
               <div className="dd">
                 { condition.length > 0 ?
                   condition.map( (data,idx) => {
@@ -197,7 +197,7 @@ export default function Write() {
               </div>
             </li>
             <li>
-              <div className="dt">상품설명 <i className="chk fa-solid fa-check"></i></div>
+              <div className="dt">상품설명 <i className={`chk fa-solid fa-check`}></i></div>
               <div className="dd">
                 <span className="textarea memo">
                   <textarea className="reply" onInput={autoheight}  ref={descriptRef} data-ui="autoheight" placeholder={`입력하세요(최대'${`1,000`}'글자)`}></textarea>
