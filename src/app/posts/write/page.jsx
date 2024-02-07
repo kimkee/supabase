@@ -29,51 +29,34 @@ export default function Write() {
     const status = statusRef.current.value;
     const category = categoryRef.current.value;
     const description = descriptRef.current.value;
-    
 
-    console.log(`상품타이틀 = `+ title);
-    console.log(`판매가격 = `+ price);
-    console.log(`판매장소 = `+location);
-    console.log(`상품분류 = `+category);
-    console.log(`상품상태 = `+conditionVal);
-    console.log(`상품설명 = `+description);
-    console.log(`판매상태 = `+status);
-    console.log(`등록시간 = `+ new Date());
-/*     const ddd ={
+    const postData = {
       title:title,
       price:price,
-      location:location,
-      category:category,
-      conditionVal:conditionVal,
+      location:location, location_id:location,
+      category:category, category_id:category,
+      condition:conditionVal, condition_id:conditionVal,
+      status:status, status_id:status,
       description:description,
-      status:status,
       created_at: new Date(),
       updated_at: new Date()
-    } */
-    // console.table(data);
+    } 
+    console.table(postData);
     
-    
-    const { data, error } = await supabase
-    .from('products')
-    .insert([
-      {
-        title:title,
-        price:price,
-        location:location,
-        location_id:location,
-        category:category,
-        category_id:category,
-        condition:conditionVal,
-        condition_id:conditionVal,
-        description:description,
-        status:status,
-        status_id:status,
-        created_at: new Date(),
-        updated_at: new Date()
+    ui.confirm(`등록하시겠습니까?
+        <p>${postData.title}</p>
+        <p>${ui.commas.add(postData.price)}원</p>
+      `,{
+      ycb:()=>{
+        console.log("등록");
+      },
+      ncb:()=>{
+        console.log("취소");
       }
-    ])
-    .select()
-    console.log(data);
+    })
+    
+    // const { data, error } = await supabase.from('products').insert([ postData ]).select()
+    // console.log(data);
             
   }
 
