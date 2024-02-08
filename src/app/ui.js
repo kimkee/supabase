@@ -80,7 +80,7 @@ const ui = {
 		for(let i = 0; i < resultArray.length; i++) {
 			if(!resultArray[i]) continue;
 			let numWithComma = (resultArray[i]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-			resultString = String(numWithComma) + unitWords[i] + resultString;
+			resultString = String(numWithComma) + unitWords[i]+' ' + resultString;
 		}
 		return resultString;
 	},
