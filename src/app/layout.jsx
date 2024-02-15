@@ -1,5 +1,4 @@
 import { Inter, Roboto_Mono , Noto_Sans } from 'next/font/google'
-// import Script from 'next/script'
 import Head from 'next/head';
 import { openGraphImage } from '@/app/shared-metadata.js';
 import '@/app/globals.css'
@@ -49,7 +48,6 @@ export default function RootLayout({ children }) {
         <div className="wrap">
           {children}
         </div>
-        {/* <Script src="/js/ui.js" /> */}
       </body>
       <GoogleAnalytics gaId="G-21BR0MNR32" />
     </html>
