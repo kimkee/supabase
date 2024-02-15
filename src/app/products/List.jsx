@@ -4,18 +4,29 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import React, { useState, useEffect } from 'react';
 import ui from '@/app/ui.js';
+import {conditionObj,locationObj,statusObj} from './getPrdObj.js';
 import Loading from '@/app/components/Loading';
 export default function List() {
 
   const [products, setProducts] = useState([]);
+  const [conditionVar, setCondition] = useState({});
+  const [locationVar, setLocation] = useState({});
+  const [statusVar, setStatus] = useState({});
   const router = useRouter();
   useEffect(() => {
+    console.log(conditionVar);  
+    console.log(locationVar);  
+    console.log(statusVar);  
+
     getProducts({
       opt:'sort',
       colum:'updated_at',
       asc:'desc'
     });
-  },[]);
+    setCondition(conditionObj)
+    setLocation(locationObj)
+    setStatus(statusObj)
+  },[statusVar,locationVar,conditionVar]);
 
   const getProducts = async (prams)=> {
     const tpData = localStorage.getItem("prdType") || 'tp-list';
@@ -35,7 +46,7 @@ export default function List() {
   }
 
 
-  // if(!products){return}
+  // if(statusObj['1']){return}
   return(
 		        
 		<section className="ui-pdlist">
@@ -70,9 +81,9 @@ export default function List() {
                       <span className="btzzim on"><i className="fa-regular fa-bookmark"></i><b>찜하기</b></span>
                       }
 
-                      { data.status == '판매중' ? null
-                        :<em className="flg"><i className="fg">{data.status}</i></em>
-                      }
+                      { statusVar[data.status_id] == '판매중' ? null
+                      :<em className="flg"><i className="fg">{statusVar[data.status_id]}</i></em>}
+                      
                     </div>
                     <div className="boxs">
                       <div className="tit">{data.title}</div>
@@ -87,8 +98,8 @@ export default function List() {
                           <em className="ht like"><i className="fa-regular fa-heart"></i><b>12</b></em>
                         </div>
                         <div className="opt">
-                          <em className="ut-bdg a bdg">{data.location_id}</em>
-                          <em className="ut-bdg a bdg">{data.condition_id}</em>
+                          <em className="ut-bdg a bdg">{ data.location_id > 0 ? locationVar[data.location_id] : locationVar['99'] }</em>
+                          <em className="ut-bdg a bdg">{conditionVar[data.condition_id]}</em>
                         </div>
                       </div>
                     </div>
