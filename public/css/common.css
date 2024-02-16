@@ -497,7 +497,7 @@ html.is-lock {height: 100%;width: 100%;overflow: hidden;position: fixed;}
 .tp-thum .unit-pd .boxs .inf{margin-top: 4rem;}
 .tp-thum .unit-pd .boxs .inf .time{font-size:10rem;}
 .tp-thum .unit-pd .boxs .inf em{display: block; margin-left: 0; padding: 2rem 0;}
-.tp-thum .unit-pd .boxs .dec{  }
+.tp-thum .unit-pd .boxs .dec{display: block;}
 .tp-thum .unit-pd .boxs .dec .hit{margin-top: 4rem;}
 .tp-thum .unit-pd .boxs .dec .opt{margin-top: 4rem;}
 

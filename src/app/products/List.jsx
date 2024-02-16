@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import React, { useState, useEffect } from 'react';
 import ui from '@/app/ui.js';
-import {conditionObj,locationObj,statusObj} from './getPrdObj.js';
+// import {conditionObj,locationObj,statusObj} from './getPrdObj.js';
+import PrdObj from './getPrdObj.js';
 import Loading from '@/app/components/Loading';
 export default function List() {
 
@@ -14,28 +15,24 @@ export default function List() {
   const [statusVar, setStatus] = useState({});
   const router = useRouter();
   useEffect(() => {
-    console.log(conditionVar);  
-    console.log(locationVar);  
-    console.log(statusVar);  
-
-    getProducts({
-      opt:'sort',
-      colum:'updated_at',
-      asc:'desc'
-    });
-    setCondition(conditionObj)
-    setLocation(locationObj)
-    setStatus(statusObj)
-  },[statusVar,locationVar,conditionVar]);
+    getProducts({ opt:'sort', colum:'updated_at', asc:'desc' });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[]);
 
   const getProducts = async (prams)=> {
     const tpData = localStorage.getItem("prdType") || 'tp-list';
     setIsTpList(tpData)
     console.log(prams);
     // const response = await fetch('https://api.kimkee7.workers.dev/',{ cache: 'no-store' }).then((response) => response.json())
+    await PrdObj.then( data => {
+      console.log(data );
+      setCondition(data.conditionObj)
+      setLocation(data.locationObj)
+      setStatus(data.statusObj)
+    })
     const response = await fetch(`/api/products/${prams.opt}/${prams.colum}/${prams.asc}`,{ cache: 'no-store' }).then((response) => response.json())
     setProducts(response);
-    console.log(response);  
+     
   }
   
   const [isTpList, setIsTpList] = useState('tp-list');

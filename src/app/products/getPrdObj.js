@@ -18,7 +18,7 @@ const getPrdObj = async ()=>{
       statusObj[item.id] = item.status;
     });
   })
-  
+  return {conditionObj , locationObj , statusObj}
 }
-getPrdObj();
-export {conditionObj , locationObj , statusObj}
+
+export default getPrdObj()
