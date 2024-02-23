@@ -8,6 +8,21 @@ import { supabase } from '@/app/supabase.js';
 export default function Files() {
   
 
+  const addFiles = async (e)=>{
+    const files = e.target.files
+    console.log(files[0]);
+    for (const file of files) {
+      console.log(file.name);
+    }
+    /* const { data, error } = await supabase
+    .storage
+    .from('products')
+    .upload('public/avatar1.png', avatarFile, {
+      cacheControl: '360000', 
+      upsert: false
+    }) */
+  }
+
   useEffect( () => {
     
   },[]);
@@ -16,7 +31,7 @@ export default function Files() {
     <>
       <div className="ut-attfiles">
         <div className="adbts">
-          <input type="file" className="file" id="fileInput" accept="image/* , video/*" multiple /* maxlength="5" */ />
+          <input type="file" className="file" onChange={addFiles} accept="image/* , video/*" multiple /* maxlength="5" */ />
           <span className="btfiles">
             <i className="fa-solid fa-camera"></i>
             <span className="num"><b className="i">{0}</b>/<b className="n">{0}</b></span>

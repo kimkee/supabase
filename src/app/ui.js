@@ -56,9 +56,34 @@ const ui = {
         watch: ()=> parseInt( getComputedStyle(document.documentElement).getPropertyValue("--safe-watch")  ) || 0
     },
     commas:{
-        add: (str)=> str.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') ,
-        del: (str)=> parseInt(str.replace(/,/g , ''))
+        add: (str)=> str.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','),
+        del: (str)=> parseInt(str.replace(/,/g , '') || 0)
     },
+    numToCommaHan : function(num) {
+        var number = ["영", "일", "이", "삼", "사", "오", "육", "칠", "팔", "구"];
+		num = num + "";
+		number = parseInt(num.replace(/,/gi, ""));
+		// console.log(">>>>>>in:one:", number);
+		let inputNumber  = number < 0 ? false : number;
+		let unitWords    = ['', '만', '억', '조', '경']
+		let splitUnit    = 10000;
+		let splitCount   = unitWords.length;
+		let resultArray  = [];
+		let resultString = '';
+		for(let i = 0; i < splitCount; i++) {
+			let unitResult = (inputNumber % Math.pow(splitUnit, i + 1)) / Math.pow(splitUnit, i);
+			unitResult = Math.floor(unitResult);
+			if(unitResult > 0) {
+				resultArray[i] = unitResult;
+			}
+		}
+		for(let i = 0; i < resultArray.length; i++) {
+			if(!resultArray[i]) continue;
+			let numWithComma = (resultArray[i]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			resultString = String(numWithComma) + unitWords[i]+' ' + resultString;
+		}
+		return resultString;
+	},
     dpmode:{
         init: function(){
             setInterval( this.set , 500);

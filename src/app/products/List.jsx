@@ -4,17 +4,19 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import React, { useState, useEffect } from 'react';
 import ui from '@/app/ui.js';
+// import {conditionObj,locationObj,statusObj} from './getPrdObj.js';
+import PrdObj from './getPrdObj.js';
 import Loading from '@/app/components/Loading';
 export default function List() {
 
   const [products, setProducts] = useState([]);
+  const [conditionVar, setCondition] = useState({});
+  const [locationVar, setLocation] = useState({});
+  const [statusVar, setStatus] = useState({});
   const router = useRouter();
   useEffect(() => {
-    getProducts({
-      opt:'sort',
-      colum:'updated_at',
-      asc:'desc'
-    });
+    getProducts({ opt:'sort', colum:'updated_at', asc:'desc' });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
   const getProducts = async (prams)=> {
@@ -22,9 +24,15 @@ export default function List() {
     setIsTpList(tpData)
     console.log(prams);
     // const response = await fetch('https://api.kimkee7.workers.dev/',{ cache: 'no-store' }).then((response) => response.json())
+    await PrdObj.then( data => {
+      console.log(data );
+      setCondition(data.conditionObj)
+      setLocation(data.locationObj)
+      setStatus(data.statusObj)
+    })
     const response = await fetch(`/api/products/${prams.opt}/${prams.colum}/${prams.asc}`,{ cache: 'no-store' }).then((response) => response.json())
     setProducts(response);
-    // console.log(response);  
+     
   }
   
   const [isTpList, setIsTpList] = useState('tp-list');
@@ -35,7 +43,7 @@ export default function List() {
   }
 
 
-  // if(!products){return}
+  // if(statusObj['1']){return}
   return(
 		        
 		<section className="ui-pdlist">
@@ -59,6 +67,7 @@ export default function List() {
               const createdAt = new Date(data.updated_at);
               // const time = new Intl.DateTimeFormat('ko-KR', { dateStyle: 'medium', timeStyle: 'short' }).format(createdAt);
               const time = ui.timeForm(createdAt);
+              const price = ui.commas.add(data.price || '');
               return(
                 <li key={idx} data-id={data.id}>
                   <Link href={`/products/${data.id}`}  className="unit-pd">
@@ -69,13 +78,13 @@ export default function List() {
                       <span className="btzzim on"><i className="fa-regular fa-bookmark"></i><b>찜하기</b></span>
                       }
 
-                      { data.status == '판매중' ? null
-                        :<em className="flg"><i className="fg">{data.status}</i></em>
-                      }
+                      { statusVar[data.status_id] == '판매중' ? null
+                      :<em className="flg"><i className="fg">{statusVar[data.status_id]}</i></em>}
+                      
                     </div>
                     <div className="boxs">
                       <div className="tit">{data.title}</div>
-                      <div className="prc"><em className="p">{ui.commas.add(data.price)}</em><i className="w">원</i></div>
+                      <div className="prc"><em className="p">{price}</em><i className="w">원</i></div>
                       <div className="inf">
                         <em className="time" dangerouslySetInnerHTML={{ __html: time }}></em>
                         {/* <em className="name">{data.location}</em> */}
@@ -86,8 +95,8 @@ export default function List() {
                           <em className="ht like"><i className="fa-regular fa-heart"></i><b>12</b></em>
                         </div>
                         <div className="opt">
-                          <em className="ut-bdg a bdg">{data.location}</em>
-                          <em className="ut-bdg a bdg">{data.condition}</em>
+                          <em className="ut-bdg a bdg">{ data.location_id > 0 ? locationVar[data.location_id] : locationVar['99'] }</em>
+                          <em className="ut-bdg a bdg">{conditionVar[data.condition_id]}</em>
                         </div>
                       </div>
                     </div>
