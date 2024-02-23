@@ -13,14 +13,16 @@ export default function Files() {
     console.log(files[0]);
     for (const file of files) {
       console.log(file.name);
+      const { data, error } = await supabase
+      .storage
+      .from('products')
+      .upload('public/test.png', file.name, {
+        cacheControl: '360000', 
+        upsert: false
+      })
+      console.log(data);
+      console.log(error);
     }
-    /* const { data, error } = await supabase
-    .storage
-    .from('products')
-    .upload('public/avatar1.png', avatarFile, {
-      cacheControl: '360000', 
-      upsert: false
-    }) */
   }
 
   useEffect( () => {
