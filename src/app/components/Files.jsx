@@ -10,18 +10,15 @@ export default function Files() {
 
   const addFiles = async (e)=>{
     const files = e.target.files
-    // files.forEach(file => {
-    //   console.log(file.name);
-      
-    // });
-    for (var i = 0; i < files.length; i++) {
-      console.log(files[i].name);
+    console.log(files[0]);
+    for (const file of files) {
+      console.log(file.name);
     }
     /* const { data, error } = await supabase
     .storage
-    .from('avatars')
+    .from('products')
     .upload('public/avatar1.png', avatarFile, {
-      cacheControl: '3600',
+      cacheControl: '360000', 
       upsert: false
     }) */
   }
