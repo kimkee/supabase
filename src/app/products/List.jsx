@@ -46,8 +46,7 @@ export default function List() {
     })
     const response = await fetch(`/api/products/${prams.opt}/${prams.colum}/${prams.asc}`,{ cache: 'no-store' }).then((response) => response.json())
     setProducts(response);
-    setTimeout(() => {
-    }); 
+
   }
   products.length && listVisbSet();
   
@@ -64,7 +63,7 @@ export default function List() {
 		        
 		<section className="ui-pdlist">
       {/* <pre>{JSON.stringify(products, null, 2)}</pre> */}
-<button onClick={listVisbSet}>d</button>
+      {/* <button onClick={listVisbSet}>d</button> */}
       { !products.length ? 
         <Loading opts={{type:'glx', cls:'abs'}}/>
         :
@@ -85,7 +84,7 @@ export default function List() {
               const time = ui.timeForm(createdAt);
               const price = ui.commas.add(data.price || '');
               return(
-                <li key={idx} data-id={data.id}>
+                <li key={idx} data-id={data.id} className={'visible'}>
                   <Link href={`/products/${data.id}`}  className="unit-pd">
                     <div className="thum">
                       <div className="pic"><img className="img" src={image} alt="이미지"  onError={ ui.error.poster } /></div>
