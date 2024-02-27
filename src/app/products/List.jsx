@@ -62,7 +62,7 @@ export default function List() {
 		        
 		<section className="ui-pdlist">
       {/* <pre>{JSON.stringify(products, null, 2)}</pre> */}
-
+<button onClick={listVisbSet}>d</button>
       { !products.length ? 
         <Loading opts={{type:'glx', cls:'abs'}}/>
         :

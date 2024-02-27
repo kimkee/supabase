@@ -12,10 +12,7 @@ export default function Files() {
     console.log(files[0]);
     for (const file of files) {
       console.log(file.name);
-      const { data, error } = await supabase
-      .storage
-      .from('products')
-      .upload('public/test.png', file.name, {
+      const { data, error } = await supabase.storage.from('products').upload('public/'+file.name, file.name, {
         cacheControl: '360000', 
         upsert: false
       })
