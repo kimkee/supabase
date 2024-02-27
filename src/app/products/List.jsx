@@ -21,8 +21,7 @@ export default function List() {
       listBoxs.forEach( box => {
         box.target.classList.toggle("visible", box.isIntersecting);
       },{
-        threshold:0.5,
-        delay: 500
+        threshold:0.5
       });
     });
     listBoxs.forEach( box => ovserver.observe(box) );
@@ -47,7 +46,7 @@ export default function List() {
     })
     const response = await fetch(`/api/products/${prams.opt}/${prams.colum}/${prams.asc}`,{ cache: 'no-store' }).then((response) => response.json())
     setProducts(response);
-    await listVisbSet();
+    listVisbSet();
   }
   
   const [isTpList, setIsTpList] = useState('tp-list');
