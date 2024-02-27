@@ -443,7 +443,8 @@ html.is-lock {height: 100%;width: 100%;overflow: hidden;position: fixed;}
 /* 상품리스트 */
 .ui-pdlist{}
 .ui-pdlist .list{}
-.ui-pdlist .list>li{border-top: 1rem solid rgb(100 100 100 / 20%);padding: 16rem 0rem 15rem 0rem;}
+.ui-pdlist .list>li{opacity: 0;border-top: 1rem solid rgb(100 100 100 / 20%);padding: 16rem 0rem 15rem 0rem; transition: all 0.2s; transform: scale(0.8) translateY(100rem);}
+.ui-pdlist .list>li.visible{opacity: 1; transform: scale(1) translateY(0);}
 .ui-pdlist .list.tp-list>li:first-child{border-top-width: 0rem;margin-top: 0rem;padding-top: 0;}
 .ui-pdlist .list.tp-list{}
 .ui-pdlist .list.tp-thum{display: flex;flex-wrap: wrap;margin: 0rem -2% 0rem -2%;}

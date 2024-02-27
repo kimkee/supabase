@@ -14,6 +14,21 @@ export default function List() {
   const [locationVar, setLocation] = useState({});
   const [statusVar, setStatus] = useState({});
   const router = useRouter();
+
+  const listVisbSet = ()=>{
+    const listBoxs = document.querySelectorAll(".ui-pdlist .list>li");
+    const ovserver = new IntersectionObserver( listBoxs => {
+      listBoxs.forEach( box => {
+        box.target.classList.toggle("visible", box.isIntersecting);
+      },{
+        threshold:0.5,
+        delay: 500
+      });
+    });
+    listBoxs.forEach( box => ovserver.observe(box) );
+    console.log(ovserver);
+  }
+
   useEffect(() => {
     getProducts({ opt:'sort', colum:'updated_at', asc:'desc' });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -32,7 +47,7 @@ export default function List() {
     })
     const response = await fetch(`/api/products/${prams.opt}/${prams.colum}/${prams.asc}`,{ cache: 'no-store' }).then((response) => response.json())
     setProducts(response);
-     
+    listVisbSet();
   }
   
   const [isTpList, setIsTpList] = useState('tp-list');
