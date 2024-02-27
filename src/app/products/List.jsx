@@ -47,9 +47,9 @@ export default function List() {
     const response = await fetch(`/api/products/${prams.opt}/${prams.colum}/${prams.asc}`,{ cache: 'no-store' }).then((response) => response.json())
     setProducts(response);
     setTimeout(() => {
-      listVisbSet();
     }); 
   }
+  products.length && listVisbSet();
   
   const [isTpList, setIsTpList] = useState('tp-list');
   const togTpList = (e, type)=>{
