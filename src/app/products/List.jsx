@@ -15,18 +15,18 @@ export default function List() {
   const [statusVar, setStatus] = useState({});
   const router = useRouter();
 
-  const listVisbSet = ()=>{
+  const listVisbSet = () => {
     const listBoxs = document.querySelectorAll(".ui-pdlist .list>li");
-    const ovserver = new IntersectionObserver( listBoxs => {
-      listBoxs.forEach( box => {
-        box.target.classList.toggle("visible", box.isIntersecting);
-      },{
-        threshold:0.5
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("visible", entry.isIntersecting);
       });
+    }, {
+      threshold: 0.3
     });
-    listBoxs.forEach( box => ovserver.observe(box) );
-    console.log(ovserver);
-  }
+    listBoxs.forEach((box) => observer.observe(box));
+    console.log(observer);
+  };
 
   useEffect(() => {
     getProducts({ opt:'sort', colum:'updated_at', asc:'desc' });
