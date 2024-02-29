@@ -16,14 +16,14 @@ export default function List() {
   const router = useRouter();
 
   const listVisbSet = () => {
-    const listBoxs = document.querySelectorAll(".ui-pdlist .list>li");
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         entry.target.classList.toggle("visible", entry.isIntersecting);
       });
     }, {
-      threshold: 0.3
+      threshold: 0.2
     });
+    const listBoxs = document.querySelectorAll(".ui-pdlist .list>li");
     listBoxs.forEach((box) => observer.observe(box));
     console.log(observer);
   };
@@ -46,9 +46,9 @@ export default function List() {
     })
     const response = await fetch(`/api/products/${prams.opt}/${prams.colum}/${prams.asc}`,{ cache: 'no-store' }).then((response) => response.json())
     setProducts(response);
+    listVisbSet();
 
   }
-  products.length && listVisbSet();
   
   const [isTpList, setIsTpList] = useState('tp-list');
   const togTpList = (e, type)=>{
