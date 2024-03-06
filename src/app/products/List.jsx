@@ -39,7 +39,7 @@ export default function List() {
     console.log(prams);
     // const response = await fetch('https://api.kimkee7.workers.dev/',{ cache: 'no-store' }).then((response) => response.json())
     await PrdObj().then( data => {
-      console.log(data );
+      console.log(data.conditionObj );
       setCondition(data.conditionObj)
       setLocation(data.locationObj)
       setStatus(data.statusObj)
