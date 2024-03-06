@@ -38,7 +38,7 @@ export default function List() {
     setIsTpList(tpData)
     console.log(prams);
     // const response = await fetch('https://api.kimkee7.workers.dev/',{ cache: 'no-store' }).then((response) => response.json())
-    await PrdObj.then( data => {
+    await PrdObj().then( data => {
       console.log(data );
       setCondition(data.conditionObj)
       setLocation(data.locationObj)
