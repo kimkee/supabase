@@ -32,7 +32,17 @@ export default function Page() {
 
         <h1 className="dd">Product Detail</h1>
         <div className="pop">{`params.id = ${params.id}`}</div>
-        {products.title}
+        <p>{products.title}</p>
+        <p>{products.description}</p>
+        {products.images_url ? 
+        <ul className="list">
+          {products.images_url.map((img,idx)=>{
+            return(
+              <li key={idx}><img width={'100px'} src={process.env.NEXT_PUBLIC_SUPABASE_URL+img} alt={''}/></li>
+            )
+          })}
+        </ul>
+        :null}
         <pre>{ JSON.stringify( products, null, 4)}</pre>
       </main>
     </div>
