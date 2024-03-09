@@ -37,9 +37,7 @@ export default function Page() {
         {products.images_url ? 
         <ul className="list">
           {products.images_url.map((img,idx)=>{
-            return(
-              <li key={idx}><img width={'100px'} src={process.env.NEXT_PUBLIC_SUPABASE_URL+img} alt={''}/></li>
-            )
+            return( <li key={idx}><img width={'100px'} src={process.env.NEXT_PUBLIC_SUPABASE_URL+img} alt={''}/></li> )
           })}
         </ul>
         :null}
