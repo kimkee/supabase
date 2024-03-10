@@ -65,7 +65,7 @@ export default function List() {
       {/* <pre>{JSON.stringify(products, null, 2)}</pre> */}
       {/* <button onClick={listVisbSet}>d</button> */}
       { !products.length ? 
-        <Loading opts={{type:'glx', cls:'abs'}}/>
+        <Loading opts={{type:'glx', cls:'full'}}/>
         :
         <>
         <div className="bbs-opt">
