@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import '../page.css'
 import List from '../List.jsx';
 import ui from '@/app/ui.js';
+import Loading from '@/app/components/Loading';
 
 export const runtime = 'edge';
 
@@ -37,11 +38,17 @@ export default function Page() {
         {products.images_url ? 
         <ul className="list">
           {products.images_url.map((img,idx)=>{
-            return( <li key={idx}><img width={'100px'} src={process.env.NEXT_PUBLIC_SUPABASE_URL+img} alt={''}/></li> )
+            return(
+              <li key={idx}>
+                <img width={'100px'} src={process.env.NEXT_PUBLIC_SUPABASE_URL+img} alt={''}/>
+              </li>
+              )
           })}
         </ul>
-        :null}
-        <pre>{ JSON.stringify( products, null, 4)}</pre>
+        :
+        <Loading opts={{type:'glx'}} />
+      }
+      <pre>{ JSON.stringify( products, null, 4)}</pre>
       </main>
     </div>
   )
