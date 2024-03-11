@@ -36,19 +36,21 @@ export default function Page() {
         <p>{products.title}</p>
         <p>{products.description}</p>
         {products.images_url ? 
-        <ul className="list">
-          {products.images_url.map((img,idx)=>{
-            return(
-              <li key={idx}>
-                <img width={'100px'} src={process.env.NEXT_PUBLIC_SUPABASE_URL+img} alt={''}/>
-              </li>
-              )
-          })}
-        </ul>
-        :
-        <Loading opts={{type:'glx'}} />
-      }
-      <pre>{ JSON.stringify( products, null, 4)}</pre>
+          <>
+          <ul className="list">
+            {products.images_url.map((img,idx)=>{
+              return(
+                <li key={idx}>
+                  <img width={'100px'} src={process.env.NEXT_PUBLIC_SUPABASE_URL+img} alt={''}/>
+                </li>
+                )
+            })}
+          </ul>
+          <pre>{ JSON.stringify( products, null, 4)}</pre>
+          </>
+          :
+          <Loading opts={{type:'glx'}} />
+        }
       </main>
     </div>
   )
