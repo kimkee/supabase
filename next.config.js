@@ -25,10 +25,10 @@ module.exports = {
 	}, */
 	remotePatterns: [
 		{
-		// 도메인 이름
-		domain: "fonts.googleapis.com",
-		// 패턴
-		patterns: ["/earlyaccess/notosanskr.css"],
+			// 도메인 이름
+			domain: "fonts.googleapis.com",
+			// 패턴
+			patterns: ["/earlyaccess/notosanskr.css"],
 		},
 	],
 }
