@@ -15,14 +15,7 @@ module.exports = {
 			},
 		];
 	},
-	/* async rewrites() {
-		return [
-			{
-				source: '/home',
-				destination: '/',
-			},
-		]
-	}, */
+
 	remotePatterns: [
 		{
 			// 도메인 이름
