@@ -15,7 +15,7 @@ export default function Select() {
   return (
     <article class="pop-select" data-selt-pop="${name}">
       <div class="pbd">
-        <div class="phd ${tit ? 'is-tit':''}" ><h3 class="ptit">${tit}</h3></div>
+        <div class="phd ${tit ? 'is-tit':''}"><h3 class="ptit">${tit}</h3></div>
         <div class="pct">
           <main class="poptents">
             <div class="swiper-container slide">
