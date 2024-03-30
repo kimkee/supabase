@@ -382,7 +382,7 @@ html.is-lock {height: 100%;width: 100%;overflow: hidden;position: fixed;}
 
 .menubar .menu{width: 100%;height:100%;align-items: center;display: flex;padding: 0rem 20rem 0rem 20rem;justify-content: space-between;}
 .menubar .menu>li{width: 100%;height: 100%;text-align: center;}
-.menubar .menu>li .bt{height: 100%;display:flex;flex-direction: column;align-items: center;justify-content: center;margin: 0rem auto 0rem auto;padding: 3rem 0rem 2rem 0rem;padding-bottom: calc(2rem);position: relative;}
+.menubar .menu>li .bt{height: 100%;display:flex;flex-direction: column;align-items: center;justify-content: center;margin: 0rem auto 0rem auto;padding: 3rem 0rem 2rem 0rem;padding-bottom: calc(2rem + var(--safe-bottom));position: relative;}
 .menubar .menu>li .bt em{display:block;font-size: 11rem;margin-top: 4rem;}
 .menubar .menu>li .bt i{font-size:18rem; font-weight: 600;}
 .menubar .menu>li .bt.router-link-active,
