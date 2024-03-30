@@ -376,7 +376,7 @@ html.is-lock {height: 100%;width: 100%;overflow: hidden;position: fixed;}
 
 /* 하단메뉴바 */
 .menubar{transition: transform 0.3s;height: 60rem;height: calc(60rem + var(--safe-bottom) );}
-.menubar>.inr{position: fixed;left: 0;bottom: 0; z-index: 500;height: 60rem;height: calc(60rem + var(--safe-bottom) ); padding-bottom: calc(0rem + var(--safe-bottom));; background: #1c1c1c;border-top: #2e2e2e solid 1rem;left: 50%;width: 100%;max-width: var(--mwide);transform: translateX(-50%);margin-left: calc( 0rem - var(--scrPad) /2 );}
+.menubar>.inr{position: fixed;left: 0;bottom: 0; z-index: 500;height: 60rem;height: calc(60rem + var(--safe-bottom) ); background: #1c1c1c;border-top: #2e2e2e solid 1rem;left: 50%;width: 100%;max-width: var(--mwide);transform: translateX(-50%);margin-left: calc( 0rem - var(--scrPad) /2 );}
 .menubar.hide{transform: translateY(100%);}
 .menubar.hide>.inr{ }
 
