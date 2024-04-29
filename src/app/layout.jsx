@@ -45,6 +45,8 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
+  viewportFit:'cover',
+  shrinkToFit: false,
   // Also supported by less commonly used
   // interactiveWidget: 'resizes-visual',
 }
