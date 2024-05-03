@@ -20,8 +20,7 @@ export const metadata = {
   author: 'Your Name',
   url: 'https://example.com/page-url',
   image: 'https://supabase.com/dashboard/favicon/favicon.ico',
-  favicon: 'https://supabase.com/dashboard/favicon/favicon.ico',
-
+  favicon: 'https://supabase.com/dashboard/favicon/favicon.ico'
 }
 
 export default function RootLayout({ children }) {
