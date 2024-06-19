@@ -36,7 +36,7 @@ export async function  GET(req) {
   return Response.json(data);
 }
 ```
-
+  
 
 [supabase.com](https://supabase.com)
 
