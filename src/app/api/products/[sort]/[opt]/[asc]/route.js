@@ -12,6 +12,10 @@ export async function  GET(req, {params}) {
   return Response.json(data);
 }
 
+// http://localhost:9008/api/products/sort/updated_at/asc
+// http://localhost:9008/api/products/sort/updated_at/desc
+// http://localhost:9008/api/products/sort/price/asc
+// http://localhost:9008/api/products/sort/price/desc
 
 // export default async function handler(req, res) {
 //   try {
