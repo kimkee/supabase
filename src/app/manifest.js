@@ -3,19 +3,19 @@ export default function manifest() {
     name: 'SUPA MARKET',
     short_name: 'SUPA MARKET',
     description: 'SUPAMARKET + Supabase + Nest.js',
-    start_url: '/',
+    start_url: `${process.env.SITE_URL}`,
     display: 'standalone',
     background_color: '#1a1a1a',
     theme_color: '#1a1a1a',
     icons: [
     {
-      src: '/img/favicon.ico',
+      src: `${process.env.SITE_URL}img/favicon.ico`,
       sizes: 'any',
       sizes: "48x48",
       type: 'image/x-icon'
     },
     {
-      src: "/img/icon_app.png",
+      src: `${process.env.SITE_URL}img/icon_app.png`,
       type: "image/png",
       sizes: "512x512"
     }

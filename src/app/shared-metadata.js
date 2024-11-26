@@ -1,1 +1,1 @@
-export const openGraphImage = { images: ['https://supamarket.pages.dev/img/ogimage.png'] }
+export const openGraphImage = { images: [`${process.env.SITE_URL}img/ogimage.png`] }
