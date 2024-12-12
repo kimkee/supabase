@@ -1,1 +1,1 @@
-export const openGraphImage = { images: [`${process.env.SITE_URL}img/ogimage.png`] }
+export const openGraphImage = { images: [`${process.env.NEXT_PUBLIC_SITE_URL}img/ogimage.png`] }

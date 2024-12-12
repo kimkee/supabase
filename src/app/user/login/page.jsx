@@ -40,7 +40,7 @@ export default function Login() {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
-        redirectTo: location.origin,
+        redirectTo: `http://localhost:9008/products`,
       },
     });
   }
@@ -54,7 +54,7 @@ export default function Login() {
           access_type: 'offline',
           prompt: 'consent',
         },
-        redirectTo: location.origin
+        redirectTo: `http://localhost:9008/products`
       },
     })
   }
@@ -63,7 +63,7 @@ export default function Login() {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "kakao",
       options: {
-        redirectTo: location.origin
+        redirectTo: `http://localhost:9008/products`
       },
     });
   }
