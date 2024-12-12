@@ -4,7 +4,7 @@ import Head from 'next/head';
 import './page.css'
 import List from './List.jsx';
 import ui from '@/app/ui.js';
-export const runtime = 'edge';
+
 
 export default async function Page() {
  
