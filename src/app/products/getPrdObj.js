@@ -1,4 +1,4 @@
-export const runtime = 'edge';
+
 const getPrdObj = async ()=>{
   const conditionObj = {}; 
   const locationObj = {}; 
