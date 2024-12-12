@@ -1,6 +1,6 @@
 import Nav from '@/app/components/Nav.jsx';
 import Header from '@/app/components/Header.jsx';
-export const runtime = 'edge';
+
 
 // export const metadata = {
 //   openGraph: {

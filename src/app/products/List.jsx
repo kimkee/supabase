@@ -7,7 +7,6 @@ import ui from '@/app/ui.js';
 // import {conditionObj,locationObj,statusObj} from './getPrdObj.js';
 import PrdObj from './getPrdObj.js';
 import Loading from '@/app/components/Loading';
-export const runtime = 'edge';
 export default function List() {
 
   const [products, setProducts] = useState([]);
