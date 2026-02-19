@@ -9,19 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/third-parties": "^14.1.0",
-    "@supabase/supabase-js": "^2.39.2",
-    "clsx": "^2.1.0",
-    "next": "14.2.35",
-    "next-pwa": "^5.6.0",
-    "react": "^18",
-    "react-dom": "^18",
+    "next": "15.1.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "@next/third-parties": "15.1.0",
+    "@supabase/supabase-js": "^2.47.0",
+    "clsx": "^2.1.1",
     "recoil": "^0.7.7",
-    "supabase": "^1.127.4",
-    "swiper": "^11.0.5"
+    "swiper": "^11.1.15"
   },
   "devDependencies": {
-    "eslint": "^8",
-    "eslint-config-next": "14.0.4"
+    "eslint": "^9.16.0", 
+    "eslint-config-next": "15.1.0",
+    "@types/node": "^20.17.9",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "typescript": "^5.7.2"
   }
 }
