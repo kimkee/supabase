@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react'; //useState, useEffect
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link'
-import clsx from 'clsx';
 import ui from '@/app/ui.js';
 import { supabase } from '@/app/supabase.js'; 
 export default function Nav() {
@@ -71,16 +70,16 @@ export default function Nav() {
       <nav id="menubar" className="menubar">
         <div className="inr">
           <ul className="menu">
-            <li className={ clsx(`li`,{ 'active': pathname.includes('/home')}) }>
+            <li className={`li ${pathname.includes('/home') ? 'active' : ''}`}>
               <Link href={`/`} className={"bt"}><i className="fa-regular fa-house"></i><em>Home</em></Link>
             </li>
-            <li className={ clsx(`li`,{ 'active': pathname.includes('/products')}) }>
+            <li className={`li ${pathname.includes('/products') ? 'active' : ''}`}>
               <Link href={`/products`} className={"bt"}><i className="fa-solid fa-box"></i><em>Products</em></Link>
             </li>
-            <li className={ clsx(`li`,{ 'active': pathname.includes('/search')}) }>
+            <li className={`li ${pathname.includes('/search') ? 'active' : ''}`}>
               <Link href={`/search`} className={"bt"}><i className="fa-regular fa-search"></i><em>Search</em></Link>
             </li>
-            <li className={ clsx(`li`,{ 'active': pathname.includes('/user')}) }>
+            <li className={`li ${pathname.includes('/user') ? 'active' : ''}`}>
               {isLogin === true
                 ? 
                 <Link href={`/user/${userInfo.uid}`} className={"bt"}> <i className="fa-regular fa-user"></i><em>Mypage</em></Link>

@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react'; //useState, useEffect
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link'
-import clsx from 'clsx';
 import ui from '@/app/ui.js';
 import { supabase } from '@/app/supabase.js';
 export default function Select() {
