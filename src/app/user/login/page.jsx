@@ -101,7 +101,7 @@ export default function Login() {
             <div className="bts">
               <button type="button" className="btn" onClick={loginGithub}><i className="fa-brands fa-github" /><em>Github </em></button>
               <button type="button" className="btn" onClick={loginGoogle}><i className="fa-brands fa-google" /><em>Google </em></button>
-              <button type="button" className="btn" onClick={loginKakao} disabled><i className="fa-brands fa-kickstarter-k" /><em>Kakao </em></button>
+              <button type="button" className="btn" onClick={loginKakao} disabled><i className="fa-brands fa-kakao-talk" /><em>Kakao </em></button>
               <button type="button" className="btn" disabled><i className="fa-brands fa-twitter" /><em>Twitter </em></button>
             </div>
           </div>

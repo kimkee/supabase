@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { openGraphImage } from '@/app/shared-metadata.js';
 import '@/app/globals.css'
 import '/public/css/common.css'
-import '/public/fontawesome/css/all.min.css'
+import '/public/fontawesome/css/all.css'
 import ui from '@/app/ui.js';
 import { GoogleAnalytics } from '@next/third-parties/google'
 export const inter = Inter({
